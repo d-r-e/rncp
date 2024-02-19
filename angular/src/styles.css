@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: rgb(50, 39, 51) !important;
+  margin:0;
+  color: #cacaca;
+  min-height: 100%;
+  overflow: auto;
+}
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

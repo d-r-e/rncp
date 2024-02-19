@@ -1,0 +1,35 @@
+services:
+  flask:
+    image: flask
+    build:
+      context: flask
+    ports:
+      - "5000:5000"
+    env_file:
+      - flask/.env
+    volumes:
+      - ./flask:/app
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+
+
+  angular:
+    image: angular
+    build: angular
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./angular/:/app
+
+
+  nginx:
+    image: nginx:stable
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - flask
+      - angular
+    
