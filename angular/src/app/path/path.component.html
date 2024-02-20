@@ -1,27 +1,28 @@
-<div class="container-xs container-md px-md-5">
+<div class="container-xs container-md">
   <div class="d-flex flex-row w-100 align-items-evenly">
     <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 m-2 bg-white text-black fw-bolder"
       [ngClass]="{'active': rncp==6}" (click)="setRNCP(6)">RNCP 6</button>
     <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 m-2 bg-white text-black fw-bolder"
       [ngClass]="{'active': rncp==7}" (click)="setRNCP(7)">RNCP 7</button>
   </div>
-  <hr>
-  <div class="row">
-      <div class="d-flex align-items-center">
-        <div class="text-nowrap mr-auto me-4">LEVEL </div>
-        <div class="text-nowrap px-1">{{getLevel()}} / {{requiredLevel}}</div>
-        <app-progressbar class="w-75 ms-auto" [current]="getLevel()" [max]="requiredLevel "></app-progressbar>
-        <span *ngIf="getLevel()>=requiredLevel" class="py-0 px-2 ">
-          <code class="text-success">OK</code>
-        </span>
-        <span *ngIf="getLevel()<requiredLevel" class="py-0 px-2 rounded-pill">
-          <code class="text-danger">KO</code>
-        </span>
-      </div>
+  <hr class="text-black">
+  <div class="row mb-2">
+    <div class="d-flex align-items-center">
+      <div class="text-nowrap mr-auto me-4">LEVEL </div>
+      <div class="text-nowrap px-1">{{getLevel()}} / {{requiredLevel}}</div>
+      <app-progressbar class="w-50 ms-auto" [current]="getLevel()" [max]="requiredLevel "></app-progressbar>
+      <span *ngIf="getLevel()>=requiredLevel" class="py-0 px-2 ">
+        <code class="text-success fw-bold">OK</code>
+      </span>
+      <span *ngIf="getLevel()<requiredLevel" class="py-0 px-2 rounded-pill">
+        <code class="text-danger">KO</code>
+      </span>
+    </div>
     <div class="d-flex align-items-center">
       <div class="mr-auto me-4">EVENTS</div>
       <div class="text-nowrap px-1">{{events}} / {{requiredEvents}}</div>
-      <app-progressbar class="w-75 ms-auto" [discrete]="true" [current]="events" [min]="0" [max]="requiredEvents"></app-progressbar>
+      <app-progressbar class="w-50 ms-auto" [discrete]="true" [current]="events" [min]="0"
+        [max]="requiredEvents"></app-progressbar>
       <span *ngIf="events>=requiredEvents" class="py-0 px-2 ">
         <code class="text-success fw-bold">OK</code>
       </span>
@@ -29,5 +30,20 @@
         <code class="text-danger">KO</code>
       </span>
     </div>
+    <div class="d-flex align-items-center">
+      <div class="w-25 d-flex flex-nowrap">
+        <div class="mr-auto me-4">INTERNSHIPS</div>
+        <div class="text-nowrap px-1">{{internships}} / {{requiredInternships}}</div>
+      </div>
+      <app-progressbar class="w-50 ms-auto" [current]="internships" [min]="0"
+        [max]="requiredInternships"></app-progressbar>
+      <span *ngIf="internships>=requiredInternships" class="py-0 px-2 ">
+        <code class="text-success fw-bold">OK</code>
+      </span>
+      <span *ngIf="internships<requiredInternships" class="py-0 px-2 rounded-pill">
+        <code class="text-danger">KO</code>
+      </span>
+    </div>
   </div>
+  <hr class="mt-4 text-black">
 </div>

@@ -62,6 +62,7 @@ def events():
     
     all_events = []
     page = 1
+    retries = 10
     while True:
         response = requests.get(
             f'https://api.intra.42.fr/v2/users/{user_id}/events',
@@ -69,12 +70,15 @@ def events():
             headers={'Authorization': token}
         )
         while response.status_code == 429:
-            sleep(.2)
+            retries -= 1
+            sleep(.5)
             response = requests.get(
                 f'https://api.intra.42.fr/v2/users/{user_id}/events',
                 params={'page': page},  # Assuming 'per_page' is supported
                 headers={'Authorization': token}
             )
+            if retries == 0:
+                return 'Too many retries', 429
         if response.status_code != 200:
             return response.json(), response.status_code
         

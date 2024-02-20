@@ -18,8 +18,11 @@ export class PathComponent implements OnInit {
   rncp: number = 6;
   requiredLevel: number = 17;
   requiredEvents: number = 10;
+  internships: number = 0;
+  requiredInternships : number = 2;
 
   constructor(private authService: AuthService, private router: Router) {
+    this.internships = this.authService.getInternships().length;
     this.authService.getEvents().subscribe((events:CursusEvent[]) => {
       console.log(events);
       this.events = events.length;
@@ -33,7 +36,7 @@ export class PathComponent implements OnInit {
 
   setRNCP(level: number) {
     this.rncp = level
-    this.requiredLevel = (level == 6) ? 17 : 42;
+    this.requiredLevel = (level == 6) ? 17 : 21;
     this.requiredEvents = (level == 6) ? 10 : 15;
   }
 
