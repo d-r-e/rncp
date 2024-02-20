@@ -1,0 +1,72 @@
+/* progressbar.component.scss */
+.progressbar-container {
+  width: 100%;
+  background-color: #000;
+  border: .1em solid #fff;
+  padding: .23em;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressbar {
+  height: 20px;
+  background-color: #fff;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+
+.progressbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.progressbar-container {
+  width: 100%;
+  background-color: #000;
+  border: 1px solid #fff;
+  padding: 2px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.progressbar {
+  height: .8em;
+  background-color: #fff;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.progressbar-container.discrete {
+  justify-content: space-between;
+}
+
+.progressbar-block {
+  height: .8em;
+  width: 9%;
+  margin: .05%;
+  background-color: transparent;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.progressbar-block.filled {
+  background-color: #fff;
+}

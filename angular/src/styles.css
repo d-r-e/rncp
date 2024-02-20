@@ -12,3 +12,13 @@ body{
   font-weight: 400;
   font-style: normal;
 }
+
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+
+.bg-green{
+  background-color: #8ae18a;
+}

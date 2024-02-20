@@ -4,6 +4,7 @@ import { LoginComponent } from "./login/login.component";
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './app.component.css',
   imports: [
     HttpClientModule,
+    CommonModule,
     RouterOutlet,
     LoginComponent,
-    CommonModule,
-    RouterLink,
-    RouterModule,
-    RouterLinkActive,
     HeaderComponent
   ],
   providers: [

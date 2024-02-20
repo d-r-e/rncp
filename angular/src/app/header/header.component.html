@@ -1,5 +1,12 @@
 <nav class="navbar navbar-expand w-100 bg-black text-white d-flex montserrat bg-dark text-white">
   <div class="container-fluid">
+    <div class="nav-item text-white" *ngIf="authService.me?.login">
+      <span>
+        {{authService.me?.login}}
+      </span>
+      <span class="badge bg-white fw-bolder text-dark rounded-pill uppercase">LV {{authService.getLevel()}}</span>
+    </div>
     <a class="navbar-brand text-white" href="#">RNCP</a>
+    <button class=" btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none" *ngIf="isLoggedIn()"  (click)="logout()">Logout</button>
   </div>
 </nav>
