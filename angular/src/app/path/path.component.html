@@ -23,7 +23,7 @@
       <div class="text-nowrap px-1">{{events}} / {{requiredEvents}}</div>
       <app-progressbar class="w-75 ms-auto" [discrete]="true" [current]="events" [min]="0" [max]="requiredEvents"></app-progressbar>
       <span *ngIf="events>=requiredEvents" class="py-0 px-2 ">
-        <code class="text-success">OK</code>
+        <code class="text-success fw-bold">OK</code>
       </span>
       <span *ngIf="events<requiredEvents" class="py-0 px-2 rounded-pill">
         <code class="text-danger">KO</code>
