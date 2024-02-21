@@ -1,0 +1,64 @@
+.completed::before,
+.completed::after {
+  content: '';
+  display: inline-block;
+  width: .4rem;
+  top:5%;
+  height: 90%;
+  background-color: rgb(94, 191, 94);
+  position: absolute;
+  transition: all .5s;
+}
+
+.completed::before {
+  left: 0;
+}
+
+.completed::after {
+  right: 0;
+}
+
+
+.project {
+  position: relative;
+}
+
+
+.project.completed:hover::before,
+.project.completed:hover::after {
+  width: 3%;
+  background-color: rgb(94, 211, 94);
+
+}
+
+
+.text-green {
+  color: #8ae18a;
+}
+
+.ok-badge {
+  background-color: #000000;
+  color: #8ae18a;
+  padding: .2rem .5rem;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.ko-badge {
+  background-color: #000000;
+  color: #ae2e2e;
+  padding: .2rem .5rem;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.planned {
+  background-color: #f0f0f0;
+  border-left: .3rem solid #ffd700;
+  transition: all .5s;
+}
+
+.planned:hover {
+  background-color: #f0f0f0;
+  border-left: .6rem solid #ffd700;
+}

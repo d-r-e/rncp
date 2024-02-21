@@ -47,3 +47,14 @@
   </div>
   <hr class="mt-4 text-black">
 </div>
+<div class="container container-lg">
+  <div class="row">
+
+    <div *ngFor="let block of blocks" class="col-md-6 col-lg-4 col-xl-3">
+      <div class="m-2">
+
+        <app-block [block]="block" [projects]="projects"></app-block>
+      </div>
+    </div>
+  </div>
+</div>

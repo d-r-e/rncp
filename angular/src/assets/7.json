@@ -1,0 +1,279 @@
+[
+  {
+    "id": 2,
+    "name": "Security",
+    "min_xp": 50000,
+    "min_projects": 3,
+    "projects": [
+      {
+        "id": 1430,
+        "name": "famine",
+        "xp": 9450
+      },
+      {
+        "id": 1443,
+        "name": "pestilence",
+        "xp": 15750
+      },
+      {
+        "id": 1404,
+        "name": "snow-crash",
+        "xp": 9450
+      },
+      {
+        "id": 2088,
+        "name": "ft_malcolm",
+        "xp": 9450
+      },
+      {
+        "id": 2089,
+        "name": "ft_ssl_md5",
+        "xp": 9450
+      },
+      {
+        "id": 2090,
+        "name": "Darkly",
+        "xp": 9450
+      },
+      {
+        "id": 2091,
+        "name": "Rainfall",
+        "xp": 15750
+      },
+      {
+        "id": 2092,
+        "name": "Override",
+        "xp": 15750
+      },
+      {
+        "id": 2093,
+        "name": "boot2root",
+        "xp": 9450
+      },
+      {
+        "id": 2094,
+        "name": "ft_shield",
+        "xp": 9450
+      },
+      {
+        "id": 1419,
+        "name": "Woody Woodpacker",
+        "xp": 9450
+      },
+      {
+        "id": 2096,
+        "name": "Piscine Cybersecurity",
+        "xp": 22450
+      },
+      {
+        "id": 2097,
+        "name": "UnleashTheBox",
+        "xp": 22450
+      },
+      {
+        "id": 2098,
+        "name": "Active Connect",
+        "xp": 9450
+      },
+      {
+        "id": 2099,
+        "name": "MicroForensX",
+        "xp": 9450
+      },
+      {
+        "id": 2100,
+        "name": "ActiveTechTales",
+        "xp": 9450
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "UNIX",
+    "min_xp": 30000,
+    "min_projects": 3,
+    "projects": [
+      {
+        "id": 1467,
+        "name": "nm",
+        "xp": 9450
+      },
+      {
+        "id": 1468,
+        "name": "malloc",
+        "xp": 9450
+      },
+      {
+        "id": 1463,
+        "name": "zappy",
+        "xp": 25200
+      },
+      {
+        "id": 1330,
+        "name": "libasm",
+        "xp": 966
+      },
+      {
+        "id": 1411,
+        "name": "gbmu",
+        "xp": 31500
+      },
+      {
+        "id": 1415,
+        "name": "ft_linux",
+        "xp": 4200
+      },
+      {
+        "id": 1416,
+        "name": "little penguin",
+        "xp": 9450
+      },
+      {
+        "id": 1381,
+        "name": "taskmaster",
+        "xp": 9450
+      },
+      {
+        "id": 1388,
+        "name": "strace",
+        "xp": 9450
+      },
+      {
+        "id": 1420,
+        "name": "Matt Daemon",
+        "xp": 9450
+      },
+      {
+        "id": 1470,
+        "name": "lem_ipc",
+        "xp": 9450
+      },
+      {
+        "id": 1425,
+        "name": "KFS 1",
+        "xp": 15750
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Suite",
+    "min_xp": 0,
+    "min_projects": 1,
+    "projects": [
+      {
+        "id": 2064,
+        "name": "Inception-of-Things",
+        "xp": 25450
+      },
+      {
+        "id": 2071,
+        "name": "BADASS",
+        "xp": 22450
+      },
+      {
+        "id": 1407,
+        "name": "ft_nmap",
+        "xp": 9450
+      },
+      {
+        "id": 2080,
+        "name": "42sh",
+        "xp": 9450
+      },
+      {
+        "id": 2082,
+        "name": "DoomNukem",
+        "xp": 25450
+      },
+      {
+        "id": 2083,
+        "name": "HumanGL",
+        "xp": 15750
+      },
+      {
+        "id": 2084,
+        "name": "kfs-1",
+        "xp": 9450
+      },
+      {
+        "id": 2085,
+        "name": "kfs-2",
+        "xp": 9450
+      },
+      {
+        "id": 2086,
+        "name": "Override",
+        "xp": 9450
+      },
+      {
+        "id": 2087,
+        "name": "RT",
+        "xp": 25450
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "System administration",
+    "min_xp": 50000,
+    "min_projects": 3,
+    "projects": [
+      {
+        "id": 2111,
+        "name": "cloud-1",
+        "xp": 9450
+      },
+      {
+        "id": 2081,
+        "name": "BADASS",
+        "xp": 22450
+      },
+      {
+        "id": 2064,
+        "name": "Inception Of Things",
+        "xp": 25450
+      },
+      {
+        "id": 2106,
+        "name": "taskmaster",
+        "xp": 9450
+      },
+      {
+        "id": 2112,
+        "name": "ft_ping",
+        "xp": 4200
+      },
+      {
+        "id": 2113,
+        "name": "ft_traceroute",
+        "xp": 9450
+      },
+      {
+        "id": 1407,
+        "name": "ft_nmap",
+        "xp": 9450
+      },
+      {
+        "id": 2114,
+        "name": "Active Discovery",
+        "xp": 9450
+      },
+      {
+        "id": 2115,
+        "name": "Automatic Directory",
+        "xp": 9450
+      },
+      {
+        "id": 2116,
+        "name": "Administrative Directory",
+        "xp": 9450
+      },
+      {
+        "id": 2117,
+        "name": "Accessible Directory",
+        "xp": 9450
+      }
+    ]
+  }
+]

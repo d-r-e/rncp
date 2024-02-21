@@ -3,6 +3,33 @@ export interface CursusUser{
   level: number;
 }
 
+export interface Block {
+  id: number;
+  name: string;
+  projects: Project[];
+  min_xp: number;
+  min_projects: number;
+}
+
+export interface Project {
+  id: number;
+  name: string;
+  slug: string;
+  xp: number;
+}
+
+export interface ProjectUser {
+  id: number;
+  occurrence: number;
+  final_mark: number;
+  status: string;
+  "validated?": boolean;
+  current_team_id: number;
+  project: Project;
+  cursus_ids: number[];
+}
+
+
 export interface CursusEvent  {
   id: number;
 }
@@ -19,7 +46,7 @@ export interface Me {
   image_url: string;
   groups: any[];
   cursus_users: CursusUser[];
-  projects_users: any[];
+  projects_users: ProjectUser[];
   languages_users: any[];
   achievements: any[];
   titles: any[];

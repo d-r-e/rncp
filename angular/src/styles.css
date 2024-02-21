@@ -22,3 +22,8 @@ body{
 .bg-green{
   background-color: #8ae18a;
 }
+
+
+.cursor-pointer{
+  cursor: pointer;
+}

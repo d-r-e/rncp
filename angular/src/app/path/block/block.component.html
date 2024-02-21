@@ -1,0 +1,41 @@
+<div class="w-100 block rounded-0 bg-white border-black border border-5 text-black">
+  <div class="d-flex flex-row justify-content-between align-items-center">
+    <h3 class="ms-2">{{block.name}}</h3>
+    <div class="ok-badge me-1" *ngIf="isBlockCompleted()">
+      OK
+    </div>
+    <div class="ko-badge m-1" *ngIf="!isBlockCompleted()">
+      KO
+    </div>
+  </div>
+  <div class="d-flex flex-row bg-black text-white justify-content-around align-items-center">
+
+    <label *ngIf="block.min_xp">
+      <span [ngClass]="{
+        'text-green': estimatedXP>=block.min_xp,
+        'text-danger': estimatedXP<block.min_xp
+        }">
+      {{estimatedXP}}
+      </span>
+      / {{block.min_xp}} XP
+    </label>
+  <div class="vr text-white mt-2" *ngIf="block.min_xp"></div>
+    <label><span [ngClass]="{
+      'text-green': completed_project_number>=block.min_projects,
+      'text-danger': completed_project_number<block.min_projects
+
+      }" >
+      {{completed_project_number}}
+    </span>
+      / {{block.min_projects}}</label>
+  </div>
+</div>
+<div *ngFor="let project of block.projects" class="mx-0 bg-white border-5 border-black text-black">
+  <div class="project cursor-pointer px-2 mx-0" [ngClass]="{'completed': isCompleted(project), 'planned': isPlanned(project)}"
+       (click)="!isCompleted(project) && planProject(project)">
+    <div class="project-body cursor-pointer mx-2 d-flex flex-row text-xs justify-content-between align-items-center">
+      <div class="project-title fw-bold">{{project.name}}</div>
+      <div class="project-text">{{project.xp}}</div>
+    </div>
+  </div>
+</div>
