@@ -1,4 +1,4 @@
-RNCP Planner for 42 School
+# RNCP Planner for 42 School
 
 ![alt text](image.png)
 
