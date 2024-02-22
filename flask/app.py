@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.DEBUG)
 load_dotenv()
 CLIENT_ID = environ.get("CLIENT_ID")
 CLIENT_SECRET = environ.get("CLIENT_SECRET")
-REDIRECT_URI = "http://localhost/auth/callback"
+REDIRECT_URI = environ.get("REDIRECT_URI")
 
 @app.route('/api/auth/callback')
 def auth_callback():
