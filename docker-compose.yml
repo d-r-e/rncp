@@ -3,8 +3,6 @@ services:
     image: flask
     build:
       context: flask
-    ports:
-      - "5000:5000"
     env_file:
       - flask/.env
     volumes:
@@ -18,7 +16,7 @@ services:
     image: angular
     build: angular
     ports:
-      - "4200:4200"
+      - "127.0.0.1:4200:4200"
     volumes:
       - ./angular/:/app
 
