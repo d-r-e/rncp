@@ -1,10 +1,10 @@
 <div class="w-100 block rounded-0 bg-white border-black border border-5 text-black">
   <div class="d-flex flex-row justify-content-between align-items-center">
     <h3 class="ms-2">{{block.name}}</h3>
-    <div class="ok-badge me-1" *ngIf="isBlockCompleted()">
+    <div class="ok-badge mx-1" *ngIf="isBlockCompleted()">
       OK
     </div>
-    <div class="ko-badge m-1" *ngIf="!isBlockCompleted()">
+    <div class="ko-badge mx-1" *ngIf="!isBlockCompleted()">
       KO
     </div>
   </div>

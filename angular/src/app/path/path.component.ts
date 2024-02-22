@@ -24,29 +24,30 @@ export class PathComponent implements OnInit {
   requiredEvents: number = 10;
   internships: number = 0;
   requiredInternships : number = 2;
+  path: 'web' | 'apps' | 'sec' | 'ia' = 'web';
 
   constructor(private authService: AuthService, private router: Router,
     private http: HttpClient) {
-    this.internships = this.authService.getInternships().length;
-    this.authService.getEvents().subscribe((events:CursusEvent[]) => {
-      this.events = events.length;
-    });
+      this.internships = this.authService.getInternships().length;
+      // this.authService.getEvents().subscribe((events:CursusEvent[]) => {
+        //   this.events = events.length;
+    // });
     if (this.authService.me)
     {
       this.projects = this.authService.me.projects_users.filter((project: ProjectUser) => {
         return project.cursus_ids.includes(21 ) && project.status == "finished";
       });
 
-  }
+    }
   }
 
   ngOnInit(): void {
-    this.setRNCP(7);
-    this.loadData(this.rncp);
+    this.setRNCP(6);
+    this.loadData();
   }
 
-  loadData(rncp: number) {
-    this.http.get(`assets/${rncp}.json`).subscribe(response => {
+  loadData() {
+    this.http.get(`assets/${this.rncp}-${this.path}.json`).subscribe(response => {
       this.blocks = response as Block[];
     });
   }
@@ -55,8 +56,14 @@ export class PathComponent implements OnInit {
     this.rncp = level
     this.requiredLevel = (level == 6) ? 17 : 21;
     this.requiredEvents = (level == 6) ? 10 : 15;
+    this.path = (level == 6) ? 'web' : 'sec';
+    this.loadData();
   }
 
+    setPath(path: 'web' | 'apps' | 'sec' | 'ia') {
+      this.path = path;
+      this.loadData();
+    }
   getLevel() {
     return this.authService.getLevel();
   }

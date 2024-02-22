@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "name": "OOP",
+    "min_xp": 10000,
+    "min_projects": 2,
+    "projects": [
+      {
+        "id": 1389,
+        "name": "Bomberman",
+        "xp": 25200
+      },
+      {
+        "id": 1386,
+        "name": "Nibbler",
+        "xp": 9450
+      },
+      {
+        "id": 3,
+        "name": "Old Piscine Php",
+        "xp": 4200
+      },
+      {
+        "id": 1481,
+        "name": "Piscine Php Symfony",
+        "xp": 9450
+      },
+      {
+        "id": 5,
+        "name": "Deprecated Piscine Python Django",
+        "xp": 9450
+      },
+      {
+        "id": 2189,
+        "name": "Piscine Django",
+        "xp": 9450
+      },
+      {
+        "id": 1482,
+        "name": "Piscine Ruby On Rails",
+        "xp": 9450
+      },
+      {
+        "id": 1396,
+        "name": "Camagru",
+        "xp": 4200
+      },
+      {
+        "id": 1401,
+        "name": "Matcha",
+        "xp": 9450
+      },
+      {
+        "id": 1402,
+        "name": "Hypertube",
+        "xp": 15750
+      },
+      {
+        "id": 1428,
+        "name": "Red Tetris",
+        "xp": 15750
+      },
+      {
+        "id": 1405,
+        "name": "Darkly",
+        "xp": 6300
+      },
+      {
+        "id": 1429,
+        "name": "H42N42",
+        "xp": 9450
+      },
+      {
+        "id": 1486,
+        "name": "Deprecated Piscine Swift Ios",
+        "xp": 9450
+      },
+      {
+        "id": 1379,
+        "name": "Ft_Hangouts",
+        "xp": 4200
+      },
+      {
+        "id": 1395,
+        "name": "Swifty Companion",
+        "xp": 4200
+      },
+      {
+        "id": 1406,
+        "name": "Swifty Proteins",
+        "xp": 15750
+      },
+      {
+        "id": 1435,
+        "name": "Avaj Launcher",
+        "xp": 4200
+      },
+      {
+        "id": 1436,
+        "name": "Swingy",
+        "xp": 9450
+      },
+      {
+        "id": 1437,
+        "name": "Fix Me",
+        "xp": 15750
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Imperative Programming",
+    "min_xp": 10000,
+    "min_projects": 2,
+    "projects":[
+      {
+        "id": 1330,
+        "name": "Libasm",
+        "xp": 966,
+        "completed": true
+      },
+      {
+        "id": 1463,
+        "name": "Zappy",
+        "xp": 25200,
+        "completed": false
+      },
+      {
+        "id": 1411,
+        "name": "Gbmu",
+        "xp": 31500,
+        "completed": false
+      },
+      {
+        "id": 1415,
+        "name": "Ft_Linux",
+        "xp": 4200,
+        "completed": false
+      },
+      {
+        "id": 1416,
+        "name": "Little Penguin 1",
+        "xp": 9450,
+        "completed": false
+      },
+      {
+        "id": 1381,
+        "name": "Taskmaster",
+        "xp": 9450,
+        "completed": false
+      },
+      {
+        "id": 1388,
+        "name": "Strace",
+        "xp": 9450,
+        "completed": false
+      },
+      {
+        "id": 1468,
+        "name": "Malloc",
+        "xp": 9450,
+        "completed": true
+      },
+      {
+        "id": 1420,
+        "name": "Matt Daemon",
+        "xp": 9450,
+        "completed": false
+      },
+      {
+        "id": 1467,
+        "name": "Nm",
+        "xp": 9450,
+        "completed": true
+      },
+      {
+        "id": 1464,
+        "name": "Lem-ipc",
+        "xp": 9450,
+        "completed": false
+      },
+      {
+        "id": 1425,
+        "name": "Kfs 1",
+        "xp": 15750,
+        "completed": false
+      },
+      {
+        "id": 1424,
+        "name": "Kfs 2",
+        "xp": 15750,
+        "completed": false
+      },
+      {
+        "id": 1840,
+        "name": "ft_malcolm",
+        "xp": 6000,
+        "completed": false
+      },
+      {
+        "id": 1451,
+        "name": "ft_ssl_md5",
+        "xp": 9450,
+        "completed": false
+      },
+      {
+        "id": 1405,
+        "name": "Darkly",
+        "xp": 6300,
+        "completed": false
+      },
+      {
+        "id": 1404,
+        "name": "Snow Crash",
+        "xp": 9450,
+        "completed": true
+      },
+      {
+        "id": 1417,
+        "name": "Rainfall",
+        "xp": 25200,
+        "completed": false
+      },
+      {
+        "id": 2086,
+        "name": "Override",
+        "xp": 35700,
+        "completed": false
+      },
+      {
+        "id": 1446,
+        "name": "Boot2Root",
+        "xp": 11500,
+        "completed": false
+      },
+      {
+        "id": 1447,
+        "name": "Ft_Shield",
+        "xp": 15750,
+        "completed": false
+      },
+      {
+        "id": 1419,
+        "name": "Woody Woodpacker",
+        "xp": 9450,
+        "completed": true
+      },
+      {
+        "id": 1430,
+        "name": "Famine",
+        "xp": 9450,
+        "completed": true
+      },
+      {
+        "id": 1443,
+        "name": "Pestilence",
+        "xp": 15750,
+        "completed": true
+      }
+    ]
+  }
+]

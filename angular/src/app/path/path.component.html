@@ -1,9 +1,21 @@
 <div class="container-xs container-md">
   <div class="d-flex flex-row w-100 align-items-evenly">
-    <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 m-2 bg-white text-black fw-bolder"
+    <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
       [ngClass]="{'active': rncp==6}" (click)="setRNCP(6)">RNCP 6</button>
-    <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 m-2 bg-white text-black fw-bolder"
+    <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
       [ngClass]="{'active': rncp==7}" (click)="setRNCP(7)">RNCP 7</button>
+  </div>
+  <div class="d-flex flex-row w-100 align-items-evenly" *ngIf="rncp==6">
+      <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+      [ngClass]="{'active': path=='web'}" (click)="setPath('web')">Web and mobile development</button>
+      <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+      [ngClass]="{'active': path=='apps'}" (click)="setPath('apps')" >Application development</button>
+  </div>
+  <div class="d-flex flex-row w-100 align-items-evenly" *ngIf="rncp==7">
+      <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+      [ngClass]="{'active': path=='sec'}" (click)="setPath('sec')">Information systems and networks</button>
+      <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+      [ngClass]="{'active': path=='ia'}" (click)="setPath('ia')" >Artificial intelligence and algorithms</button>
   </div>
   <hr class="text-black">
   <div class="row mb-2">

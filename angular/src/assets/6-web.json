@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "name": "Web",
+    "min_xp": 15000,
+    "min_projects": 2,
+    "projects":[
+      {
+        "id": 1,
+        "name": "Old Piscine Php",
+        "xp": 4200
+      },
+      {
+        "id": 1481,
+        "name": "Piscine Php Symfony",
+        "xp": 9450
+      },
+      {
+        "id": 1483,
+        "name": "Deprecated Piscine Python Django",
+        "xp": 9450
+      },
+      {
+        "id": 2189,
+        "name": "Piscine Django",
+        "xp": 9450
+      },
+      {
+        "id": 1482,
+        "name": "Piscine Ruby On Rails",
+        "xp": 9450
+      },
+      {
+        "id": 1396,
+        "name": "Camagru",
+        "xp": 4200
+      },
+      {
+        "id": 1401,
+        "name": "Matcha",
+        "xp": 9450
+      },
+      {
+        "id": 1402,
+        "name": "Hypertube",
+        "xp": 15750
+      },
+      {
+        "id": 1428,
+        "name": "Red Tetris",
+        "xp": 15750
+      },
+      {
+        "id": 1405,
+        "name": "Darkly",
+        "xp": 6300
+      },
+      {
+        "id": 1429,
+        "name": "H42N42",
+        "xp": 9450
+      },
+      {
+        "id": 2485,
+        "name": "Tokenizer",
+        "xp": 9450
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mobile",
+    "min_xp": 15000,
+    "min_projects": 2,
+    "projects": [
+      {
+        "id": 1486,
+        "name": "Deprecated Piscine Swift iOS",
+        "xp": 9450
+      },
+      {
+        "id": 1379,
+        "name": "Ft_Hangouts",
+        "xp": 4200
+      },
+      {
+        "id": 1395,
+        "name": "Swifty Companion",
+        "xp": 4200
+      },
+      {
+        "id": 1406,
+        "name": "Swifty Proteins",
+        "xp": 15750
+      },
+      {
+        "id": 2355,
+        "name": "Mobile",
+        "xp": 9450
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Suite",
+    "min_xp": 0,
+    "min_projects": 1,
+    "projects": [
+      {
+        "id": 1854,
+        "name": "42Sh",
+        "xp": null
+      },
+      {
+        "id": 2071,
+        "name": "BADASS",
+        "xp": null
+      },
+      {
+        "id": 1458,
+        "name": "Doom Nukem",
+        "xp": null
+      },
+      {
+        "id": 4,
+        "name": "Old Doom Nukem",
+        "xp": null
+      },
+      {
+        "id": 2064,
+        "name": "Inception Of Things",
+        "xp": null
+      },
+      {
+        "id": 1394,
+        "name": "Humangl",
+        "xp": null
+      },
+      {
+        "id": 1424,
+        "name": "Kfs-2",
+        "xp": null
+      },
+      {
+        "id": 2086,
+        "name": "Override",
+        "xp": null
+      },
+      {
+        "id": 1443,
+        "name": "Pestilence",
+        "xp": null
+      },
+      {
+        "id": 1855,
+        "name": "Rt",
+        "xp": null
+      },
+      {
+        "id": 0,
+        "name": "Old Rt",
+        "xp": null
+      }
+    ]
+
+  }
+]
