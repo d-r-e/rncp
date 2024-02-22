@@ -26,7 +26,7 @@
         "xp": 9450
       },
       {
-        "id": 5,
+        "id": 1483,
         "name": "Deprecated Piscine Python Django",
         "xp": 9450
       },
@@ -104,6 +104,12 @@
         "id": 1437,
         "name": "Fix Me",
         "xp": 15750
+      },
+      {
+        "id": 2364,
+        "name":"Piscine Object",
+        "xp": 9450
+
       }
     ]
   },
@@ -116,146 +122,122 @@
       {
         "id": 1330,
         "name": "Libasm",
-        "xp": 966,
-        "completed": true
+        "xp": 966
       },
       {
         "id": 1463,
         "name": "Zappy",
-        "xp": 25200,
-        "completed": false
+        "xp": 25200
       },
       {
         "id": 1411,
         "name": "Gbmu",
-        "xp": 31500,
-        "completed": false
+        "xp": 31500
       },
       {
         "id": 1415,
         "name": "Ft_Linux",
-        "xp": 4200,
-        "completed": false
+        "xp": 4200
       },
       {
         "id": 1416,
         "name": "Little Penguin 1",
-        "xp": 9450,
-        "completed": false
+        "xp": 9450
       },
       {
         "id": 1381,
         "name": "Taskmaster",
-        "xp": 9450,
-        "completed": false
+        "xp": 9450
       },
       {
         "id": 1388,
         "name": "Strace",
-        "xp": 9450,
-        "completed": false
+        "xp": 9450
       },
       {
         "id": 1468,
         "name": "Malloc",
-        "xp": 9450,
-        "completed": true
+        "xp": 9450
       },
       {
         "id": 1420,
         "name": "Matt Daemon",
-        "xp": 9450,
-        "completed": false
+        "xp": 9450
       },
       {
         "id": 1467,
         "name": "Nm",
-        "xp": 9450,
-        "completed": true
+        "xp": 9450
       },
       {
         "id": 1464,
         "name": "Lem-ipc",
-        "xp": 9450,
-        "completed": false
+        "xp": 9450
       },
       {
         "id": 1425,
         "name": "Kfs 1",
-        "xp": 15750,
-        "completed": false
+        "xp": 15750
       },
       {
         "id": 1424,
         "name": "Kfs 2",
-        "xp": 15750,
-        "completed": false
+        "xp": 15750
       },
       {
         "id": 1840,
         "name": "ft_malcolm",
-        "xp": 6000,
-        "completed": false
+        "xp": 6000
       },
       {
         "id": 1451,
         "name": "ft_ssl_md5",
-        "xp": 9450,
-        "completed": false
+        "xp": 9450
       },
       {
         "id": 1405,
         "name": "Darkly",
-        "xp": 6300,
-        "completed": false
+        "xp": 6300
       },
       {
         "id": 1404,
         "name": "Snow Crash",
-        "xp": 9450,
-        "completed": true
+        "xp": 9450
       },
       {
         "id": 1417,
         "name": "Rainfall",
-        "xp": 25200,
-        "completed": false
+        "xp": 25200
       },
       {
         "id": 2086,
         "name": "Override",
-        "xp": 35700,
-        "completed": false
+        "xp": 35700
       },
       {
         "id": 1446,
         "name": "Boot2Root",
-        "xp": 11500,
-        "completed": false
+        "xp": 11500
       },
       {
         "id": 1447,
         "name": "Ft_Shield",
-        "xp": 15750,
-        "completed": false
+        "xp": 15750
       },
       {
         "id": 1419,
         "name": "Woody Woodpacker",
-        "xp": 9450,
-        "completed": true
+        "xp": 9450
       },
       {
         "id": 1430,
         "name": "Famine",
-        "xp": 9450,
-        "completed": true
+        "xp": 9450
       },
       {
         "id": 1443,
         "name": "Pestilence",
-        "xp": 15750,
-        "completed": true
+        "xp": 15750
       }
     ]
   }

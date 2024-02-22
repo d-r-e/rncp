@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { Block, Project, ProjectUser } from '../../models/me';
 
 @Component({
@@ -13,6 +13,7 @@ export class BlockComponent implements OnInit {
 
   @Input() block!: Block;
   @Input() projects?: ProjectUser[];
+  @Output() completionStatus: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   xp: number = 0;
   completed_projects: ProjectUser[] = [];
@@ -31,7 +32,9 @@ export class BlockComponent implements OnInit {
   }
 
   isBlockCompleted() {
-    return this.estimatedXP >= this.block.min_xp && this.completed_project_number >= this.block.min_projects;
+    this.completed = this.estimatedXP >= this.block.min_xp && this.completed_project_number >= this.block.min_projects;
+    this.completionStatus.emit(this.completed);
+    return this.completed;
   }
 
   planProject(project: Project): void {
@@ -44,10 +47,10 @@ export class BlockComponent implements OnInit {
       this.planned_projects = this.planned_projects.filter((id: number) => {
         return id != project.id;
       });
-      this.estimatedXP -= project.xp; // Assuming full XP will be awarded for simplicity
+      this.estimatedXP -= project.xp;
       this.completed_project_number--;
     }
-
+    this.isBlockCompleted();
 
   }
   isPlanned(project: Project): boolean {
@@ -63,6 +66,7 @@ export class BlockComponent implements OnInit {
           if (p.id == project.project.id) {
             console.log(p.xp * project.final_mark / 100);
             this.xp += p.xp * project.final_mark / 100;
+            this.xp = Math.round(this.xp);
             return true;
           }
           return false;
@@ -75,5 +79,6 @@ export class BlockComponent implements OnInit {
     }
     this.completed_project_number = this.completed_projects.length;
     this.estimatedXP = this.xp;
+    this.isBlockCompleted();
   }
 }

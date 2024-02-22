@@ -24,14 +24,14 @@ export class PathComponent implements OnInit {
   requiredEvents: number = 10;
   internships: number = 0;
   requiredInternships : number = 2;
-  path: 'web' | 'apps' | 'sec' | 'ia' = 'web';
+  path: 'web' | 'apps' | 'sec' | 'ai' = 'ai';
 
   constructor(private authService: AuthService, private router: Router,
     private http: HttpClient) {
       this.internships = this.authService.getInternships().length;
-      // this.authService.getEvents().subscribe((events:CursusEvent[]) => {
-        //   this.events = events.length;
-    // });
+      this.authService.getEvents().subscribe((events:CursusEvent[]) => {
+          this.events = events.length;
+    });
     if (this.authService.me)
     {
       this.projects = this.authService.me.projects_users.filter((project: ProjectUser) => {
@@ -42,7 +42,7 @@ export class PathComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setRNCP(6);
+    this.setRNCP(7);
     this.loadData();
   }
 
@@ -60,7 +60,7 @@ export class PathComponent implements OnInit {
     this.loadData();
   }
 
-    setPath(path: 'web' | 'apps' | 'sec' | 'ia') {
+    setPath(path: 'web' | 'apps' | 'sec' | 'ai') {
       this.path = path;
       this.loadData();
     }
