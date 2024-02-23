@@ -15,8 +15,6 @@ services:
   angular:
     image: angular
     build: angular
-    ports:
-      - "127.0.0.1:4200:4200"
     volumes:
       - ./angular/:/app
 
@@ -24,11 +22,11 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      - "80:80"
+      - "8000:80"
+      - "127.0.0.1:4200:4200"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      # - ./angular/dist/rncp/browser:/usr/share/nginx/html
+      - ./angular/dist/rncp/browser:/usr/share/nginx/html
     depends_on:
       - flask
-      - angular
     

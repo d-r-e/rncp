@@ -20,7 +20,7 @@ docker compose up -d
 0. Edit flask/.env
 1. Exec:
 ```bash
-docker compose run angular npm run build
+docker compose run angular sh -c "rm -rf node_modules && npm install && ng build"
 ```
 
 2. Uncomment the prod server on nginx.conf
@@ -28,5 +28,5 @@ docker compose run angular npm run build
 3. Replace redirect url in the environment.ts
 4. Exec:
 ```bash
-docker compose up -d
+docker compose up -d nginx flask
 ```
