@@ -11,6 +11,7 @@ export class AuthService {
   auth_url = `${this.api_url}/auth`;
   public token: string | null = null;
   public me: Me | null = null;
+  private expires_at: string | null = null;
 
   constructor(private http: HttpClient, private router: Router) {
     this.loadInitialData();
@@ -22,8 +23,16 @@ export class AuthService {
       next: (data: any) => {
         if (data['access_token']) {
           this.token = data['access_token'];
-          if (this.token)
+          let expires_in = data['expires_in'];
+          const expires_at = new Date();
+          expires_at.setSeconds(expires_at.getSeconds() + expires_in);
+          this.expires_at = expires_at.toISOString();
+          if (this.token && this.expires_at)
+          {
+            localStorage.setItem('expires_at', this.expires_at);
             localStorage.setItem('access_token', this.token);
+          }
+
           this.getMe().subscribe((data: Me) => {
             this.me = data;
             localStorage.setItem('me', JSON.stringify(this.me));
@@ -37,6 +46,16 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     const token = localStorage.getItem('access_token');
+    const expires_at = localStorage.getItem('expires_at');
+    if (expires_at) {
+      const expires = new Date(expires_at);
+      if (expires < new Date()) {
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('expires_at');
+        localStorage.removeItem('me');
+        return false;
+      }
+    }
     return !!token;
   }
 
@@ -54,30 +73,16 @@ export class AuthService {
   }
 
   getInternships() {
-    // filters for projects_users where cursus_id is 21, in search for any intership
-    // {
-    //   "projects_users": [
-    //     {
-    //       "project": {
-    //         "name": "Internshipxx"
-    //       },
-    //       "validated?": true,
-    //       "cursus_ids": [21]
-    //     }
-    //   ]
-    // }
-
-    // Assuming 'this.me' is already populated with the user's data
     const projects = this.me?.projects_users;
 
     if (!projects) {
-      return []; // Return an empty array if there are no projects
+      return [];
     }
 
     const internships = projects.filter(projectUser =>
       projectUser.cursus_ids.includes(21) &&
       (projectUser.project.name.toLowerCase()==("internship i") || projectUser.project.name.toLowerCase() == ("internship ii")) &&
-      projectUser["validated?"] // Check if the project is validated
+      projectUser["validated?"]
     );
 
     const internshipDetails = internships.map(projectUser => {
