@@ -107,9 +107,8 @@
       },
       {
         "id": 2364,
-        "name":"Piscine Object",
+        "name": "Piscine Object",
         "xp": 9450
-
       }
     ]
   },
@@ -118,7 +117,7 @@
     "name": "Imperative Programming",
     "min_xp": 10000,
     "min_projects": 2,
-    "projects":[
+    "projects": [
       {
         "id": 1330,
         "name": "Libasm",
@@ -238,6 +237,59 @@
         "id": 1443,
         "name": "Pestilence",
         "xp": 15750
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Suite",
+    "min_xp": 0,
+    "min_projects": 1,
+    "projects": [
+      {
+        "id": 1854,
+        "name": "42Sh",
+        "xp": null
+      },
+      {
+        "id": 2071,
+        "name": "BADASS",
+        "xp": null
+      },
+      {
+        "id": 1458,
+        "name": "Doom Nukem",
+        "xp": null
+      },
+      {
+        "id": 2064,
+        "name": "Inception Of Things",
+        "xp": null
+      },
+      {
+        "id": 1394,
+        "name": "Humangl",
+        "xp": null
+      },
+      {
+        "id": 1424,
+        "name": "Kfs-2",
+        "xp": null
+      },
+      {
+        "id": 2086,
+        "name": "Override",
+        "xp": null
+      },
+      {
+        "id": 1443,
+        "name": "Pestilence",
+        "xp": null
+      },
+      {
+        "id": 1855,
+        "name": "Rt",
+        "xp": null
       }
     ]
   }
