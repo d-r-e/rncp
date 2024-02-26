@@ -19,7 +19,6 @@ export class BlockComponent implements OnInit {
   xp: number = 0;
   completed_projects: ProjectUser[] = [];
   completed: boolean = false;
-  completed_project_number: number = 0;
   planned_projects: ProjectUser[] = [];
   slider_mark: number = 100;
   show_slider:boolean = false;
@@ -31,38 +30,54 @@ export class BlockComponent implements OnInit {
 
 
   get estimatedXP(): number {
-    return this.planned_projects.reduce((acc, project) => acc + project.occurrence, 0);
+    let planned_xp = this.planned_projects.reduce((acc, project) => acc + project.occurrence, 0);
+    this.block.projects.forEach((project: Project) => {
+      if (!this.isCompleted(project)) {
+        planned_xp += project.xp;
+      }
+    });
+    return planned_xp;
   }
 
   isCompleted($event: Project) {
     return this.completed_projects.find((project: ProjectUser) => {
-      return project.project.id == $event.id;
+      return project.project.id == $event.id && project["validated?"];
     });
   }
 
+  get completed_project_number(): number {
+    return this.completed_projects.length + this.planned_projects.length;
+  }
+
   isBlockCompleted() {
-    this.completed = this.estimatedXP >= this.block.min_xp && this.completed_project_number >= this.block.min_projects;
+    this.completed = this.estimatedXP >= this.block.min_xp &&
+    this.completed_project_number == this.block.projects.length;
     this.completionStatus.emit(this.completed);
     return this.completed;
   }
 
   planProject(project: Project): void {
+    this.show_slider= false;
+    this.slider_mark = 100;
     if (!this.isCompleted(project) && !this.isPlanned(project)) {
       this.planned_projects.push({ id: project.id, xp: project.xp , name: project.name, slug: project.slug, occurrence: project.xp * 1,
        final_mark: 100, status: "", "validated?": true, current_team_id: 0, project: project, cursus_ids: [21] } as ProjectUser);
-      this.completed_project_number++;
-
     } else if (this.isPlanned(project)) {
-      this.planned_projects = this.planned_projects.filter((projectUser: ProjectUser) => {
-        projectUser.id != project.id;
+      let proj = this.planned_projects.find((projectUser: ProjectUser) => {
+        return projectUser.project.id == project.id;
       });
-      this.completed_project_number--;
+      if (proj)
+      this.planned_projects = this.planned_projects.filter((projectUser: ProjectUser) => {
+        return projectUser.project.id != project.id;
+      });
     }
     this.isBlockCompleted();
     this.show_slider = false;
+    this.calculateXP();
 
   }
   isPlanned(project: Project): boolean {
+
     return this.planned_projects.find((projectUser: ProjectUser) => {
       return projectUser.project.id == project.id;
     }) ? true : false;
@@ -70,14 +85,10 @@ export class BlockComponent implements OnInit {
 
   ngOnInit() {
     if (this.projects) {
-
-      console.log(this.projects);
       this.completed_projects = this.projects.filter((project: ProjectUser) => {
         if (this.block.projects.find(p => {
           if (p.id == project.project.id) {
-            console.log(p.xp * project.final_mark / 100);
             this.xp += p.xp * project.final_mark / 100;
-            this.xp = Math.round(this.xp);
             return true;
           }
           return false;
@@ -88,8 +99,6 @@ export class BlockComponent implements OnInit {
       }
       );
     }
-    this.completed_project_number = this.completed_projects.length;
-    // this.estimatedXP = this.xp;
     this.isBlockCompleted();
   }
 
@@ -123,8 +132,28 @@ export class BlockComponent implements OnInit {
       return false;
     });
     if (!found) {
-      this.planned_projects.push({ id: project.id, xp: project.xp , name: project.name, slug: project.slug, occurrence: new_xp, final_mark: mark, status: "", "validated?": true, current_team_id: 0, project: project, cursus_ids: [21] } as ProjectUser);
+      this.planned_projects.push({ id: project.id, final_mark: mark , name: project.name, slug: project.slug, occurrence: new_xp, status: "", "validated?": true, current_team_id: 0, project: project, cursus_ids: [21] } as ProjectUser);
     }
+    this.calculateXP();
+  }
+
+  calculateXP() {
+    this.xp = 0;
+    this.planned_projects.forEach((project: ProjectUser) => {
+      console.log(project.final_mark * project.project.xp / 100);
+      this.xp += project.final_mark * project.project.xp / 100;
+    });
+    this.block.projects.forEach((project: Project) => {
+      if (this.isCompleted(project)) {
+        let project_user = this.completed_projects.find((projectUser: ProjectUser) => {
+          return projectUser.project.id == project.id;
+        });
+        if (project_user) {
+          this.xp += project_user.final_mark * project.xp / 100;
+        }
+      }
+    });
+    this.isBlockCompleted();
   }
 
   getPlannedXP(project: Project): number {
