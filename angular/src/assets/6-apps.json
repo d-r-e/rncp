@@ -1,4 +1,56 @@
-[
+[{
+    "id": 3,
+    "name": "Suite",
+    "min_xp": 0,
+    "min_projects": 1,
+    "projects": [
+      {
+        "id": 1854,
+        "name": "42Sh",
+        "xp": null
+      },
+      {
+        "id": 2071,
+        "name": "BADASS",
+        "xp": null
+      },
+      {
+        "id": 1458,
+        "name": "Doom Nukem",
+        "xp": null
+      },
+      {
+        "id": 2064,
+        "name": "Inception Of Things",
+        "xp": null
+      },
+      {
+        "id": 1394,
+        "name": "Humangl",
+        "xp": null
+      },
+      {
+        "id": 1424,
+        "name": "Kfs-2",
+        "xp": null
+      },
+      {
+        "id": 2086,
+        "name": "Override",
+        "xp": null
+      },
+      {
+        "id": 1443,
+        "name": "Pestilence",
+        "xp": null
+      },
+      {
+        "id": 1855,
+        "name": "Rt",
+        "xp": null
+      }
+    ]
+  },
   {
     "id": 1,
     "name": "OOP",
@@ -239,6 +291,34 @@
         "name": "Pestilence",
         "xp": 15750
       }
+    ]
+  },
+  {
+    "id": 3,
+    "name":"Functional programming",
+    "min_xp": 10000,
+    "projects":[
+      {
+        "id": 1484,
+        "name": "Piscine OCaml",
+        "xp": 9450
+      },
+      {
+        "id":1403,
+        "name": "ft_turing",
+        "xp": 9450
+      },
+      {
+        "xp":4200,
+        "id":1407,
+        "name":"ft_ality"
+      },
+      {
+        "id": 1429,
+        "name": "H42N42",
+        "xp": 9450
+      }
+
     ]
   }
 ]
