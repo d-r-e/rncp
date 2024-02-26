@@ -15,7 +15,7 @@
         'text-green': estimatedXP>=block.min_xp,
         'text-danger': estimatedXP<block.min_xp
         }">
-        {{estimatedXP}}
+        {{xp}}
       </span>
       / {{block.min_xp}} XP
     </label>
@@ -43,7 +43,7 @@
       <div class="ms-1 fw-bolder text-success" *ngIf="project.xp &&  isCompleted(project)">
         {{getPlannedXP(project)}}
       </div>
-      <div class="text-secondary ms-3" [ngClass]="{'opacity-0 disabled': isCompleted(project)}"
+      <div class="text-secondary ms-3 px-1 d-flex flex-row" [ngClass]="{'opacity-0 disabled': isCompleted(project)}"
         (click)="toggleSlider($event, i)">
         <span *ngIf="show_slider && activeProjectIndex === i" class="text-secondary">⌃</span>
         <span *ngIf="!show_slider && activeProjectIndex !== i" class="text-secondary">⌄</span>
