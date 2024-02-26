@@ -8,11 +8,11 @@ import { HttpClient } from '@angular/common/http';
 import { BlockComponent } from "./block/block.component";
 
 @Component({
-    selector: 'app-path',
-    standalone: true,
-    templateUrl: './path.component.html',
-    styleUrl: './path.component.css',
-    imports: [CommonModule, ProgressbarComponent, BlockComponent]
+  selector: 'app-path',
+  standalone: true,
+  templateUrl: './path.component.html',
+  styleUrl: './path.component.css',
+  imports: [CommonModule, ProgressbarComponent, BlockComponent]
 })
 export class PathComponent implements OnInit {
 
@@ -23,19 +23,18 @@ export class PathComponent implements OnInit {
   requiredLevel: number = 17;
   requiredEvents: number = 10;
   internships: number = 0;
-  requiredInternships : number = 2;
+  requiredInternships: number = 2;
   path: 'web' | 'apps' | 'sec' | 'ai' = 'ai';
 
   constructor(private authService: AuthService, private router: Router,
     private http: HttpClient) {
-      this.internships = this.authService.getInternships().length;
-      this.authService.getEvents().subscribe((events:CursusEvent[]) => {
-          this.events = events.length;
+    this.internships = this.authService.getInternships().length;
+    this.authService.getEvents().subscribe((events: CursusEvent[]) => {
+      this.events = events.length;
     });
-    if (this.authService.me)
-    {
+    if (this.authService.me) {
       this.projects = this.authService.me.projects_users.filter((project: ProjectUser) => {
-        return project.cursus_ids.includes(21 ) && project.status == "finished";
+        return project.cursus_ids.includes(21) && project.status == "finished";
       });
 
     }
@@ -43,7 +42,6 @@ export class PathComponent implements OnInit {
 
   ngOnInit(): void {
     this.setRNCP(7);
-    this.loadData();
   }
 
   loadData() {
@@ -60,10 +58,10 @@ export class PathComponent implements OnInit {
     this.loadData();
   }
 
-    setPath(path: 'web' | 'apps' | 'sec' | 'ai') {
-      this.path = path;
-      this.loadData();
-    }
+  setPath(path: 'web' | 'apps' | 'sec' | 'ai') {
+    this.path = path;
+    this.loadData();
+  }
   getLevel() {
     return this.authService.getLevel();
   }

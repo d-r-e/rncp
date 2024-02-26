@@ -29,3 +29,8 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+
+.text-gold {
+  color: rgb(129, 115, 36);
+}
