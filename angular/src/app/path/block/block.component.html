@@ -12,8 +12,8 @@
 
     <label *ngIf="block.min_xp">
       <span [ngClass]="{
-        'text-green': estimatedXP>=block.min_xp,
-        'text-danger': estimatedXP<block.min_xp
+        'text-green': xp>=block.min_xp,
+        'text-danger': xp<block.min_xp
         }">
         {{xp}}
       </span>

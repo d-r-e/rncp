@@ -50,8 +50,10 @@ export class BlockComponent implements OnInit {
   }
 
   isBlockCompleted() {
-    this.completed = this.estimatedXP >= this.block.min_xp &&
-    this.completed_project_number == this.block.projects.length;
+    console.log(this.block.min_xp)
+    console.log(this.block.name, this.xp, this.completed_projects.length)
+    this.completed = this.xp >= this.block.min_xp &&
+    this.completed_projects.length + this.planned_projects.length >= this.block.min_projects;
     this.completionStatus.emit(this.completed);
     return this.completed;
   }
@@ -99,7 +101,6 @@ export class BlockComponent implements OnInit {
       }
       );
     }
-    this.isBlockCompleted();
   }
 
   toggleSlider(event: MouseEvent, index: number) {
@@ -153,7 +154,6 @@ export class BlockComponent implements OnInit {
         }
       }
     });
-    this.isBlockCompleted();
   }
 
   getPlannedXP(project: Project): number {
