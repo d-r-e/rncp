@@ -50,8 +50,8 @@ export class BlockComponent implements OnInit {
   }
 
   isBlockCompleted() {
-    this.completed = this.estimatedXP >= this.block.min_xp &&
-    this.completed_project_number == this.block.projects.length;
+    this.completed = this.xp >= this.block.min_xp &&
+    this.completed_projects.length + this.planned_projects.length >= this.block.min_projects;
     this.completionStatus.emit(this.completed);
     return this.completed;
   }
@@ -99,15 +99,13 @@ export class BlockComponent implements OnInit {
       }
       );
     }
-    this.isBlockCompleted();
   }
 
   toggleSlider(event: MouseEvent, index: number) {
     event.stopPropagation();
     this.show_slider = !this.show_slider;
-    console.log(this.show_slider)
     this.activeProjectIndex = this.activeProjectIndex === index ? null : index;
-    this.changeDetectorRef.detectChanges(); // Manually trigger change detection
+    this.changeDetectorRef.detectChanges();
   }
 
 
@@ -118,8 +116,6 @@ export class BlockComponent implements OnInit {
   }
 
   setPlannedXP(project: Project, $event: any){
-    // project: planned project. event, estimated note (percentage of the base note)
-    console.log($event.target.value);
     const mark = $event.target.value;
     this.slider_mark = mark;
     const new_xp = Math.round(project.xp * mark / 100);
@@ -140,7 +136,6 @@ export class BlockComponent implements OnInit {
   calculateXP() {
     this.xp = 0;
     this.planned_projects.forEach((project: ProjectUser) => {
-      console.log(project.final_mark * project.project.xp / 100);
       this.xp += project.final_mark * project.project.xp / 100;
     });
     this.block.projects.forEach((project: Project) => {
@@ -153,7 +148,6 @@ export class BlockComponent implements OnInit {
         }
       }
     });
-    this.isBlockCompleted();
   }
 
   getPlannedXP(project: Project): number {
