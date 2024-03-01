@@ -297,6 +297,7 @@
     "id": 3,
     "name":"Functional programming",
     "min_xp": 10000,
+    "min_projects":2,
     "projects":[
       {
         "id": 1484,
