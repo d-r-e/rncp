@@ -1,11 +1,10 @@
 [
-
   {
     "id": 2,
     "name": "Artificial intelligence",
     "min_projects": 3,
     "min_xp": 70000,
-    "projects":[
+    "projects": [
       {
         "id": 2295,
         "name": "Piscine Data Science",
@@ -62,18 +61,38 @@
         "xp": 15750
       },
       {
-        "id": 2267,
-        "name": "Piscine Python for Data Science",
-        "xp": 4725
+        "id": 2268,
+        "name": "Python for data science - Module 00",
+        "xp": 545
+      },
+      {
+        "id": 2269,
+        "name": "Python for data science - Module 01",
+        "xp": 545
+      },
+      {
+        "id": 2270,
+        "name": "Python for data science - Module 02",
+        "xp": 545
+      },
+      {
+        "id": 2271,
+        "name": "Python for data science - Module 03",
+        "xp": 545
+      },
+      {
+        "id": 2272,
+        "name": "Python for data science - Module 04",
+        "xp": 2545
       }
     ]
   },
   {
-    "id":3,
-    "name":"Databases",
-    "min_projects":2,
-    "min_xp":50000,
-    "projects":[
+    "id": 3,
+    "name": "Databases",
+    "min_projects": 2,
+    "min_xp": 50000,
+    "projects": [
       {
         "id": 1481,
         "name": "Piscine PHP Symfony",
@@ -125,7 +144,8 @@
         "xp": 9450
       }
     ]
-  },{
+  },
+  {
     "id": 5,
     "name": "Suite",
     "min_xp": 0,
@@ -177,7 +197,8 @@
         "xp": 25450
       }
     ]
-  },{
+  },
+  {
     "id": 1,
     "name": "Mandatory",
     "min_projects": 1,

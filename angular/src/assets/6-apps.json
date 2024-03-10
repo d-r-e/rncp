@@ -1,5 +1,5 @@
 [{
-    "id": 3,
+    "id": 0,
     "name": "Suite",
     "min_xp": 0,
     "min_projects": 1,
@@ -297,8 +297,8 @@
     "id": 3,
     "name":"Functional programming",
     "min_xp": 10000,
-    "min_projects":2,
-    "projects":[
+    "min_projects": 2,
+    "projects": [
       {
         "id": 1484,
         "name": "Piscine OCaml",
