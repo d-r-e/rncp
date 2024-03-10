@@ -189,12 +189,17 @@
       {
         "id": 2086,
         "name": "Override",
-        "xp": 9450
+        "xp": null
       },
       {
         "id": 2087,
         "name": "RT",
-        "xp": 25450
+        "xp": null
+      },
+      {
+        "id": 1460,
+        "name": "Total perspective vortex",
+        "xp": null
       }
     ]
   },
