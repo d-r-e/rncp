@@ -1,5 +1,8 @@
 {
+	"logout": "Déconnexion",
+	"faq": "FAQ",
 	"level": "Niveau",
+	"level-short": "Nv",
 	"events": "Événements",
 	"internships": "Stages",
 	"rncp6": "RNCP 6",

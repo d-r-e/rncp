@@ -3,12 +3,12 @@ import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Me } from '../models/me';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

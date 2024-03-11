@@ -4,7 +4,7 @@
       <span class="ms-1">
         {{authService.me?.login}}
       </span>
-      <span class="badge bg-white fw-bolder text-dark rounded-pill uppercase">LV {{authService.getLevel()}}</span>
+      <span class="badge bg-white fw-bolder text-dark rounded-pill uppercase">{{ 'level-short' | translate }} {{authService.getLevel()}}</span>
     </div>
     <a class="navbar-brand text-white" href="#">RNCP</a>
     <span class="d-flex flex-row flex-nowrap align-items-center">
@@ -15,9 +15,9 @@
 		<option value="es" [selected]="currentLanguage == 'es'">Español</option>
 	  </select>
 
-	  <a class="ms-auto nav-link text-white me-3" href="faq">FAQ</a>
+	  <a class="ms-auto nav-link text-white me-3" href="faq">{{ 'faq' | translate }}</a>
 
-      <button class=" btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none" *ngIf="isLoggedIn()"  (click)="logout()">Logout</button>
+      <button class=" btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none" *ngIf="isLoggedIn()"  (click)="logout()">{{ 'logout' | translate }}</button>
     </span>
   </div>
 </nav>

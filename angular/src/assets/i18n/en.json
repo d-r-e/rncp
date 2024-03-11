@@ -1,5 +1,8 @@
 {
+	"logout": "Logout",
+	"faq": "Q&A",
 	"level": "Level",
+	"level-short": "Lv",
 	"events": "Events",
 	"interships": "Interships",
 	"rncp6": "RNCP 6",
