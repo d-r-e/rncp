@@ -7,20 +7,20 @@
   </div>
   <div class="d-flex flex-row w-100 align-items-evenly" *ngIf="rncp==6">
       <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
-      [ngClass]="{'active': path=='web'}" (click)="setPath('web')">{{ 'rncp6-web' | translate }} </button>
+      [ngClass]="{'active': path=='web'}" (click)="setPath('web')">{{ 'rncp6-web' | translate }}</button>
       <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
-      [ngClass]="{'active': path=='apps'}" (click)="setPath('apps')" >Application development</button>
+      [ngClass]="{'active': path=='apps'}" (click)="setPath('apps')" >{{ 'rncp6-apps' | translate }}</button>
   </div>
   <div class="d-flex flex-row w-100 align-items-evenly" *ngIf="rncp==7">
       <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
-      [ngClass]="{'active': path=='sec'}" (click)="setPath('sec')">Information systems and networks</button>
+      [ngClass]="{'active': path=='sec'}" (click)="setPath('sec')">{{ 'rncp7-sec' | translate }}</button>
       <button class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
-      [ngClass]="{'active': path=='ai'}" (click)="setPath('ai')" >Artificial intelligence and algorithms</button>
+      [ngClass]="{'active': path=='ai'}" (click)="setPath('ai')" >{{ 'rncp7-ai' | translate }}</button>
   </div>
   <hr class="text-black">
   <div class="row mb-2">
     <div class="d-flex align-items-center">
-      <div class="text-nowrap mr-auto me-4">LEVEL </div>
+      <div class="text-nowrap mr-auto me-4 text-uppercase">{{ 'level' | translate }}</div>
       <div class="text-nowrap px-1">{{getLevel()}} / {{requiredLevel}}</div>
       <app-progressbar class="w-50 ms-auto" [current]="getLevel()" [max]="requiredLevel "></app-progressbar>
       <span *ngIf="getLevel()>=requiredLevel" class="py-0 px-2 ">
@@ -31,7 +31,7 @@
       </span>
     </div>
     <div class="d-flex align-items-center">
-      <div class="mr-auto me-4">EVENTS</div>
+      <div class="mr-auto me-4 text-uppercase">{{ 'events' | translate }}</div>
       <div class="text-nowrap px-1">{{events}} / {{requiredEvents}}</div>
       <app-progressbar class="w-50 ms-auto" [discrete]="true" [current]="events" [min]="0"
         [max]="requiredEvents"></app-progressbar>
@@ -44,7 +44,7 @@
     </div>
     <div class="d-flex align-items-center">
       <div class="w-25 d-flex flex-nowrap">
-        <div class="mr-auto me-4">INTERNSHIPS</div>
+        <div class="mr-auto me-4 text-uppercase">{{ 'internships' | translate }}</div>
         <div class="text-nowrap px-1">{{internships}} / {{requiredInternships}}</div>
       </div>
       <app-progressbar class="w-50 ms-auto" [current]="internships" [min]="0"

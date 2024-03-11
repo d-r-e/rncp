@@ -8,8 +8,15 @@
     </div>
     <a class="navbar-brand text-white" href="#">RNCP</a>
     <span class="d-flex flex-row flex-nowrap align-items-center">
+	  <!-- A select of languages -->
+	  <select class="form-select bg-black text-white language-selector" (change)="changeLanguage($event)">
+		<option value="en" [selected]="currentLanguage == 'en'">English</option>
+		<option value="fr" [selected]="currentLanguage == 'fr'">Français</option>
+		<option value="es" [selected]="currentLanguage == 'es'">Español</option>
+	  </select>
 
-      <a class="ms-auto nav-link text-white me-3 " href="faq">FAQ</a>
+	  <a class="ms-auto nav-link text-white me-3" href="faq">FAQ</a>
+
       <button class=" btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none" *ngIf="isLoggedIn()"  (click)="logout()">Logout</button>
     </span>
   </div>

@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { AppModule } from './app.module';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -24,10 +24,22 @@ import { AppModule } from './app.module';
   providers: [
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 	title = 'RNCP';
 
-	constructor(private translate: TranslateService) {
-		translate.setDefaultLang('fr');
+	constructor(
+		private authService: AuthService,
+		private translate: TranslateService) {
+	}
+
+	ngOnInit(): void {
+		this.translate.addLangs(['fr', 'en', 'es']);
+		this.translate.setDefaultLang('en');
+
+		this.translate.use(this.authService.getLanguage() || 'en');
+
+		this.authService.onLanguageChange$.subscribe((lang: string) => {
+			this.translate.use(lang);
+		});
 	}
 }
