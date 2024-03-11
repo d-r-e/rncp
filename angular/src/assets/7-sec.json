@@ -91,7 +91,7 @@
     "id": 3,
     "name": "UNIX",
     "min_xp": 30000,
-    "min_projects": 3,
+    "min_projects": 2,
     "projects": [
       {
         "id": 1467,
