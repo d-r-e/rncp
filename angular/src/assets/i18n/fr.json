@@ -10,5 +10,17 @@
 	"rncp6-apps": "Développement d'applications",
 	"rncp7": "RNCP 7",
 	"rncp7-sec": "Systèmes d'information et réseaux",
-	"rncp7-ai": "Intelligence artificielle et algorithmes"
+	"rncp7-ai": "Intelligence artificielle et algorithmes",
+	"blocks": {
+		"mandatory": "Obligatoires",
+		"suite": "Suite",
+		"security": "Sécurité",
+		"admin-sys": "Administration système",
+		"ai": "Intelligence artificielle",
+		"databases": "Bases de données",
+		"web": "Web",
+		"mobile": "Mobile",
+		"imperative-prog": "Programmation impérative",
+		"functional-prog": "Programmation fonctionnelle"
+	}
 }
