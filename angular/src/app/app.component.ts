@@ -27,8 +27,7 @@ import { AppModule } from './app.module';
 export class AppComponent {
 	title = 'RNCP';
 
-	constructor(private readonly translate: TranslateService) {
+	constructor(private translate: TranslateService) {
 		translate.setDefaultLang('fr');
-		translate.use('fr');
 	}
 }

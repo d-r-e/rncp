@@ -4,8 +4,14 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { AppComponent } from './app.component';
 import { customLangFactory } from './CustomLangFactory';
 import { PathModule } from './path/path.module';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
+	providers: [
+		AuthService,
+		AuthGuardService
+	],
 	imports: [
 		HttpClientModule,
 		PathModule,
