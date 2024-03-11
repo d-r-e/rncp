@@ -28,7 +28,7 @@ export class AppComponent {
 	title = 'RNCP';
 
 	constructor(private readonly translate: TranslateService) {
-		translate.setDefaultLang('en');
-		translate.use('en');
+		translate.setDefaultLang('fr');
+		translate.use('fr');
 	}
 }

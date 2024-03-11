@@ -1,20 +1,18 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
-
-export function HttpLoaderFactory(http: HttpClient) {
-	return new TranslateHttpLoader(http);
-}
+import { customLangFactory } from './CustomLangFactory';
+import { PathModule } from './path/path.module';
 
 @NgModule({
 	imports: [
 		HttpClientModule,
+		PathModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
-				useFactory: HttpLoaderFactory,
+				useFactory: customLangFactory,
 				deps: [HttpClient]
 			}
 		})
