@@ -1,7 +1,7 @@
 [
   {
     "id": 2,
-    "name": "Security",
+    "name": "blocks.security",
     "min_xp": 50000,
     "min_projects": 3,
     "projects": [
@@ -167,7 +167,7 @@
   },
   {
     "id": 5,
-    "name": "Suite",
+    "name": "blocks.suite",
     "min_xp": 0,
     "min_projects": 1,
     "projects": [
@@ -225,7 +225,7 @@
   },
   {
     "id": 7,
-    "name": "System administration",
+    "name": "blocks.admin-sys",
     "min_xp": 50000,
     "min_projects": 3,
     "projects": [

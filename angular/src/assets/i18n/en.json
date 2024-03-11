@@ -1,0 +1,27 @@
+{
+	"logout": "Logout",
+	"login-with": "Login with",
+	"faq": "Q&A",
+	"level": "Level",
+	"level-short": "Lv",
+	"events": "Events",
+	"interships": "Interships",
+	"rncp6": "RNCP 6",
+	"rncp6-web": "Web and mobile development",
+	"rncp6-apps": "Application development",
+	"rncp7": "RNCP 7",
+	"rncp7-sec": "Information systems and networks",
+	"rncp7-ai": "Artificial intelligence and algorithms",
+	"blocks": {
+		"mandatory": "Mandatory",
+		"suite": "Suite",
+		"security": "Security",
+		"admin-sys": "System administration",
+		"ai": "Artificial intelligence",
+		"databases": "Databases",
+		"web": "Web",
+		"mobile": "Mobile",
+		"imperative-prog": "Imperative programming",
+		"functional-prog": "Functional programming"
+	}
+}

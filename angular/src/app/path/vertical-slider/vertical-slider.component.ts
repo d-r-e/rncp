@@ -1,10 +1,7 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-vertical-slider',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './vertical-slider.component.html',
   styleUrl: './vertical-slider.component.css'
 })
