@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
+import { AppModule } from './app.module';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   imports: [
+	AppModule,
     HttpClientModule,
     CommonModule,
     RouterOutlet,
@@ -22,5 +25,10 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
 })
 export class AppComponent {
-  title = 'RNCP';
+	title = 'RNCP';
+
+	constructor(private readonly translate: TranslateService) {
+		translate.setDefaultLang('en');
+		translate.use('en');
+	}
 }
