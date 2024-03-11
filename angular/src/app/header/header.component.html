@@ -1,23 +1,25 @@
 <nav class="navbar navbar-expand w-100 d-flex bg-black text-white d-flex montserrat bg-dark text-white">
-  <div class="d-flex justify-content-between w-100">
-    <div class="nav-item text-center text-white d-flex flex-row gap-3 align-items-center" *ngIf="authService.me?.login">
-      <span class="ms-1">
-        {{authService.me?.login}}
-      </span>
-      <span class="badge bg-white fw-bolder text-dark rounded-pill uppercase">{{ 'level-short' | translate }} {{authService.getLevel()}}</span>
-    </div>
-    <a class="navbar-brand text-white" href="#">RNCP</a>
-    <span class="d-flex flex-row flex-nowrap align-items-center">
-	  <!-- A select of languages -->
-	  <select class="form-select bg-black text-white language-selector" (change)="changeLanguage($event)">
-		<option value="en" [selected]="currentLanguage == 'en'">English</option>
-		<option value="fr" [selected]="currentLanguage == 'fr'">Français</option>
-		<option value="es" [selected]="currentLanguage == 'es'">Español</option>
-	  </select>
+	<div class="container">
+		<div class="d-flex justify-content-between w-100">
+			<div class="nav-item text-center text-white d-flex flex-row gap-3 align-items-center" *ngIf="authService.me?.login">
+			  <span class="ms-1">
+				{{authService.me?.login}}
+			  </span>
+			  <span class="badge bg-white fw-bolder text-dark rounded-pill uppercase">{{ 'level-short' | translate }} {{authService.getLevel()}}</span>
+			</div>
+			<a class="navbar-brand text-white" href="#">RNCP</a>
+			<span class="d-flex flex-row flex-nowrap align-items-center">
+			  <!-- A select of languages -->
+			  <select class="form-select bg-black text-white language-selector" (change)="changeLanguage($event)">
+				<option value="en" [selected]="currentLanguage == 'en'">English</option>
+				<option value="fr" [selected]="currentLanguage == 'fr'">Français</option>
+				<option value="es" [selected]="currentLanguage == 'es'">Español</option>
+			  </select>
 
-	  <a class="ms-auto nav-link text-white me-3" href="faq">{{ 'faq' | translate }}</a>
+			  <a class="ms-auto nav-link text-white me-3" href="faq">{{ 'faq' | translate }}</a>
 
-      <button class=" btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none" *ngIf="isLoggedIn()"  (click)="logout()">{{ 'logout' | translate }}</button>
-    </span>
-  </div>
+			  <button class=" btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none" *ngIf="isLoggedIn()"  (click)="logout()">{{ 'logout' | translate }}</button>
+			</span>
+		  </div>
+	</div>
 </nav>
