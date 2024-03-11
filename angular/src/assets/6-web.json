@@ -70,7 +70,7 @@
   {
     "id": 2,
     "name": "Mobile",
-    "min_xp": 15000,
+    "min_xp": 10000,
     "min_projects": 2,
     "projects": [
       {
