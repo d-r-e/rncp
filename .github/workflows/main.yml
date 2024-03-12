@@ -1,0 +1,9 @@
+name: Main
+
+on:
+  pull_request:
+    branches: ['main']
+
+jobs:
+  build-frontend:
+    uses: ./.github/workflows/build-frontend.yaml
