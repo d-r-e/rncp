@@ -1,6 +1,18 @@
 {
   "name": "rncp",
   "version": "0.0.0",
+  "contributors": [
+	{
+		"name": "David Rodríguez",
+		"email": "darodrig@student.42madrid.com",
+		"url": "https://github.com/d-r-e"
+	},
+	{
+		"name": "Axel Coezard",
+		"email": "acoezard@student.42nice.fr",
+		"url": "https://github.com/axelcoezard"
+	}
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
