@@ -16,8 +16,6 @@
 				<option value="es" [selected]="currentLanguage == 'es'">Español</option>
 			  </select>
 
-			  <a class="ms-auto nav-link text-white me-3" href="faq">{{ 'faq' | translate }}</a>
-
 			  <button class=" btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none" *ngIf="isLoggedIn()"  (click)="logout()">{{ 'logout' | translate }}</button>
 			</span>
 		  </div>

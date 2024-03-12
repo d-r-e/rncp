@@ -1,0 +1,10 @@
+.footer {
+	width: 100%;
+	padding: 20px 0;
+
+	a {
+		display: inline;
+		margin: 0 10px;
+		text-decoration: none;
+	}
+}
