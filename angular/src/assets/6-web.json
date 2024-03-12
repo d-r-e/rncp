@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Web",
+    "name": "blocks.web",
     "min_xp": 15000,
     "min_projects": 2,
     "projects":[
@@ -69,7 +69,7 @@
   },
   {
     "id": 2,
-    "name": "Mobile",
+    "name": "blocks.mobile",
     "min_xp": 10000,
     "min_projects": 2,
     "projects": [
@@ -102,7 +102,7 @@
   },
   {
     "id": 3,
-    "name": "Suite",
+    "name": "blocks.suite",
     "min_xp": 0,
     "min_projects": 1,
     "projects": [

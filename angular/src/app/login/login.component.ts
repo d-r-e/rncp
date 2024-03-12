@@ -3,11 +3,12 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { environment } from '../../environments/environment.development';
 import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-login',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, TranslateModule],
 	templateUrl: './login.component.html',
 	styleUrl: './login.component.css'
 })

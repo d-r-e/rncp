@@ -55,11 +55,11 @@ def events():
     token = request.headers.get('Authorization')
     if not token:
         return 'No token provided', 401
-    
+
     user_id = request.args.get('user_id')
     if not user_id:
         return 'No user ID provided', 400
-    
+
     all_events = []
     page = 1
     retries = 10
@@ -81,15 +81,15 @@ def events():
                 return 'Too many retries', 429
         if response.status_code != 200:
             return response.json(), response.status_code
-        
+
         events = response.json()
         if not events:
             break
-        
+
         all_events.extend(events)
         page += 1
     all_events = [event for event in all_events if event['kind'] != 'extern' and event['kind'] != 'association']
-    
+
     return jsonify(all_events), 200
 
 

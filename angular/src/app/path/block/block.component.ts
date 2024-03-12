@@ -1,12 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, Output, OnInit, EventEmitter, ViewChildren, QueryList, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { Block, Project, ProjectUser } from '../../models/me';
-import { VerticalSliderComponent } from '../vertical-slider/vertical-slider.component';
 
 @Component({
   selector: 'app-block',
-  standalone: true,
-  imports: [CommonModule, VerticalSliderComponent],
   templateUrl: './block.component.html',
   styleUrl: './block.component.css'
 })

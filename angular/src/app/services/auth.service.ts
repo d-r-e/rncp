@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CursusEvent, Me } from '../models/me';
 import { Router } from '@angular/router';
@@ -13,7 +13,11 @@ export class AuthService {
   public me: Me | null = null;
   private expires_at: string | null = null;
 
-  constructor(private http: HttpClient, private router: Router) {
+  public onLanguageChange$: EventEmitter<string> = new EventEmitter<string>();
+
+  constructor(
+	private http: HttpClient,
+	private router: Router) {
     this.loadInitialData();
   }
 
@@ -117,5 +121,12 @@ export class AuthService {
     return this.http.get<CursusEvent[]>(`${this.api_url}/events?user_id=${this.me?.id}`, { headers });
   }
 
+  getLanguage() {
+	return localStorage.getItem('lang') || 'en';
+  }
 
+  changeLanguage(lang: string) {
+	localStorage.setItem('lang', lang);
+	this.onLanguageChange$.emit(lang);
+  }
 }
