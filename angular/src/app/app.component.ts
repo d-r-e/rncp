@@ -10,21 +10,20 @@ import { AuthService } from './services/auth.service';
 import { FooterComponent } from './footer/footer.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [
-	AppModule,
-    HttpClientModule,
-    CommonModule,
-    RouterOutlet,
-    LoginComponent,
-    HeaderComponent,
-	FooterComponent
-  ],
-  providers: [
-  ],
+	selector: 'app-root',
+	standalone: true,
+	templateUrl: './app.component.html',
+	styleUrl: './app.component.css',
+	imports: [
+		AppModule,
+		HttpClientModule,
+		CommonModule,
+		RouterOutlet,
+		LoginComponent,
+		HeaderComponent,
+		FooterComponent,
+	],
+	providers: [],
 })
 export class AppComponent implements OnInit {
 	title = 'RNCP';

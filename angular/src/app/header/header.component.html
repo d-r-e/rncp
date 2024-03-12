@@ -23,7 +23,12 @@
 					<option value="es" [selected]="currentLanguage === 'es'">Español</option>
 				</select>
 
-			  <button class=" btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none" *ngIf="isLoggedIn()"  (click)="logout()">{{ 'logout' | translate }}</button>
+				<button
+					class="btn bg-black text-white rounded-pill border border-white cursor-pointer user-select-none"
+					*ngIf="isLoggedIn()"
+					(click)="logout()">
+					{{ 'logout' | translate }}
+				</button>
 			</span>
 		</div>
 	</div>
