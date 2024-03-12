@@ -82,7 +82,7 @@
 				[(value)]="slider_mark"
 				color="green"
 				(keyup.enter)="show_slider = false"
-				(change)="setPlannedXP(project, $event.target.value)"
+				(change)="setPlannedXP(project, $event?.target?.value)"
 				orient="horizontal" />
 		</div>
 	</div>
