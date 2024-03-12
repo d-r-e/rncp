@@ -1,0 +1,37 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    # Files stored in `app` directory
+    directory: "/angular"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    open-pull-requests-limit: 10000
+    reviewers:
+      - "axelcoezard"
+      - "d-r-e"
+    assignees:
+      - "axelcoezard"
+      - "d-r-e"
+
+  - package-ecosystem: "github-actions"
+    # Workflow files stored in the
+    # default location of `.github/workflows`
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+    open-pull-requests-limit: 10000
+    reviewers:
+      - "louchebem06"
+      - "axelcoezard"
+      - "d-r-e"
+    assignees:
+      - "louchebem06"
+      - "axelcoezard"
+      - "d-r-e"
