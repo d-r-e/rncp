@@ -24,5 +24,8 @@
 		"imperative-prog": "Programación imperativa",
 		"functional-prog": "Programación funcional"
 	},
-	"contributors": "Contribuidores"
+	"contributors": "Contribuidores",
+	"home": "Inicio",
+	"about": "Acerca de",
+	"github": "GitHub"
 }

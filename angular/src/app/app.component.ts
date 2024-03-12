@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { AppModule } from './app.module';
 import { AuthService } from './services/auth.service';
+import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { AuthService } from './services/auth.service';
     CommonModule,
     RouterOutlet,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+	FooterComponent
   ],
   providers: [
   ],
