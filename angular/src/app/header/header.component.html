@@ -17,7 +17,7 @@
 				<!-- A select of languages -->
 				<select
 					class="form-select bg-black text-white language-selector"
-					(change)="changeLanguage($event?.target?.value)">
+					(change)="changeLanguage($event.target)">
 					<option value="en" [selected]="currentLanguage === 'en'">English</option>
 					<option value="fr" [selected]="currentLanguage === 'fr'">Français</option>
 					<option value="es" [selected]="currentLanguage === 'es'">Español</option>

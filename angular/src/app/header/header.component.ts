@@ -36,7 +36,9 @@ export class HeaderComponent {
 		return this.authService.getLanguage();
 	}
 
-	changeLanguage(value: string) {
-		this.authService.changeLanguage(value);
+	changeLanguage(target: EventTarget | null) {
+		if (target !== null) {
+			this.authService.changeLanguage((target as HTMLInputElement).value);
+		}
 	}
 }

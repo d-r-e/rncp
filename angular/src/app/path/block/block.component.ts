@@ -123,8 +123,11 @@ export class BlockComponent implements OnInit {
 		$event.stopPropagation();
 	}
 
-	setPlannedXP(project: Project, mark: number) {
-		this.slider_mark = mark;
+	setPlannedXP(project: Project, target: EventTarget | null) {
+		if (target === null) {
+			return;
+		}
+		const mark = parseInt((target as HTMLInputElement).value);
 		const new_xp = Math.round((project.xp * mark) / 100);
 		const found: ProjectUser | undefined = this.planned_projects.find(
 			(projectUser: ProjectUser) => {
@@ -136,6 +139,9 @@ export class BlockComponent implements OnInit {
 				return false;
 			}
 		);
+
+		this.slider_mark = mark;
+
 		if (!found) {
 			this.planned_projects.push({
 				id: project.id,
@@ -150,6 +156,7 @@ export class BlockComponent implements OnInit {
 				cursus_ids: [21],
 			} as ProjectUser);
 		}
+
 		this.calculateXP();
 	}
 
