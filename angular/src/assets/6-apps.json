@@ -1,330 +1,329 @@
-[{
-    "id": 0,
-    "name": "blocks.suite",
-    "min_xp": 0,
-    "min_projects": 1,
-    "projects": [
-      {
-        "id": 1854,
-        "name": "42Sh",
-        "xp": null
-      },
-      {
-        "id": 2071,
-        "name": "BADASS",
-        "xp": null
-      },
-      {
-        "id": 1458,
-        "name": "Doom Nukem",
-        "xp": null
-      },
-      {
-        "id": 2064,
-        "name": "Inception Of Things",
-        "xp": null
-      },
-      {
-        "id": 1394,
-        "name": "Humangl",
-        "xp": null
-      },
-      {
-        "id": 1424,
-        "name": "Kfs-2",
-        "xp": null
-      },
-      {
-        "id": 1448,
-        "name": "Override",
-        "xp": null
-      },
-      {
-        "id": 1443,
-        "name": "Pestilence",
-        "xp": null
-      },
-      {
-        "id": 1855,
-        "name": "Rt",
-        "xp": null
-      },
-      {
-        "id": 1460,
-        "name": "Total perspective vortex",
-        "xp": null
-      }
-    ]
-  },
-  {
-    "id": 1,
-    "name": "OOP",
-    "min_xp": 10000,
-    "min_projects": 2,
-    "projects": [
-      {
-        "id": 1389,
-        "name": "Bomberman",
-        "xp": 25200
-      },
-      {
-        "id": 1386,
-        "name": "Nibbler",
-        "xp": 9450
-      },
-      {
-        "id": 3,
-        "name": "Old Piscine Php",
-        "xp": 4200
-      },
-      {
-        "id": 1481,
-        "name": "Piscine Php Symfony",
-        "xp": 9450
-      },
-      {
-        "id": 1483,
-        "name": "Deprecated Piscine Python Django",
-        "xp": 9450
-      },
-      {
-        "id": 2189,
-        "name": "Piscine Django",
-        "xp": 9450
-      },
-      {
-        "id": 1482,
-        "name": "Piscine Ruby On Rails",
-        "xp": 9450
-      },
-      {
-        "id": 1396,
-        "name": "Camagru",
-        "xp": 4200
-      },
-      {
-        "id": 1401,
-        "name": "Matcha",
-        "xp": 9450
-      },
-      {
-        "id": 1402,
-        "name": "Hypertube",
-        "xp": 15750
-      },
-      {
-        "id": 1428,
-        "name": "Red Tetris",
-        "xp": 15750
-      },
-      {
-        "id": 1405,
-        "name": "Darkly",
-        "xp": 6300
-      },
-      {
-        "id": 1429,
-        "name": "H42N42",
-        "xp": 9450
-      },
-      {
-        "id": 1486,
-        "name": "Deprecated Piscine Swift Ios",
-        "xp": 9450
-      },
-      {
-        "id": 1379,
-        "name": "Ft_Hangouts",
-        "xp": 4200
-      },
-      {
-        "id": 1395,
-        "name": "Swifty Companion",
-        "xp": 4200
-      },
-      {
-        "id": 1406,
-        "name": "Swifty Proteins",
-        "xp": 15750
-      },
-      {
-        "id": 1435,
-        "name": "Avaj Launcher",
-        "xp": 4200
-      },
-      {
-        "id": 1436,
-        "name": "Swingy",
-        "xp": 9450
-      },
-      {
-        "id": 1437,
-        "name": "Fix Me",
-        "xp": 15750
-      },
-      {
-        "id": 2364,
-        "name":"Piscine Object",
-        "xp": 9450
-
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "name": "blocks.imperative-prog",
-    "min_xp": 10000,
-    "min_projects": 2,
-    "projects":[
-      {
-        "id": 1330,
-        "name": "Libasm",
-        "xp": 966
-      },
-      {
-        "id": 1463,
-        "name": "Zappy",
-        "xp": 25200
-      },
-      {
-        "id": 1411,
-        "name": "Gbmu",
-        "xp": 31500
-      },
-      {
-        "id": 1415,
-        "name": "Ft_Linux",
-        "xp": 4200
-      },
-      {
-        "id": 1416,
-        "name": "Little Penguin 1",
-        "xp": 9450
-      },
-      {
-        "id": 1381,
-        "name": "Taskmaster",
-        "xp": 9450
-      },
-      {
-        "id": 1388,
-        "name": "Strace",
-        "xp": 9450
-      },
-      {
-        "id": 1468,
-        "name": "Malloc",
-        "xp": 9450
-      },
-      {
-        "id": 1420,
-        "name": "Matt Daemon",
-        "xp": 9450
-      },
-      {
-        "id": 1467,
-        "name": "Nm",
-        "xp": 9450
-      },
-      {
-        "id": 1464,
-        "name": "Lem-ipc",
-        "xp": 9450
-      },
-      {
-        "id": 1425,
-        "name": "Kfs 1",
-        "xp": 15750
-      },
-      {
-        "id": 1424,
-        "name": "Kfs 2",
-        "xp": 15750
-      },
-      {
-        "id": 1840,
-        "name": "ft_malcolm",
-        "xp": 6000
-      },
-      {
-        "id": 1451,
-        "name": "ft_ssl_md5",
-        "xp": 9450
-      },
-      {
-        "id": 1405,
-        "name": "Darkly",
-        "xp": 6300
-      },
-      {
-        "id": 1404,
-        "name": "Snow Crash",
-        "xp": 9450
-      },
-      {
-        "id": 1417,
-        "name": "Rainfall",
-        "xp": 25200
-      },
-      {
-        "id": 2086,
-        "name": "Override",
-        "xp": 35700
-      },
-      {
-        "id": 1446,
-        "name": "Boot2Root",
-        "xp": 11500
-      },
-      {
-        "id": 1447,
-        "name": "Ft_Shield",
-        "xp": 15750
-      },
-      {
-        "id": 1419,
-        "name": "Woody Woodpacker",
-        "xp": 9450
-      },
-      {
-        "id": 1430,
-        "name": "Famine",
-        "xp": 9450
-      },
-      {
-        "id": 1443,
-        "name": "Pestilence",
-        "xp": 15750
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name":"blocks.functional-prog",
-    "min_xp": 10000,
-    "min_projects": 2,
-    "projects": [
-      {
-        "id": 1484,
-        "name": "Piscine OCaml",
-        "xp": 9450
-      },
-      {
-        "id":1403,
-        "name": "ft_turing",
-        "xp": 9450
-      },
-      {
-        "xp":4200,
-        "id":1407,
-        "name":"ft_ality"
-      },
-      {
-        "id": 1429,
-        "name": "H42N42",
-        "xp": 9450
-      }
-
-    ]
-  }
+[
+	{
+		"id": 0,
+		"name": "blocks.suite",
+		"min_xp": 0,
+		"min_projects": 1,
+		"projects": [
+			{
+				"id": 1854,
+				"name": "42Sh",
+				"xp": null
+			},
+			{
+				"id": 2071,
+				"name": "BADASS",
+				"xp": null
+			},
+			{
+				"id": 1458,
+				"name": "Doom Nukem",
+				"xp": null
+			},
+			{
+				"id": 2064,
+				"name": "Inception Of Things",
+				"xp": null
+			},
+			{
+				"id": 1394,
+				"name": "Humangl",
+				"xp": null
+			},
+			{
+				"id": 1424,
+				"name": "Kfs-2",
+				"xp": null
+			},
+			{
+				"id": 1448,
+				"name": "Override",
+				"xp": null
+			},
+			{
+				"id": 1443,
+				"name": "Pestilence",
+				"xp": null
+			},
+			{
+				"id": 1855,
+				"name": "Rt",
+				"xp": null
+			},
+			{
+				"id": 1460,
+				"name": "Total perspective vortex",
+				"xp": null
+			}
+		]
+	},
+	{
+		"id": 1,
+		"name": "OOP",
+		"min_xp": 10000,
+		"min_projects": 2,
+		"projects": [
+			{
+				"id": 1389,
+				"name": "Bomberman",
+				"xp": 25200
+			},
+			{
+				"id": 1386,
+				"name": "Nibbler",
+				"xp": 9450
+			},
+			{
+				"id": 3,
+				"name": "Old Piscine Php",
+				"xp": 4200
+			},
+			{
+				"id": 1481,
+				"name": "Piscine Php Symfony",
+				"xp": 9450
+			},
+			{
+				"id": 1483,
+				"name": "Deprecated Piscine Python Django",
+				"xp": 9450
+			},
+			{
+				"id": 2189,
+				"name": "Piscine Django",
+				"xp": 9450
+			},
+			{
+				"id": 1482,
+				"name": "Piscine Ruby On Rails",
+				"xp": 9450
+			},
+			{
+				"id": 1396,
+				"name": "Camagru",
+				"xp": 4200
+			},
+			{
+				"id": 1401,
+				"name": "Matcha",
+				"xp": 9450
+			},
+			{
+				"id": 1402,
+				"name": "Hypertube",
+				"xp": 15750
+			},
+			{
+				"id": 1428,
+				"name": "Red Tetris",
+				"xp": 15750
+			},
+			{
+				"id": 1405,
+				"name": "Darkly",
+				"xp": 6300
+			},
+			{
+				"id": 1429,
+				"name": "H42N42",
+				"xp": 9450
+			},
+			{
+				"id": 1486,
+				"name": "Deprecated Piscine Swift Ios",
+				"xp": 9450
+			},
+			{
+				"id": 1379,
+				"name": "Ft_Hangouts",
+				"xp": 4200
+			},
+			{
+				"id": 1395,
+				"name": "Swifty Companion",
+				"xp": 4200
+			},
+			{
+				"id": 1406,
+				"name": "Swifty Proteins",
+				"xp": 15750
+			},
+			{
+				"id": 1435,
+				"name": "Avaj Launcher",
+				"xp": 4200
+			},
+			{
+				"id": 1436,
+				"name": "Swingy",
+				"xp": 9450
+			},
+			{
+				"id": 1437,
+				"name": "Fix Me",
+				"xp": 15750
+			},
+			{
+				"id": 2364,
+				"name": "Piscine Object",
+				"xp": 9450
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "blocks.imperative-prog",
+		"min_xp": 10000,
+		"min_projects": 2,
+		"projects": [
+			{
+				"id": 1330,
+				"name": "Libasm",
+				"xp": 966
+			},
+			{
+				"id": 1463,
+				"name": "Zappy",
+				"xp": 25200
+			},
+			{
+				"id": 1411,
+				"name": "Gbmu",
+				"xp": 31500
+			},
+			{
+				"id": 1415,
+				"name": "Ft_Linux",
+				"xp": 4200
+			},
+			{
+				"id": 1416,
+				"name": "Little Penguin 1",
+				"xp": 9450
+			},
+			{
+				"id": 1381,
+				"name": "Taskmaster",
+				"xp": 9450
+			},
+			{
+				"id": 1388,
+				"name": "Strace",
+				"xp": 9450
+			},
+			{
+				"id": 1468,
+				"name": "Malloc",
+				"xp": 9450
+			},
+			{
+				"id": 1420,
+				"name": "Matt Daemon",
+				"xp": 9450
+			},
+			{
+				"id": 1467,
+				"name": "Nm",
+				"xp": 9450
+			},
+			{
+				"id": 1464,
+				"name": "Lem-ipc",
+				"xp": 9450
+			},
+			{
+				"id": 1425,
+				"name": "Kfs 1",
+				"xp": 15750
+			},
+			{
+				"id": 1424,
+				"name": "Kfs 2",
+				"xp": 15750
+			},
+			{
+				"id": 1840,
+				"name": "ft_malcolm",
+				"xp": 6000
+			},
+			{
+				"id": 1451,
+				"name": "ft_ssl_md5",
+				"xp": 9450
+			},
+			{
+				"id": 1405,
+				"name": "Darkly",
+				"xp": 6300
+			},
+			{
+				"id": 1404,
+				"name": "Snow Crash",
+				"xp": 9450
+			},
+			{
+				"id": 1417,
+				"name": "Rainfall",
+				"xp": 25200
+			},
+			{
+				"id": 2086,
+				"name": "Override",
+				"xp": 35700
+			},
+			{
+				"id": 1446,
+				"name": "Boot2Root",
+				"xp": 11500
+			},
+			{
+				"id": 1447,
+				"name": "Ft_Shield",
+				"xp": 15750
+			},
+			{
+				"id": 1419,
+				"name": "Woody Woodpacker",
+				"xp": 9450
+			},
+			{
+				"id": 1430,
+				"name": "Famine",
+				"xp": 9450
+			},
+			{
+				"id": 1443,
+				"name": "Pestilence",
+				"xp": 15750
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "blocks.functional-prog",
+		"min_xp": 10000,
+		"min_projects": 2,
+		"projects": [
+			{
+				"id": 1484,
+				"name": "Piscine OCaml",
+				"xp": 9450
+			},
+			{
+				"id": 1403,
+				"name": "ft_turing",
+				"xp": 9450
+			},
+			{
+				"xp": 4200,
+				"id": 1407,
+				"name": "ft_ality"
+			},
+			{
+				"id": 1429,
+				"name": "H42N42",
+				"xp": 9450
+			}
+		]
+	}
 ]

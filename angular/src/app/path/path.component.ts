@@ -11,7 +11,6 @@ import { TranslateService } from '@ngx-translate/core';
 	styleUrl: './path.component.css',
 })
 export class PathComponent implements OnInit {
-
 	events: number = 0;
 	rncp: number = 6;
 	blocks: Block[] = [];
@@ -36,7 +35,9 @@ export class PathComponent implements OnInit {
 
 		if (this.authService.me) {
 			this.projects = this.authService.me.projects_users.filter(
-				(project: ProjectUser) => project.cursus_ids.includes(21) && project.status == "finished");
+				(project: ProjectUser) =>
+					project.cursus_ids.includes(21) && project.status == 'finished'
+			);
 		}
 	}
 
@@ -51,10 +52,10 @@ export class PathComponent implements OnInit {
 	}
 
 	setRNCP(level: number) {
-		this.rncp = level
-		this.requiredLevel = (level == 6) ? 17 : 21;
-		this.requiredEvents = (level == 6) ? 10 : 15;
-		this.path = (level == 6) ? 'web' : 'sec';
+		this.rncp = level;
+		this.requiredLevel = level == 6 ? 17 : 21;
+		this.requiredEvents = level == 6 ? 10 : 15;
+		this.path = level == 6 ? 'web' : 'sec';
 		this.loadData();
 	}
 

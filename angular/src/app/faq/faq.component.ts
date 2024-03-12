@@ -4,17 +4,17 @@ import { TranslateModule } from '@ngx-translate/core';
 import { contributors } from '@app/package.json';
 
 interface Contributor {
-	name: string,
-	email: string,
-	url: string
-};
+	name: string;
+	email: string;
+	url: string;
+}
 
 @Component({
-  selector: 'app-faq',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './faq.component.html',
-  styleUrl: './faq.component.css'
+	selector: 'app-faq',
+	standalone: true,
+	imports: [CommonModule, TranslateModule],
+	templateUrl: './faq.component.html',
+	styleUrl: './faq.component.css',
 })
 export class FaqComponent implements OnInit {
 	public contributors: Contributor[] = [];

@@ -8,10 +8,7 @@ import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
-	providers: [
-		AuthService,
-		AuthGuardService
-	],
+	providers: [AuthService, AuthGuardService],
 	imports: [
 		HttpClientModule,
 		PathModule,
@@ -19,10 +16,10 @@ import { AuthGuardService } from './services/auth-guard.service';
 			loader: {
 				provide: TranslateLoader,
 				useFactory: customLangFactory,
-				deps: [HttpClient]
-			}
-		})
+				deps: [HttpClient],
+			},
+		}),
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

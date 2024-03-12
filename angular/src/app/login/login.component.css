@@ -1,23 +1,23 @@
-#login-button{
-  height: 6rem;
-  font-size: 2rem;
+#login-button {
+	height: 6rem;
+	font-size: 2rem;
 }
 
-#login-button span{
-  position: relative;
+#login-button span {
+	position: relative;
 }
 
 #login-button img {
-  position: relative;
-  width: 3rem;
+	position: relative;
+	width: 3rem;
 }
 
 #login-button:hover {
-  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
-  color: black;
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
+	color: black;
 }
 
-#login-button:active span{
-  position: relative;
-  top: 1px;
+#login-button:active span {
+	position: relative;
+	top: 1px;
 }

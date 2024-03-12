@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Me } from '../models/me';
@@ -6,31 +6,28 @@ import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+	selector: 'app-header',
+	standalone: true,
+	imports: [CommonModule, TranslateModule],
+	templateUrl: './header.component.html',
+	styleUrl: './header.component.css',
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent {
 	title = 'RNCP';
-	login :string | null = null;
+	login: string | null = null;
 	me?: Me;
 	level: number = 0;
 
 	constructor(
 		public authService: AuthService,
-		private router: Router) {}
+		private router: Router
+	) {}
 
-	ngOnInit(): void {
-
-	}
-
-	isLoggedIn(){
+	isLoggedIn() {
 		return this.authService.isLoggedIn();
 	}
 
-	logout(){
+	logout() {
 		this.authService.logout();
 		this.router.navigate(['/login']);
 	}
@@ -39,7 +36,9 @@ export class HeaderComponent  implements OnInit {
 		return this.authService.getLanguage();
 	}
 
-	changeLanguage(event: any) {
-		this.authService.changeLanguage(event.target.value);
+	changeLanguage(target: EventTarget | null) {
+		if (target !== null) {
+			this.authService.changeLanguage((target as HTMLInputElement).value);
+		}
 	}
 }
