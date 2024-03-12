@@ -23,7 +23,6 @@ def auth_callback():
             'client_secret': CLIENT_SECRET,
             'code': request.args.get('code'),
             'redirect_uri': REDIRECT_URI,
-
         }
     token_response = requests.post('https://api.intra.42.fr/oauth/token', data=data)
 

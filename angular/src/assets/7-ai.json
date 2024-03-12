@@ -1,219 +1,219 @@
 [
-  {
-    "id": 2,
-    "name": "blocks.ai",
-    "min_projects": 3,
-    "min_xp": 70000,
-    "projects": [
-      {
-        "id": 2295,
-        "name": "Piscine Data Science",
-        "xp": 4725
-      },
-      {
-        "id": 1391,
-        "name": "Linear regression",
-        "xp": 4200
-      },
-      {
-        "id": 1453,
-        "name": "DSLR",
-        "xp": 6000
-      },
-      {
-        "id": 1457,
-        "name": "Multi layer perceptron",
-        "xp": 9450
-      },
-      {
-        "id": 1383,
-        "name": "Gomoku",
-        "xp": 25200
-      },
-      {
-        "id": 1460,
-        "name": "Total perspective vortex",
-        "xp": 9450
-      },
-      {
-        "id": 1384,
-        "name": "Expert system",
-        "xp": 9450
-      },
-      {
-        "id": 1392,
-        "name": "Krpsim",
-        "xp": 9450
-      },
-      {
-        "id": 2077,
-        "name": "Matrix",
-        "xp": 7000
-      },
-      {
-        "id": 2076,
-        "name": "Ready set boole",
-        "xp": 7000
-      },
-      {
-        "id": 2372,
-        "name": "Leaffliction",
-        "xp": 15750
-      },
-      {
-        "id": 2268,
-        "name": "Python for data science - Module 00",
-        "xp": 545
-      },
-      {
-        "id": 2269,
-        "name": "Python for data science - Module 01",
-        "xp": 545
-      },
-      {
-        "id": 2270,
-        "name": "Python for data science - Module 02",
-        "xp": 545
-      },
-      {
-        "id": 2271,
-        "name": "Python for data science - Module 03",
-        "xp": 545
-      },
-      {
-        "id": 2272,
-        "name": "Python for data science - Module 04",
-        "xp": 2545
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "blocks.databases",
-    "min_projects": 2,
-    "min_xp": 50000,
-    "projects": [
-      {
-        "id": 1481,
-        "name": "Piscine PHP Symfony",
-        "xp": 9450
-      },
-      {
-        "id": 2189,
-        "name": "Piscine Python Django",
-        "xp": 9450
-      },
-      {
-        "id": 1482,
-        "name": "Piscine Ruby on Rails",
-        "xp": 9450
-      },
-      {
-        "id": 1396,
-        "name": "Camagru",
-        "xp": 4200
-      },
-      {
-        "id": 1401,
-        "name": "Matcha",
-        "xp": 9450
-      },
-      {
-        "id": 1402,
-        "name": "Hypertube",
-        "xp": 15750
-      },
-      {
-        "id": 1428,
-        "name": "Red Tetris",
-        "xp": 15750
-      },
-      {
-        "id": 1405,
-        "name": "Darkly",
-        "xp": 6300
-      },
-      {
-        "id": 1429,
-        "name": "h42n42",
-        "xp": 9450
-      },
-      {
-        "id": 2485,
-        "name": "Tokenizer",
-        "xp": 9450
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "name": "blocks.suite",
-    "min_xp": 0,
-    "min_projects": 1,
-    "projects": [
-      {
-        "id": 2064,
-        "name": "Inception-of-Things",
-        "xp": null
-      },
-      {
-        "id": 2071,
-        "name": "BADASS",
-        "xp": null
-      },
-      {
-        "id": 1407,
-        "name": "ft_nmap",
-        "xp": null
-      },
-      {
-        "id": 2080,
-        "name": "42sh",
-        "xp": null
-      },
-      {
-        "id": 2082,
-        "name": "DoomNukem",
-        "xp": null
-      },
-      {
-        "id": 2083,
-        "name": "HumanGL",
-        "xp": null
-      },
-      {
-        "id": 1424,
-        "name": "KFS 2",
-        "xp": null
-      },
-      {
-        "id": 2086,
-        "name": "Override",
-        "xp": null
-      },
-      {
-        "id": 2087,
-        "name": "RT",
-        "xp": null
-      },
-      {
-        "id": 1460,
-        "name": "Total perspective vortex",
-        "xp": null
-      }
-    ]
-  },
-  {
-    "id": 1,
-    "name": "blocks.mandatory",
-    "min_projects": 1,
-    "min_xp": 0,
-    "projects": [
-      {
-        "id": 1460,
-        "name": "Total perspective vortex",
-        "xp": null
-      }
-    ]
-  }
+	{
+		"id": 2,
+		"name": "blocks.ai",
+		"min_projects": 3,
+		"min_xp": 70000,
+		"projects": [
+			{
+				"id": 2295,
+				"name": "Piscine Data Science",
+				"xp": 4725
+			},
+			{
+				"id": 1391,
+				"name": "Linear regression",
+				"xp": 4200
+			},
+			{
+				"id": 1453,
+				"name": "DSLR",
+				"xp": 6000
+			},
+			{
+				"id": 1457,
+				"name": "Multi layer perceptron",
+				"xp": 9450
+			},
+			{
+				"id": 1383,
+				"name": "Gomoku",
+				"xp": 25200
+			},
+			{
+				"id": 1460,
+				"name": "Total perspective vortex",
+				"xp": 9450
+			},
+			{
+				"id": 1384,
+				"name": "Expert system",
+				"xp": 9450
+			},
+			{
+				"id": 1392,
+				"name": "Krpsim",
+				"xp": 9450
+			},
+			{
+				"id": 2077,
+				"name": "Matrix",
+				"xp": 7000
+			},
+			{
+				"id": 2076,
+				"name": "Ready set boole",
+				"xp": 7000
+			},
+			{
+				"id": 2372,
+				"name": "Leaffliction",
+				"xp": 15750
+			},
+			{
+				"id": 2268,
+				"name": "Python for data science - Module 00",
+				"xp": 545
+			},
+			{
+				"id": 2269,
+				"name": "Python for data science - Module 01",
+				"xp": 545
+			},
+			{
+				"id": 2270,
+				"name": "Python for data science - Module 02",
+				"xp": 545
+			},
+			{
+				"id": 2271,
+				"name": "Python for data science - Module 03",
+				"xp": 545
+			},
+			{
+				"id": 2272,
+				"name": "Python for data science - Module 04",
+				"xp": 2545
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "blocks.databases",
+		"min_projects": 2,
+		"min_xp": 50000,
+		"projects": [
+			{
+				"id": 1481,
+				"name": "Piscine PHP Symfony",
+				"xp": 9450
+			},
+			{
+				"id": 2189,
+				"name": "Piscine Python Django",
+				"xp": 9450
+			},
+			{
+				"id": 1482,
+				"name": "Piscine Ruby on Rails",
+				"xp": 9450
+			},
+			{
+				"id": 1396,
+				"name": "Camagru",
+				"xp": 4200
+			},
+			{
+				"id": 1401,
+				"name": "Matcha",
+				"xp": 9450
+			},
+			{
+				"id": 1402,
+				"name": "Hypertube",
+				"xp": 15750
+			},
+			{
+				"id": 1428,
+				"name": "Red Tetris",
+				"xp": 15750
+			},
+			{
+				"id": 1405,
+				"name": "Darkly",
+				"xp": 6300
+			},
+			{
+				"id": 1429,
+				"name": "h42n42",
+				"xp": 9450
+			},
+			{
+				"id": 2485,
+				"name": "Tokenizer",
+				"xp": 9450
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "blocks.suite",
+		"min_xp": 0,
+		"min_projects": 1,
+		"projects": [
+			{
+				"id": 2064,
+				"name": "Inception-of-Things",
+				"xp": null
+			},
+			{
+				"id": 2071,
+				"name": "BADASS",
+				"xp": null
+			},
+			{
+				"id": 1407,
+				"name": "ft_nmap",
+				"xp": null
+			},
+			{
+				"id": 2080,
+				"name": "42sh",
+				"xp": null
+			},
+			{
+				"id": 2082,
+				"name": "DoomNukem",
+				"xp": null
+			},
+			{
+				"id": 2083,
+				"name": "HumanGL",
+				"xp": null
+			},
+			{
+				"id": 1424,
+				"name": "KFS 2",
+				"xp": null
+			},
+			{
+				"id": 2086,
+				"name": "Override",
+				"xp": null
+			},
+			{
+				"id": 2087,
+				"name": "RT",
+				"xp": null
+			},
+			{
+				"id": 1460,
+				"name": "Total perspective vortex",
+				"xp": null
+			}
+		]
+	},
+	{
+		"id": 1,
+		"name": "blocks.mandatory",
+		"min_projects": 1,
+		"min_xp": 0,
+		"projects": [
+			{
+				"id": 1460,
+				"name": "Total perspective vortex",
+				"xp": null
+			}
+		]
+	}
 ]

@@ -1,7 +1,14 @@
 <!-- app-vertical-slider.component.html -->
 <div class="slider-container" *ngIf="showSlider" (mouseleave)="onSliderLeave()">
-  <input type="range" class="slider" [min]="min" [max]="max" [(value)]="value"
-    orient="vertical">
-  <div class="value-display" *ngIf="showValue">{{ value }}</div>
+	<input
+		type="range"
+		class="slider"
+		[min]="min"
+		[max]="max"
+		[(value)]="value"
+		orient="vertical" />
+	<div class="value-display" *ngIf="showValue">{{ value }}</div>
 </div>
-<button (mouseover)="toggleSliderDisplay()" (touchstart)="toggleSliderDisplay()">Adjust Value</button>
+<button (mouseover)="toggleSliderDisplay()" (touchstart)="toggleSliderDisplay()">
+	Adjust Value
+</button>

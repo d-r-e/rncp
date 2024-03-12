@@ -7,3 +7,5 @@ on:
 jobs:
   build-frontend:
     uses: ./.github/workflows/build-frontend.yml
+  linter-frontend:
+    uses: ./.github/workflows/linter-frontend.yml

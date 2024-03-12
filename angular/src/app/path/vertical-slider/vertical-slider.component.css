@@ -1,43 +1,45 @@
 /* app-vertical-slider.component.css */
 .slider-container {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s ease;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		visibility 0s,
+		opacity 0.5s ease;
 }
 
 .slider-container:hover,
 .slider-container:focus-within {
-  visibility: visible;
-  opacity: 1;
+	visibility: visible;
+	opacity: 1;
 }
 
 .slider {
-  -webkit-appearance: slider-vertical;
-  /* Chrome */
-  appearance: slider-vertical;
-  /* Standard */
-  width: 25px;
-  height: 200px;
-  background: white;
-  border: 1px solid black;
-  cursor: pointer;
+	-webkit-appearance: slider-vertical;
+	/* Chrome */
+	appearance: slider-vertical;
+	/* Standard */
+	width: 25px;
+	height: 200px;
+	background: white;
+	border: 1px solid black;
+	cursor: pointer;
 }
 
 .value-display {
-  margin-top: 10px;
-  background: black;
-  color: white;
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
+	margin-top: 10px;
+	background: black;
+	color: white;
+	padding: 5px;
+	border: none;
+	border-radius: 5px;
 }
 
 button {
-  border: 1px solid black;
-  background-color: white;
-  cursor: pointer;
+	border: 1px solid black;
+	background-color: white;
+	cursor: pointer;
 }

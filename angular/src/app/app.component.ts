@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from "./header/header.component";
+import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { AppModule } from './app.module';
@@ -31,8 +31,8 @@ export class AppComponent implements OnInit {
 
 	constructor(
 		private authService: AuthService,
-		private translate: TranslateService) {
-	}
+		private translate: TranslateService
+	) {}
 
 	ngOnInit(): void {
 		this.translate.addLangs(['fr', 'en', 'es']);

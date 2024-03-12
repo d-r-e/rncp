@@ -1,63 +1,89 @@
 <div class="w-100 block rounded-0 bg-white border-black border border-5 text-black">
-  <div class="d-flex flex-row justify-content-between align-items-center">
-    <h3 class="ms-2">{{ block.name | translate}}</h3>
-    <div class="ok-badge mx-1" *ngIf="isBlockCompleted()">
-      OK
-    </div>
-    <div class="ko-badge mx-1" *ngIf="!isBlockCompleted()">
-      KO
-    </div>
-  </div>
-  <div class="d-flex flex-row bg-black text-white justify-content-around align-items-center">
-
-    <label *ngIf="block.min_xp">
-      <span [ngClass]="{
-        'text-green': xp>=block.min_xp,
-        'text-danger': xp<block.min_xp
-        }">
-        {{xp}}
-      </span>
-      / {{block.min_xp}} XP
-    </label>
-    <div class="vr text-white mt-2" *ngIf="block.min_xp"></div>
-    <label><span [ngClass]="{
-      'text-green': completed_project_number>=block.min_projects,
-      'text-danger': completed_project_number<block.min_projects
-
-      }">
-        {{completed_project_number}}
-      </span>
-      / {{block.min_projects}}</label>
-  </div>
+	<div class="d-flex flex-row justify-content-between align-items-center">
+		<h3 class="ms-2">{{ block.name | translate }}</h3>
+		<div class="ok-badge mx-1" *ngIf="isBlockCompleted()">OK</div>
+		<div class="ko-badge mx-1" *ngIf="!isBlockCompleted()">KO</div>
+	</div>
+	<div class="d-flex flex-row bg-black text-white justify-content-around align-items-center">
+		<div *ngIf="block.min_xp">
+			<span
+				[ngClass]="{
+					'text-green': xp >= block.min_xp,
+					'text-danger': xp < block.min_xp
+				}">
+				{{ xp }}
+			</span>
+			/ {{ block.min_xp }} XP
+		</div>
+		<div class="vr text-white mt-2" *ngIf="block.min_xp"></div>
+		<div>
+			<span
+				[ngClass]="{
+					'text-green': completed_project_number >= block.min_projects,
+					'text-danger': completed_project_number < block.min_projects
+				}">
+				{{ completed_project_number }}
+			</span>
+			/ {{ block.min_projects }}
+		</div>
+	</div>
 </div>
-<div *ngFor="let project of block.projects; let i = index" class="mx-0 bg-white border-5 border-black text-black">
-  <div class="project cursor-pointer px-2 mx-0"
-    [ngClass]="{'completed': isCompleted(project), 'planned': isPlanned(project)}"
-    (click)="!isCompleted(project) && planProject(project)">
-    <div class="cursor-pointer d-flex text-xs align-items-center">
-      <div class="project-title me-auto fw-bold">{{project.name}}</div>
-      <div class="project-text" *ngIf="project.xp && !isCompleted(project) && getPlannedXP(project) != project.xp">{{project.xp}}</div>
-      <div class="ms-1 fw-bolder text-gold" *ngIf="project.xp && isPlanned(project)">
-        {{getPlannedXP(project)}}
-      </div>
-      <div class="ms-1 fw-bolder text-success" *ngIf="project.xp &&  isCompleted(project)">
-        {{getPlannedXP(project)}}
-      </div>
-      <div class="text-secondary ms-3 px-1 d-flex flex-row" [ngClass]="{'opacity-0 disabled': isCompleted(project)}"
-        (click)="toggleSlider($event, i)">
-        <span *ngIf="show_slider && activeProjectIndex === i" class="text-secondary">⌃</span>
-        <span *ngIf="!show_slider && activeProjectIndex !== i" class="text-secondary">⌄</span>
-        <span *ngIf="show_slider && activeProjectIndex !== i" class="text-secondary">⌄</span>
-        <span *ngIf="!show_slider && activeProjectIndex === i" class="text-secondary">⌃</span>
+<div
+	*ngFor="let project of block.projects; let i = index"
+	class="mx-0 bg-white border-5 border-black text-black">
+	<div
+		class="project cursor-pointer px-2 mx-0"
+		[ngClass]="{
+			completed: isCompleted(project),
+			planned: isPlanned(project)
+		}"
+		(click)="!isCompleted(project) && planProject(project)">
+		<div class="cursor-pointer d-flex text-xs align-items-center">
+			<div class="project-title me-auto fw-bold">{{ project.name }}</div>
+			<div
+				class="project-text"
+				*ngIf="project.xp && !isCompleted(project) && getPlannedXP(project) !== project.xp">
+				{{ project.xp }}
+			</div>
+			<div class="ms-1 fw-bolder text-gold" *ngIf="project.xp && isPlanned(project)">
+				{{ getPlannedXP(project) }}
+			</div>
+			<div class="ms-1 fw-bolder text-success" *ngIf="project.xp && isCompleted(project)">
+				{{ getPlannedXP(project) }}
+			</div>
+			<div
+				class="text-secondary ms-3 px-1 d-flex flex-row"
+				[ngClass]="{ 'opacity-0 disabled': isCompleted(project) }"
+				(click)="toggleSlider($event, i)">
+				<span *ngIf="show_slider && activeProjectIndex === i" class="text-secondary"
+					>⌃</span
+				>
+				<span *ngIf="!show_slider && activeProjectIndex !== i" class="text-secondary"
+					>⌄</span
+				>
+				<span *ngIf="show_slider && activeProjectIndex !== i" class="text-secondary"
+					>⌄</span
+				>
+				<span *ngIf="!show_slider && activeProjectIndex === i" class="text-secondary"
+					>⌃</span
+				>
+			</div>
+		</div>
 
-      </div>
-    </div>
-
-    <div *ngIf="project.xp && activeProjectIndex === i" class="form-group row mx-4">
-      <!-- <label class="text-center text-small">{{slider_mark}}</label> -->
-      <input type="number" class="form-control my-1" [min]="80" [max]="125" [step]="1" (click)="event($event)"
-        [(value)]="slider_mark" color="green" (keyup.enter)="show_slider=false" (change)="setPlannedXP(project, $event)" orient="horizontal">
-    </div>
-
-  </div>
+		<div *ngIf="project.xp && activeProjectIndex === i" class="form-group row mx-4">
+			<!-- <label class="text-center text-small">{{slider_mark}}</label> -->
+			<input
+				type="number"
+				class="form-control my-1"
+				[min]="80"
+				[max]="125"
+				[step]="1"
+				(click)="event($event)"
+				[(value)]="slider_mark"
+				color="green"
+				(keyup.enter)="show_slider = false"
+				(change)="setPlannedXP(project, $event.target.value)"
+				orient="horizontal" />
+		</div>
+	</div>
 </div>

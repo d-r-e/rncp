@@ -8,29 +8,18 @@ import { HttpClient } from '@angular/common/http';
 import { customLangFactory } from '../CustomLangFactory';
 import { VerticalSliderComponent } from './vertical-slider/vertical-slider.component';
 
-
 @NgModule({
-	declarations: [
-		PathComponent,
-		ProgressbarComponent,
-		BlockComponent,
-		VerticalSliderComponent
-	],
+	declarations: [PathComponent, ProgressbarComponent, BlockComponent, VerticalSliderComponent],
 	imports: [
 		CommonModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
 				useFactory: customLangFactory,
-				deps: [HttpClient]
-			}
-		})
+				deps: [HttpClient],
+			},
+		}),
 	],
-	exports: [
-		PathComponent,
-		ProgressbarComponent,
-		BlockComponent,
-		VerticalSliderComponent
-	]
+	exports: [PathComponent, ProgressbarComponent, BlockComponent, VerticalSliderComponent],
 })
-export class PathModule { }
+export class PathModule {}

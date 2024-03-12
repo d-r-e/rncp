@@ -1,44 +1,42 @@
 .active {
-  position: relative;
-  border-radius: 5px;
-  color: black !important;
-  border:  .3em solid black;
+	position: relative;
+	border-radius: 5px;
+	color: black !important;
+	border: 0.3em solid black;
 }
 
-.rncp-level-button:not(.active){
-  opacity: 70% !important;
-  border : .2em solid black;
+.rncp-level-button:not(.active) {
+	opacity: 70% !important;
+	border: 0.2em solid black;
 }
 
 .rncp-level-button {
-  transition: border-color 0.2s;
-  border-radius: 5px;
+	transition: border-color 0.2s;
+	border-radius: 5px;
 }
 
-.rncp-level-button.active::before
- {
-  content: '';
-  position: absolute;
-  top: 25%;
-  left: .1em;
-  height: 50%;
-  width: .1em;
-  border:  .1em solid black;
-  z-index: 1;
+.rncp-level-button.active::before {
+	content: '';
+	position: absolute;
+	top: 25%;
+	left: 0.1em;
+	height: 50%;
+	width: 0.1em;
+	border: 0.1em solid black;
+	z-index: 1;
 
-  transition: border 0.2s;
+	transition: border 0.2s;
 }
 
-.rncp-level-button.active::after
- {
-  content: '';
-  position: absolute;
-  top: 25%;
-  right: .1em;
-  height: 50%;
-  width: .1em;
-  border:  .1em solid black;
-  z-index: 1;
+.rncp-level-button.active::after {
+	content: '';
+	position: absolute;
+	top: 25%;
+	right: 0.1em;
+	height: 50%;
+	width: 0.1em;
+	border: 0.1em solid black;
+	z-index: 1;
 
-  transition: border 0.2s;
+	transition: border 0.2s;
 }
