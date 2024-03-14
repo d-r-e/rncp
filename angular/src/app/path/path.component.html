@@ -1,13 +1,13 @@
 <div class="container-xs container-md">
 	<div class="d-flex flex-row w-100 align-items-evenly">
 		<button
-			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 w-sm-25 mt-1 bg-white text-black fw-bolder"
 			[ngClass]="{ active: rncp === 6 }"
 			(click)="setRNCP(6)">
 			RNCP 6
 		</button>
 		<button
-			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 w-sm-25 mt-1 bg-white text-black fw-bolder"
 			[ngClass]="{ active: rncp === 7 }"
 			(click)="setRNCP(7)">
 			RNCP 7
@@ -15,13 +15,13 @@
 	</div>
 	<div class="d-flex flex-row w-100 align-items-evenly" *ngIf="rncp === 6">
 		<button
-			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 w-sm-25 mt-1 bg-white text-black fw-bolder"
 			[ngClass]="{ active: path === 'web' }"
 			(click)="setPath('web')">
 			{{ 'rncp6-web' | translate }}
 		</button>
 		<button
-			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 w-sm-25 mt-1 bg-white text-black fw-bolder"
 			[ngClass]="{ active: path === 'apps' }"
 			(click)="setPath('apps')">
 			{{ 'rncp6-apps' | translate }}
@@ -29,13 +29,13 @@
 	</div>
 	<div class="d-flex flex-row w-100 align-items-evenly" *ngIf="rncp === 7">
 		<button
-			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 w-sm-25 mt-1 bg-white text-black fw-bolder"
 			[ngClass]="{ active: path === 'sec' }"
 			(click)="setPath('sec')">
 			{{ 'rncp7-sec' | translate }}
 		</button>
 		<button
-			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 mt-1 bg-white text-black fw-bolder"
+			class="rncp-level-button btn btn-white rounded-0 shadow shadow-sm w-50 w-sm-25 mt-1 bg-white text-black fw-bolder"
 			[ngClass]="{ active: path === 'ai' }"
 			(click)="setPath('ai')">
 			{{ 'rncp7-ai' | translate }}
@@ -49,7 +49,7 @@
 			</div>
 			<div class="text-nowrap px-1">{{ getLevel() }} / {{ requiredLevel }}</div>
 			<app-progressbar
-				class="w-50 ms-auto"
+				class="w-50 w-sm-25 ms-auto"
 				[current]="getLevel()"
 				[max]="requiredLevel"></app-progressbar>
 			<span *ngIf="getLevel() >= requiredLevel" class="py-0 px-2">
@@ -65,7 +65,7 @@
 			</div>
 			<div class="text-nowrap px-1">{{ events }} / {{ requiredEvents }}</div>
 			<app-progressbar
-				class="w-50 ms-auto"
+				class="w-50 w-sm-25 ms-auto"
 				[discrete]="true"
 				[current]="events"
 				[min]="0"
@@ -82,10 +82,10 @@
 				<div class="mr-auto me-4 text-uppercase">
 					{{ 'internships' | translate }}
 				</div>
-				<div class="text-nowrap px-1">{{ internships }} / {{ requiredInternships }}</div>
+				<div class="text-nowrap">{{ internships }} / {{ requiredInternships }}</div>
 			</div>
 			<app-progressbar
-				class="w-50 ms-auto"
+				class="w-50 w-sm-25 ms-auto"
 				[current]="internships"
 				[min]="0"
 				[max]="requiredInternships"></app-progressbar>

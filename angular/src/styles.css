@@ -7,6 +7,8 @@ body {
 	padding: 0;
 	background: gray;
 	/* Base gradient background */
+  font-family: 'Montserrat', sans-serif;
+
 	height: 100vh;
 }
 
