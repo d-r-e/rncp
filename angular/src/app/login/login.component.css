@@ -1,5 +1,3 @@
-
-
 #login-button span {
 	position: relative;
 }
@@ -17,4 +15,99 @@
 #login-button:active span {
 	position: relative;
 	top: 1px;
+}
+
+#login-button {
+	position: relative;
+	padding: 10px 20px;
+	border: 2px solid transparent;
+    border-radius: 3em; /* This is the border-radius for the button */
+
+	background-color: #fff;
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+#login-button span,
+#login-button img {
+	position: relative;
+	z-index: 1;
+}
+
+#login-button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 3em;
+  border: 3px solid transparent; /* Start with a transparent border */
+	box-sizing: border-box;
+	animation: dash 1s linear infinite;
+}
+
+@keyframes dash {
+	to {
+		stroke-dashoffset: -1000;
+	}
+}
+
+#login-button:hover::before,
+#login-button:active::before {
+	border-style: block;
+	animation: dash-animation 5s ease-in-out  infinite;
+}
+@keyframes dash-animation {
+  0%, 100% {
+    border-color: transparent;
+  }
+  12.5% {
+    border-top-color: #888;
+  }
+  25% {
+    border-top-color: #888;
+    border-right-color: #888;
+  }
+  37.5% {
+border-right-color: #888;
+}
+50% {
+border-right-color: #888;
+border-bottom-color: #888;
+}
+62.5% {
+border-bottom-color: #888;
+}
+75% {
+border-bottom-color: #888;
+border-left-color: #888;
+}
+87.5% {
+border-left-color: #888;
+}
+}
+
+#login-button:hover,
+#login-button:active {
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+	color: #000;
+}
+
+#login-button:active span {
+	top: 2px;
+}
+
+#login-button img {
+	width: 3rem;
+}
+
+@media (max-width: 768px) {
+	#login-button {
+		padding: 8px 16px;
+	}
+	#login-button img {
+		width: 2.5rem;
+	}
 }
