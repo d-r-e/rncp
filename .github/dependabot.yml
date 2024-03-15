@@ -11,7 +11,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-    open-pull-requests-limit: 10000
+    open-pull-requests-limit: 10 # 10 per week is already good, do not need 10000 PR per week
     reviewers:
       - "axelcoezard"
       - "d-r-e"
@@ -26,7 +26,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-    open-pull-requests-limit: 10000
+    open-pull-requests-limit: 0 # only create pull request if there is a CVE, we dont care about new features
     reviewers:
       - "louchebem06"
       - "axelcoezard"
