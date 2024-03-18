@@ -20,7 +20,7 @@ app.config.from_mapping(config)
 cache = Cache(app)
 
 # Use a custom key for the cache
-# Why? Because we wamt the cache to be different for each user
+# Why? Because we want the cache to be different for each user
 # So, we use the URL and the Authorization header as the cache key
 def custom_cache_key(*args, **kwargs):
 	bearer_token = request.headers.get('Authorization')
