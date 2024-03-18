@@ -3,9 +3,23 @@ from flask import Flask, request, redirect
 import requests
 from dotenv import load_dotenv
 from os import environ
-app = Flask(__name__)
 import logging
 from flask import Flask, request, jsonify
+from flask_caching import Cache
+
+app = Flask(__name__)
+
+app.config['CACHE_TYPE'] = 'filesystem'
+app.config['CACHE_DIR'] = 'cache'
+app.config['CACHE_DEFAULT_TIMEOUT'] = 3600 # reset cache every hour
+
+cache = Cache(app)
+
+def custom_cache_key(*args, **kwargs):
+	bearer_token = request.headers.get('Authorization')
+	url = request.url
+	cache_key = (url, bearer_token)
+	return cache_key
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -38,6 +52,7 @@ def auth_callback():
 
 
 @app.route('/api/me')
+@cache.cached(key_prefix=custom_cache_key)
 def me():
     token = request.headers.get('Authorization')
     if not token:
@@ -50,6 +65,7 @@ def me():
     return response.json(), response.status_code
 
 @app.route('/api/events')
+@cache.cached(key_prefix=custom_cache_key)
 def events():
     token = request.headers.get('Authorization')
     if not token:
