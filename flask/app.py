@@ -10,7 +10,6 @@ from flask_caching import Cache
 app = Flask(__name__)
 
 config = {
-	"DEBUG": True,
 	"CACHE_TYPE": "filesystem",
 	"CACHE_DIR": "cache",
 	"CACHE_DEFAULT_TIMEOUT": 300
@@ -20,6 +19,9 @@ app.config.from_mapping(config)
 
 cache = Cache(app)
 
+# Use a custom key for the cache
+# Why? Because we wamt the cache to be different for each user
+# So, we use the URL and the Authorization header as the cache key
 def custom_cache_key(*args, **kwargs):
 	bearer_token = request.headers.get('Authorization')
 	url = request.url
@@ -56,7 +58,7 @@ def auth_callback():
 
 
 @app.route('/api/me')
-@cache.cached(key_prefix=custom_cache_key)
+@cache.cached(key_prefix=custom_cache_key) # Always put the cache.cached between the route and the function, to cache the result of the function and not the function itself
 def me():
     token = request.headers.get('Authorization')
     if not token:
