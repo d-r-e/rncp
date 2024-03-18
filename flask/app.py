@@ -3,9 +3,29 @@ from flask import Flask, request, redirect
 import requests
 from dotenv import load_dotenv
 from os import environ
-app = Flask(__name__)
 import logging
 from flask import Flask, request, jsonify
+from flask_caching import Cache
+
+app = Flask(__name__)
+
+config = {
+	"CACHE_TYPE": "filesystem",
+	"CACHE_DIR": "cache",
+	"CACHE_DEFAULT_TIMEOUT": 3600 # refresh the cache for each user every 1 hour
+}
+
+app.config.from_mapping(config)
+
+cache = Cache(app)
+
+# Use a custom key for the cache
+# Why? Because we want the cache to be different for each user
+# So, we use the URL and the Authorization header as the cache key
+def custom_cache_key(*args, **kwargs):
+	bearer_token = request.headers.get('Authorization')
+	url = request.url
+	return f"{url}:{bearer_token}"
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -38,6 +58,7 @@ def auth_callback():
 
 
 @app.route('/api/me')
+@cache.cached(key_prefix=custom_cache_key) # Always put the cache.cached between the route and the function, to cache the result of the function and not the function itself
 def me():
     token = request.headers.get('Authorization')
     if not token:
@@ -50,6 +71,7 @@ def me():
     return response.json(), response.status_code
 
 @app.route('/api/events')
+@cache.cached(key_prefix=custom_cache_key)
 def events():
     token = request.headers.get('Authorization')
     if not token:
