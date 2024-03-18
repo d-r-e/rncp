@@ -9,17 +9,21 @@ from flask_caching import Cache
 
 app = Flask(__name__)
 
-app.config['CACHE_TYPE'] = 'filesystem'
-app.config['CACHE_DIR'] = 'cache'
-app.config['CACHE_DEFAULT_TIMEOUT'] = 3600 # reset cache every hour
+config = {
+	"DEBUG": True,
+	"CACHE_TYPE": "filesystem",
+	"CACHE_DIR": "cache",
+	"CACHE_DEFAULT_TIMEOUT": 300
+}
+
+app.config.from_mapping(config)
 
 cache = Cache(app)
 
 def custom_cache_key(*args, **kwargs):
 	bearer_token = request.headers.get('Authorization')
 	url = request.url
-	cache_key = (url, bearer_token)
-	return cache_key
+	return f"{url}:{bearer_token}"
 
 logging.basicConfig(level=logging.DEBUG)
 
