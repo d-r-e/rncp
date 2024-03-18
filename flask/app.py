@@ -12,7 +12,7 @@ app = Flask(__name__)
 config = {
 	"CACHE_TYPE": "filesystem",
 	"CACHE_DIR": "cache",
-	"CACHE_DEFAULT_TIMEOUT": 300
+	"CACHE_DEFAULT_TIMEOUT": 3600 # refresh the cache for each user every 1 hour
 }
 
 app.config.from_mapping(config)
