@@ -202,18 +202,5 @@
 				"xp": null
 			}
 		]
-	},
-	{
-		"id": 1,
-		"name": "blocks.mandatory",
-		"min_projects": 1,
-		"min_xp": 0,
-		"projects": [
-			{
-				"id": 1460,
-				"name": "Total perspective vortex",
-				"xp": null
-			}
-		]
 	}
 ]
