@@ -28,7 +28,9 @@ export class BlockComponent implements OnInit {
 		);
 		this.block.projects.forEach((project: Project) => {
 			if (!this.isCompleted(project)) {
-				planned_xp += project.xp;
+				planned_xp += Number(project.xp);
+				// to integer
+				planned_xp = Math.round(planned_xp);
 			}
 		});
 		return planned_xp;
@@ -98,6 +100,7 @@ export class BlockComponent implements OnInit {
 					this.block.projects.find(p => {
 						if (p.id == project.project.id) {
 							this.xp += (p.xp * project.final_mark) / 100;
+							this.xp = Math.floor(this.xp);
 							return true;
 						}
 						return false;
@@ -172,6 +175,7 @@ export class BlockComponent implements OnInit {
 				});
 				if (project_user) {
 					this.xp += (project_user.final_mark * project.xp) / 100;
+					this.xp = Math.round(this.xp);
 				}
 			}
 		});

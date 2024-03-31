@@ -36,7 +36,7 @@ export class PathComponent implements OnInit {
 		if (this.authService.me) {
 			this.projects = this.authService.me.projects_users.filter(
 				(project: ProjectUser) =>
-					project.cursus_ids.includes(21) && project.status == 'finished'
+					project.cursus_ids.includes(21) && project['validated?']
 			);
 		}
 	}
