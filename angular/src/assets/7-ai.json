@@ -61,29 +61,9 @@
 				"xp": 15750
 			},
 			{
-				"id": 2268,
-				"name": "Python for data science - Module 00",
-				"xp": 545
-			},
-			{
-				"id": 2269,
-				"name": "Python for data science - Module 01",
-				"xp": 545
-			},
-			{
-				"id": 2270,
-				"name": "Python for data science - Module 02",
-				"xp": 545
-			},
-			{
-				"id": 2271,
-				"name": "Python for data science - Module 03",
-				"xp": 545
-			},
-			{
-				"id": 2272,
-				"name": "Python for data science - Module 04",
-				"xp": 2545
+				"id": 2267,
+				"name": "Python for data science piscine",
+				"xp": 4725
 			}
 		]
 	},
