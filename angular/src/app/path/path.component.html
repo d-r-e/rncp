@@ -42,7 +42,7 @@
 		</button>
 	</div>
 	<hr class="text-black" />
-	<div class="row mb-2">
+	<div class="row mb-2 montserrat text-white">
 		<div class="d-flex align-items-center">
 			<div class="text-nowrap mr-auto me-4 text-uppercase">
 				{{ 'level' | translate }}
@@ -68,6 +68,7 @@
 				class="w-50 w-sm-25 ms-auto"
 				[discrete]="true"
 				[current]="events"
+				[blocksCount]="requiredEvents"
 				[min]="0"
 				[max]="requiredEvents"></app-progressbar>
 			<span *ngIf="events >= requiredEvents" class="py-0 px-2">
@@ -87,6 +88,8 @@
 			<app-progressbar
 				class="w-50 w-sm-25 ms-auto"
 				[current]="internships"
+				[discrete]="true"
+				[blocksCount]="requiredInternships"
 				[min]="0"
 				[max]="requiredInternships"></app-progressbar>
 			<span *ngIf="internships >= requiredInternships" class="py-0 px-2">
@@ -100,9 +103,9 @@
 	<hr class="mt-4 text-black" />
 </div>
 <div class="container container-lg">
-	<div class="row">
+	<div class="row d-flex align-items-stretch">
 		<div *ngFor="let block of blocks" class="col-md-6 col-lg-4 col-xl-3">
-			<div class="m-2">
+			<div class="m-2 h-100 pb-4">
 				<app-block [block]="block" [projects]="projects"></app-block>
 			</div>
 		</div>

@@ -1,17 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@keyframes waveAnimation {
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: 1000px 0;
+		/* Adjust this value based on the width of your SVG for a smooth loop */
+	}
+}
+
 body {
-	background-color: rgb(50, 39, 51) !important;
+	background-image: url("assets/waves.svg");
+	background-color: #212a2c;
+	background-position: center;
+	background-size: cover;
+	/* Cover the entire page */
+	background-repeat: repeat-x;
 	color: #cacaca;
 	min-height: 100%;
 	overflow-y: auto;
 	padding: 0;
-	background: gray;
-	/* Base gradient background */
-  font-family: 'Montserrat', sans-serif;
-
 	height: 100vh;
+	background-attachment: fixed;
+	/* Adjust time for desired speed */
 }
-
 .montserrat {
 	font-family: 'Montserrat', sans-serif;
 	font-optical-sizing: auto;

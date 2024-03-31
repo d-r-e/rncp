@@ -1,12 +1,12 @@
-<!-- progressbar.component.html -->
 <div class="progressbar-container" [class.discrete]="discrete">
 	<ng-container *ngIf="!discrete; else discreteTemplate">
-		<div class="progressbar" [style.width]="percentage"></div>
+		<div class="progressbar" [style.width]="percentage">
+			<div class="progressbar-shimmer"></div>
+		</div>
 	</ng-container>
 	<ng-template #discreteTemplate>
-		<div
-			class="progressbar-block"
-			*ngFor="let block of discreteBlocks"
-			[class.filled]="block"></div>
+		<div class="progressbar-blocks">
+			<div class="progressbar-block" *ngFor="let block of discreteBlocks" [class.filled]="block"></div>
+		</div>
 	</ng-template>
 </div>

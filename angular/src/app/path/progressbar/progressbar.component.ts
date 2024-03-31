@@ -11,6 +11,7 @@ export class ProgressbarComponent {
 	@Input() max: number = 100;
 
 	@Input() discrete: boolean = false;
+	@Input() blocksCount: number = 10;
 
 	get percentage(): string {
 		const range = this.max - this.min;
@@ -25,8 +26,7 @@ export class ProgressbarComponent {
 
 	get discreteBlocks(): number[] {
 		const range = this.max - this.min;
-		const totalBlocks = 10; // Define the number of blocks you want
-		const blocksFilled = Math.round(((this.current - this.min) / range) * totalBlocks);
-		return Array.from({ length: totalBlocks }, (_, index) => (index < blocksFilled ? 1 : 0));
+		const blocksFilled = Math.round(((this.current - this.min) / range) * this.blocksCount);
+		return Array.from({ length: this.blocksCount }, (_, index) => index < blocksFilled ? 1 : 0);
 	}
 }

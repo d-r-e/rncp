@@ -1,5 +1,6 @@
-<div class="w-100 block rounded-0 bg-white border-black border border-5 text-black">
-	<div class="d-flex flex-row justify-content-between align-items-center">
+<div class="w-100 block rounded-0 bg-white d-flex flex-column h-100 mb-">
+	<div class="w-100 block rounded-0 bg-white border-black border border-5 text-black">
+		<div class="d-flex flex-row justify-content-between align-items-center">
 		<h3 class="ms-2">{{ block.name | translate }}</h3>
 		<div class="ok-badge mx-1" *ngIf="isBlockCompleted()">OK</div>
 		<div class="ko-badge mx-1" *ngIf="!isBlockCompleted()">KO</div>
@@ -18,7 +19,7 @@
 		<div class="vr text-white mt-2" *ngIf="block.min_xp"></div>
 		<div>
 			<span
-				[ngClass]="{
+			[ngClass]="{
 					'text-green': completed_project_number >= block.min_projects,
 					'text-danger': completed_project_number < block.min_projects
 				}">
@@ -29,11 +30,11 @@
 	</div>
 </div>
 <div
-	*ngFor="let project of block.projects; let i = index"
+*ngFor="let project of block.projects; let i = index"
 	class="mx-0 bg-white border-5 border-black text-black">
 	<div
-		class="project cursor-pointer px-2 mx-0"
-		[ngClass]="{
+	class="project cursor-pointer px-2 mx-0"
+	[ngClass]="{
 			completed: isCompleted(project),
 			planned: isPlanned(project)
 		}"
@@ -41,8 +42,8 @@
 		<div class="cursor-pointer d-flex text-xs align-items-center">
 			<div class="project-title me-auto fw-bold">{{ project.name }}</div>
 			<div
-				class="project-text"
-				*ngIf="project.xp && !isCompleted(project) && getPlannedXP(project) !== project.xp">
+			class="project-text"
+			*ngIf="project.xp && !isCompleted(project) && getPlannedXP(project) !== project.xp">
 				{{ project.xp }}
 			</div>
 			<div class="ms-1 fw-bolder text-gold" *ngIf="project.xp && isPlanned(project)">
@@ -56,16 +57,16 @@
 				[ngClass]="{ 'opacity-0 disabled': isCompleted(project) }"
 				(click)="toggleSlider($event, i)">
 				<span *ngIf="show_slider && activeProjectIndex === i" class="text-secondary"
-					>⌃</span
+				>⌃</span
 				>
 				<span *ngIf="!show_slider && activeProjectIndex !== i" class="text-secondary"
-					>⌄</span
+				>⌄</span
 				>
 				<span *ngIf="show_slider && activeProjectIndex !== i" class="text-secondary"
 					>⌄</span
 				>
 				<span *ngIf="!show_slider && activeProjectIndex === i" class="text-secondary"
-					>⌃</span
+				>⌃</span
 				>
 			</div>
 		</div>
@@ -73,10 +74,10 @@
 		<div *ngIf="project.xp && activeProjectIndex === i" class="form-group row mx-4">
 			<!-- <label class="text-center text-small">{{slider_mark}}</label> -->
 			<input
-				type="number"
-				class="form-control my-1"
-				[min]="80"
-				[max]="125"
+			type="number"
+			class="form-control my-1"
+			[min]="80"
+			[max]="125"
 				[step]="1"
 				(click)="event($event)"
 				[(value)]="slider_mark"
@@ -84,6 +85,8 @@
 				(keyup.enter)="show_slider = false"
 				(change)="setPlannedXP(project, $event.target)"
 				orient="horizontal" />
-		</div>
+			</div>
 	</div>
+</div>
+
 </div>
