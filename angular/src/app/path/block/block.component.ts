@@ -168,6 +168,9 @@ export class BlockComponent implements OnInit {
 		this.planned_projects.forEach((project: ProjectUser) => {
 			this.xp += (project.final_mark * project.project.xp) / 100;
 		});
+		this.block.planned_xp = this.planned_projects
+		.filter((p: ProjectUser) => !this.isCompleted(p.project))
+		.reduce((acc, p) => acc + p.occurrence, 0);
 		this.block.projects.forEach((project: Project) => {
 			if (this.isCompleted(project)) {
 				const project_user = this.completed_projects.find((projectUser: ProjectUser) => {
