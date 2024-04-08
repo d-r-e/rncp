@@ -117,6 +117,9 @@ export class BlockComponent implements OnInit {
 		event.stopPropagation();
 		this.show_slider = !this.show_slider;
 		this.activeProjectIndex = this.activeProjectIndex === index ? null : index;
+		const project: Project | undefined = this.block.projects[index];
+		const projectUser: ProjectUser | undefined = this.planned_projects?.find(p => p.project.id == project?.id);
+		this.slider_mark = projectUser?.final_mark ?? 100;
 		this.changeDetectorRef.detectChanges();
 	}
 
