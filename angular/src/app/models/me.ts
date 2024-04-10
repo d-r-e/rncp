@@ -7,6 +7,7 @@ export interface Block {
 	id: number;
 	name: string;
 	projects: Project[];
+	planned_xp: number;
 	min_xp: number;
 	min_projects: number;
 }
