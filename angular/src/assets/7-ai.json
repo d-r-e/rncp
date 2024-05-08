@@ -64,6 +64,11 @@
 				"id": 2267,
 				"name": "Python for data science piscine",
 				"xp": 4725
+			},
+			{
+				"id": 9999,
+				"name": "Piscine Machine Learning",
+				"xp": 15000
 			}
 		]
 	},
