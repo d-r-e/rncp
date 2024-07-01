@@ -47,8 +47,8 @@
 			<div class="text-nowrap mr-auto me-4 text-uppercase">
 				{{ 'level' | translate }}
 			</div>
-			<div class="text-nowrap px-1" *ngIf="getPlannedLevel() == getLevel()">{{ getLevel() }} / {{ requiredLevel }}</div>
-			<div class="text-nowrap px-1 text-gold" *ngIf="getPlannedLevel() != getLevel()">{{ getPlannedLevel() | number: '1.0-2' }} / {{ requiredLevel }}</div>
+			<div class="text-nowrap px-1" *ngIf="getPlannedLevel() === getLevel()">{{ getLevel() }} / {{ requiredLevel }}</div>
+			<div class="text-nowrap px-1 text-gold" *ngIf="getPlannedLevel() !== getLevel()">{{ getPlannedLevel() | number: '1.0-2' }} / {{ requiredLevel }}</div>
 			<app-progressbar
 				class="w-50 w-sm-25 ms-auto"
 				[current]="getPlannedLevel()"
