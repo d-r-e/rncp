@@ -75,21 +75,22 @@ export class PathComponent implements OnInit {
 	}
 
 	getPlannedLevel() {
-		let startLevel = this.getLevel();
-		let plannedXp = this.blocks.map((block: Block) => block.planned_xp).reduce((acc, xp) => acc + (xp ?? 0), 0);
+		const startLevel = this.getLevel();
+		const plannedXp = this.blocks.map((block: Block) => block.planned_xp).reduce((acc, xp) => acc + (xp ?? 0), 0);
 
-		let levelDown = Math.floor(startLevel);
-		let levelUp = Math.ceil(startLevel);
-		let levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];
-		let currentXp = levelsXp[levelDown] + (levelXpTotal * (startLevel - Math.floor(startLevel)));
+		const levelDown = Math.floor(startLevel);
+		const levelUp = Math.ceil(startLevel);
+		const levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];
+		const currentXp = levelsXp[levelDown] + (levelXpTotal * (startLevel - Math.floor(startLevel)));
 
 		let finalXp = currentXp + plannedXp;
-
-		for (var i = 0; i < levelsXp.length; i++) {
+		
+		let i = 0;
+		for (; i < levelsXp.length; i++) {
 			if (levelsXp[i] > finalXp) break;
 		}
 
-		let maxXp = levelsXp[i] - levelsXp[i - 1];
+		const maxXp = levelsXp[i] - levelsXp[i - 1];
 		finalXp = finalXp - levelsXp[i - 1];
 
 		return i - 1 + (finalXp / maxXp);
