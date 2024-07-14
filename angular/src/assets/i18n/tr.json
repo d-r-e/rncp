@@ -1,0 +1,31 @@
+{
+	"logout": "Çıkış",
+	"login-with": "İle Giriş",
+	"faq": "SSS",
+	"level": "Seviye",
+	"level-short": "Sv",
+	"events": "Etkinlikler",
+	"internships": "Stajlar",
+	"rncp6": "RNCP 6",
+	"rncp6-web": "Web ve mobil geliştirme",
+	"rncp6-apps": "Uygulama Geliştirme",
+	"rncp7": "RNCP 7",
+	"rncp7-sec": "Bilgi sistemleri ve ağlar",
+	"rncp7-ai": "Yapay zeka ve algoritmalar",
+	"blocks": {
+		"mandatory": "Zorunlu",
+		"suite": "Suite",
+		"security": "Güvenlik",
+		"admin-sys": "Sistem Yönetimi",
+		"ai": "Yapay Zeka",
+		"databases": "Veritabanları",
+		"web": "Web",
+		"mobile": "Mobil",
+		"imperative-prog": "Zorunlu Programlama",
+		"functional-prog": "Fonksiyonel Programlama"
+	},
+	"contributors": "Katkıda bulunanlar",
+	"home": "Ana Sayfa",
+	"about": "Hakkında",
+	"github": "GitHub"
+}
