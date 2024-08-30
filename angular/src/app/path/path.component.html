@@ -101,6 +101,22 @@
 			</span>
 		</div>
 	</div>
+  <div id="planned-internships" class="w-100 d-flex justify-content-center gap-2">
+    <div class="p-2 cursor-pointer bg-white border border-5 border-black text-black fw-bold"
+      *ngFor="let internship of availableInternships" (click)="selectInternship(internship)">
+      {{ internship.name }}
+    </div>
+  </div>
+
+  <div *ngIf="selectedInternship" class="mt-4">
+    <h3>{{ 'select_grade' | translate }}: {{ selectedInternship.name }}</h3>
+    <div class="d-flex justify-content-center align-items-center">
+      <label for="grade" class="me-2">{{ 'grade' | translate }}:</label>
+      <input type="number" id="grade" [(value)]="selectedGrade" min="100" max="125" class="form-control w-auto">
+      <button (click)="addPlannedInternship()" class="btn btn-success ms-3">{{ 'add_internship' | translate }}</button>
+    </div>
+  </div>
+
 	<hr class="mt-4 text-black" />
 </div>
 <div class="container container-lg">

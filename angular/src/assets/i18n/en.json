@@ -12,6 +12,8 @@
 	"rncp7": "RNCP 7",
 	"rncp7-sec": "Information systems and networks",
 	"rncp7-ai": "Artificial intelligence and algorithms",
+  "select_grade": "Select grade",
+  "add_internship": "Add internship",
 	"blocks": {
 		"mandatory": "Mandatory",
 		"suite": "Suite",

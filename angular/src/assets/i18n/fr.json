@@ -12,6 +12,8 @@
 	"rncp7": "RNCP 7",
 	"rncp7-sec": "Systèmes d'information et réseaux",
 	"rncp7-ai": "Intelligence artificielle et algorithmes",
+  "select_grade": "Sélectionner la note",
+  "add_internship": "Ajouter un stage",
 	"blocks": {
 		"mandatory": "Obligatoires",
 		"suite": "Suite",

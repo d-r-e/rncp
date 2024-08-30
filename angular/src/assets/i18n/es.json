@@ -12,6 +12,8 @@
 	"rncp7": "RNCP 7",
 	"rncp7-sec": "Sistemas y redes de información",
 	"rncp7-ai": "Inteligencia artificial y algoritmos",
+  "select_grade": "Seleccionar calificación",
+  "add_internship": "Añadir práctica",
 	"blocks": {
 		"mandatory": "Obligatorios",
 		"suite": "Suite",

@@ -12,6 +12,8 @@
 	"rncp7": "RNCP 7",
 	"rncp7-sec": "Bilgi sistemleri ve ağlar",
 	"rncp7-ai": "Yapay zeka ve algoritmalar",
+  "select_grade": "Notu seç",
+  "add_internship": "Staj ekle",
 	"blocks": {
 		"mandatory": "Zorunlu",
 		"suite": "Suite",

@@ -7,92 +7,152 @@ import { TranslateService } from '@ngx-translate/core';
 
 // from https://42evaluators.com/calculator
 const levelsXp = [
-	0, 462, 2688, 5885, 11777, 29217, 46255, 63559, 74340, 85483, 95000, 105630, 
-	124446, 145782, 169932, 197316, 228354, 263508, 303366, 348516, 399672, 457632, 
-	523320, 597786, 682164, 777756, 886074, 1008798, 1147902, 1305486, 1484070 ];
+  0, 462, 2688, 5885, 11777, 29217, 46255, 63559, 74340, 85483, 95000, 105630,
+  124446, 145782, 169932, 197316, 228354, 263508, 303366, 348516, 399672, 457632,
+  523320, 597786, 682164, 777756, 886074, 1008798, 1147902, 1305486, 1484070];
+
+interface Internship {
+  name: string;
+  baseXP: number;
+  grade?: number;
+}
 
 @Component({
-	selector: 'app-path',
-	templateUrl: './path.component.html',
-	styleUrl: './path.component.css',
+  selector: 'app-path',
+  templateUrl: './path.component.html',
+  styleUrl: './path.component.css',
 })
 export class PathComponent implements OnInit {
-	events: number = 0;
-	rncp: number = 6;
-	blocks: Block[] = [];
-	projects: ProjectUser[] = [];
-	requiredLevel: number = 17;
-	requiredEvents: number = 10;
-	internships: number = 0;
-	requiredInternships: number = 2;
-	path: 'web' | 'apps' | 'sec' | 'ai' = 'ai';
+  events: number = 0;
+  rncp: number = 6;
+  blocks: Block[] = [];
+  projects: ProjectUser[] = [];
+  requiredLevel: number = 17;
+  requiredEvents: number = 10;
+  internships: number = 0;
+  requiredInternships: number = 2;
+  plannedInternships: Internship[] = [];
+  path: 'web' | 'apps' | 'sec' | 'ai' = 'ai';
+  selectedInternship?: Internship;  // To store the currently selected internship
+  selectedGrade: number = 100;  // Default grade value
 
-	constructor(
-		private authService: AuthService,
-		private router: Router,
-		private http: HttpClient,
-		private translate: TranslateService
-	) {
-		this.internships = this.authService.getInternships().length;
+  availableInternships: Internship[] =
+    [
+      { name: 'Internship I', baseXP: 42000 },
+      { name: 'Internship II', baseXP: 65000 },
+    ]
+  showInternshipForm: boolean = false;
 
-		this.authService.getEvents().subscribe((events: CursusEvent[]) => {
-			this.events = events.length;
-		});
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private http: HttpClient,
+    private translate: TranslateService
+  ) {
+    const internshipProjects = this.authService.getInternships();
+    this.availableInternships = this.availableInternships.filter(i=> !internshipProjects.find(p=> p.name === i.name));
+    this.internships = internshipProjects.length;
 
-		if (this.authService.me) {
-			this.projects = this.authService.me.projects_users.filter(
-				(project: ProjectUser) =>
-					project.cursus_ids.includes(21) && project['validated?']
-			);
-		}
-	}
+    this.authService.getEvents().subscribe((events: CursusEvent[]) => {
+      this.events = events.length;
+    });
 
-	ngOnInit(): void {
-		this.setRNCP(7);
-	}
+    if (this.authService.me) {
+      this.projects = this.authService.me.projects_users.filter(
+        (project: ProjectUser) =>
+          project.cursus_ids.includes(21) && project['validated?']
+      );
+    }
+  }
 
-	loadData() {
-		this.http.get(`assets/${this.rncp}-${this.path}.json`).subscribe(response => {
-			this.blocks = response as Block[];
-		});
-	}
+  ngOnInit(): void {
+    this.setRNCP(7);
+  }
 
-	setRNCP(level: number) {
-		this.rncp = level;
-		this.requiredLevel = level == 6 ? 17 : 21;
-		this.requiredEvents = level == 6 ? 10 : 15;
-		this.path = level == 6 ? 'web' : 'sec';
-		this.loadData();
-	}
+  loadData() {
+    this.http.get(`assets/${this.rncp}-${this.path}.json`).subscribe(response => {
+      this.blocks = response as Block[];
+    });
+  }
 
-	setPath(path: 'web' | 'apps' | 'sec' | 'ai') {
-		this.path = path;
-		this.loadData();
-	}
+  selectInternship(internship: Internship) {
+    this.selectedInternship = internship;
+  }
 
-	getLevel() {
-		return this.authService.getLevel();
-	}
+  addPlannedInternship() {
+    if (!this.selectedInternship) {
+      console.error('No internship selected');
+      return;
+    }
+    if (this.selectedGrade < 100 || this.selectedGrade > 125) {
+      console.error('Invalid grade');
+      return;
+    }
 
-	getPlannedLevel() {
-		const startLevel = this.getLevel();
-		const plannedXp = this.blocks.map((block: Block) => block.planned_xp).reduce((acc, xp) => acc + (xp ?? 0), 0);
+    const existingInternship = this.plannedInternships.find(
+      internship => internship.name === this.selectedInternship?.name
+    );
 
-		const levelDown = Math.floor(startLevel);
-		const levelUp = Math.ceil(startLevel);
-		const levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];
-		const currentXp = levelsXp[levelDown] + (levelXpTotal * (startLevel - Math.floor(startLevel)));
+    if (!existingInternship) {
+      this.plannedInternships.push({
+        ...this.selectedInternship,
+        grade: this.selectedGrade
+      });
+      this.updatePlannedXP();
+    } else {
+      console.error('Internship already planned');
+    }
 
-		let finalXp = currentXp + plannedXp;
-		
-		let i = 0;
-		for (; i < levelsXp.length; i++) {
-			if (levelsXp[i] > finalXp) break;
-		}
+    this.selectedInternship = undefined;
+    this.selectedGrade = 100;
+  }
 
-		const maxXp = levelsXp[i] - levelsXp[i - 1];
-		finalXp = finalXp - levelsXp[i - 1];
+  updatePlannedXP() {
+    const totalPlannedXP = this.plannedInternships.reduce((total, internship) => {
+      const xp = internship.baseXP * (internship.grade ? internship.grade / 100 : 1);
+      return total + xp;
+    }, 0);
 
-		return i - 1 + (finalXp / maxXp);
-	}
+    // Here you could update your UI or any other relevant property with the calculated XP
+    console.log('Total Planned XP:', totalPlannedXP);
+  }
+
+  setRNCP(level: number) {
+    this.rncp = level;
+    this.requiredLevel = level == 6 ? 17 : 21;
+    this.requiredEvents = level == 6 ? 10 : 15;
+    this.path = level == 6 ? 'web' : 'sec';
+    this.loadData();
+  }
+
+  setPath(path: 'web' | 'apps' | 'sec' | 'ai') {
+    this.path = path;
+    this.loadData();
+  }
+
+  getLevel() {
+    return this.authService.getLevel();
+  }
+
+  getPlannedLevel() {
+    const startLevel = this.getLevel();
+    let plannedXp = this.blocks.map((block: Block) => block.planned_xp).reduce((acc, xp) => acc + (xp ?? 0), 0);
+    plannedXp += this.plannedInternships.map((internship: Internship) => internship.baseXP).reduce((acc, xp) => acc + xp, 0);
+    const levelDown = Math.floor(startLevel);
+    const levelUp = Math.ceil(startLevel);
+    const levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];
+    const currentXp = levelsXp[levelDown] + (levelXpTotal * (startLevel - Math.floor(startLevel)));
+
+    let finalXp = currentXp + plannedXp;
+
+    let i = 0;
+    for (; i < levelsXp.length; i++) {
+      if (levelsXp[i] > finalXp) break;
+    }
+
+    const maxXp = levelsXp[i] - levelsXp[i - 1];
+    finalXp = finalXp - levelsXp[i - 1];
+
+    return i - 1 + (finalXp / maxXp);
+  }
 }
