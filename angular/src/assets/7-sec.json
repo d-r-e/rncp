@@ -84,11 +84,6 @@
 				"id": 2529,
 				"name": "ActiveTechTales",
 				"xp": 15750 
-			},
-			{
-				"id": 2520,
-				"name":"Active Discovery",
-				"xp": 15750 
 			}
 		]
 	},
@@ -270,24 +265,24 @@
 				"xp": 15750
 			},
 			{
-				"id": 2114,
-				"name": "Active Discovery",
-				"xp": 0
+				"id": 2520,
+				"name":"Active Discovery",
+				"xp": 15750 
 			},
 			{
-				"id": 2115,
+				"id": 2521,
 				"name": "Automatic Directory",
-				"xp": 0
+				"xp": 9450 
 			},
 			{
-				"id": 2116,
+				"id": 2522,
 				"name": "Administrative Directory",
-				"xp": 0
+				"xp":9450 
 			},
 			{
-				"id": 2117,
+				"id": 2523,
 				"name": "Accessible Directory",
-				"xp": 0
+				"xp": 9450 
 			}
 		]
 	}
