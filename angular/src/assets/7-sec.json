@@ -84,6 +84,11 @@
 				"id": 2529,
 				"name": "ActiveTechTales",
 				"xp": 15750 
+			},
+			{
+				"id": 2520,
+				"name":"Active Discovery",
+				"xp": 15750 
 			}
 		]
 	},
