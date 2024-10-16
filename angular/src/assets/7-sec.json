@@ -172,54 +172,54 @@
 		"min_projects": 1,
 		"projects": [
 			{
-				"id": 2064,
-				"name": "Inception-of-Things",
-				"xp": null
+				"id": 1854,
+				"name": "42Sh",
+				"xp": 15750
 			},
 			{
 				"id": 2071,
 				"name": "BADASS",
-				"xp": null
+				"xp": 22450
 			},
 			{
-				"id": 1400,
-				"name": "ft_nmap",
-				"xp": null
+				 "id": 1458,
+				"name": "Doom Nukem",
+				"xp": 15750
 			},
 			{
-				"id": 1854,
-				"name": "42sh",
-				"xp": null
-			},
-			{
-				"id": 1458,
-				"name": "DoomNukem",
-				"xp": null
+				"id": 2064,
+				"name": "Inception Of Things",
+				"xp": 25450
 			},
 			{
 				"id": 1394,
-				"name": "HumanGL",
-				"xp": null
+				"name": "Humangl",
+				"xp": 4200
 			},
 			{
 				"id": 1424,
-				"name": "KFS 2",
-				"xp": null
+				"name": "Kfs-2",
+				"xp": 15750
 			},
 			{
 				"id": 1448,
 				"name": "Override",
-				"xp": null
+				"xp": 35700
+			},
+			{
+				"id": 1443,
+				"name": "Pestilence",
+				"xp": 15750
 			},
 			{
 				"id": 1855,
-				"name": "RT",
-				"xp": null
+				"name": "Rt",
+				"xp": 20750
 			},
 			{
 				"id": 1460,
 				"name": "Total perspective vortex",
-				"xp": null
+				"xp": 9450
 			}
 		]
 	},
