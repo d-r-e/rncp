@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Block, CursusEvent, ProjectUser } from '../models/me';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
+import { BlockComponent } from './block/block.component'; // Import BlockComponent
 
 // from https://42evaluators.com/calculator
 const levelsXp = [
@@ -138,6 +139,18 @@ export class PathComponent implements OnInit {
     const startLevel = this.getLevel();
     let plannedXp = this.blocks.map((block: Block) => block.planned_xp).reduce((acc, xp) => acc + (xp ?? 0), 0);
     plannedXp += this.plannedInternships.map((internship: Internship) => internship.baseXP).reduce((acc, xp) => acc + xp, 0);
+
+    // Use plannedProjects from BlockComponent to avoid double counting
+    const allPlannedProjects = this.blocks.reduce((acc, block) => {
+      const blockComponent = new BlockComponent(new ChangeDetectorRef());
+      blockComponent.block = block;
+      blockComponent.projects = this.projects;
+      blockComponent.ngOnInit();
+      return acc.concat(blockComponent.plannedProjects);
+    }, [] as ProjectUser[]);
+
+    plannedXp += allPlannedProjects.reduce((acc, project) => acc + project.occurrence, 0);
+
     const levelDown = Math.floor(startLevel);
     const levelUp = Math.ceil(startLevel);
     const levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];

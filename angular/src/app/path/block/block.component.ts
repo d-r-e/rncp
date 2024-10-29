@@ -17,7 +17,7 @@ export class BlockComponent implements OnInit {
 	planned_projects: ProjectUser[] = [];
 	slider_mark: number = 100;
 	show_slider: boolean = false;
-	// estimatedXP: number = 0;
+	plannedProjects: ProjectUser[] = []; // P2c25
 
 	constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
@@ -72,6 +72,19 @@ export class BlockComponent implements OnInit {
 				project: project,
 				cursus_ids: [21],
 			} as ProjectUser);
+			this.plannedProjects.push({
+				id: project.id,
+				xp: project.xp,
+				name: project.name,
+				slug: project.slug,
+				occurrence: project.xp * 1,
+				final_mark: 100,
+				status: '',
+				'validated?': true,
+				current_team_id: 0,
+				project: project,
+				cursus_ids: [21],
+			} as ProjectUser); // P924b
 		} else if (this.isPlanned(project)) {
 			const proj = this.planned_projects.find((projectUser: ProjectUser) => {
 				return projectUser.project.id == project.id;
@@ -80,6 +93,9 @@ export class BlockComponent implements OnInit {
 				this.planned_projects = this.planned_projects.filter((projectUser: ProjectUser) => {
 					return projectUser.project.id != project.id;
 				});
+			this.plannedProjects = this.plannedProjects.filter((projectUser: ProjectUser) => {
+				return projectUser.project.id != project.id;
+			}); // P924b
 		}
 		this.isBlockCompleted();
 		this.show_slider = false;
@@ -185,6 +201,11 @@ export class BlockComponent implements OnInit {
 				}
 			}
 		});
+		this.plannedProjects.forEach((project: ProjectUser) => {
+			if (!this.isCompleted(project.project)) {
+				this.xp += (project.final_mark * project.project.xp) / 100;
+			}
+		}); // P43be
 	}
 
 	getPlannedXP(project: Project): number {
