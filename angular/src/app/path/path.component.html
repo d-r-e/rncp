@@ -112,7 +112,7 @@
     <h3>{{ 'select_grade' | translate }}: {{ selectedInternship.name }}</h3>
     <div class="d-flex justify-content-center align-items-center">
       <label for="grade" class="me-2">{{ 'grade' | translate }}:</label>
-      <input type="number" id="grade" [(value)]="selectedGrade" min="100" max="125" class="form-control w-auto">
+      <input type="number" [value]="inputValue" (change)="onInputChange($event)" min="100" max="125" class="form-control w-auto">
       <button (click)="addPlannedInternship()" class="btn btn-success ms-3">{{ 'add_internship' | translate }}</button>
     </div>
   </div>
