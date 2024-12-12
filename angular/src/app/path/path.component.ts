@@ -109,7 +109,7 @@ export class PathComponent implements OnInit {
     } else {
       console.error('Internship already planned');
     }
-
+    this.internships = this.internships + 1;
     this.selectedInternship = undefined;
     this.selectedGrade = 100;
   }
