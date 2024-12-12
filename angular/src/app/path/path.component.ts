@@ -14,7 +14,7 @@ const levelsXp = [
 interface Internship {
   name: string;
   baseXP: number;
-  grade?: number;
+  grade: number;
 }
 
 @Component({
@@ -35,11 +35,12 @@ export class PathComponent implements OnInit {
   path: 'web' | 'apps' | 'sec' | 'ai' = 'ai';
   selectedInternship?: Internship;  // To store the currently selected internship
   selectedGrade: number = 100;  // Default grade value
+  inputValue: number = 100;
 
   availableInternships: Internship[] =
     [
-      { name: 'Internship I', baseXP: 42000 },
-      { name: 'Internship II', baseXP: 65000 },
+      { name: 'Internship I', baseXP: 42000, grade: 100 },
+      { name: 'Internship II', baseXP: 63000, grade: 100 },
     ]
   showInternshipForm: boolean = false;
 
@@ -75,6 +76,12 @@ export class PathComponent implements OnInit {
     });
   }
 
+  onInputChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    const newValue = Number(inputElement.value);
+    this.selectedGrade = newValue;
+  }
+
   selectInternship(internship: Internship) {
     this.selectedInternship = internship;
   }
@@ -102,7 +109,7 @@ export class PathComponent implements OnInit {
     } else {
       console.error('Internship already planned');
     }
-
+    this.internships = this.internships + 1;
     this.selectedInternship = undefined;
     this.selectedGrade = 100;
   }
@@ -137,7 +144,7 @@ export class PathComponent implements OnInit {
   getPlannedLevel() {
     const startLevel = this.getLevel();
     let plannedXp = this.blocks.map((block: Block) => block.planned_xp).reduce((acc, xp) => acc + (xp ?? 0), 0);
-    plannedXp += this.plannedInternships.map((internship: Internship) => internship.baseXP).reduce((acc, xp) => acc + xp, 0);
+    plannedXp += this.plannedInternships.map((internship: Internship) => internship.baseXP * internship.grade / 100).reduce((acc, xp) => acc + xp, 0);
     const levelDown = Math.floor(startLevel);
     const levelUp = Math.ceil(startLevel);
     const levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];
