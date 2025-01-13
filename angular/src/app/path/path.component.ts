@@ -87,29 +87,25 @@ export class PathComponent implements OnInit {
   }
 
   addPlannedInternship() {
-    if (!this.selectedInternship) {
-      console.error('No internship selected');
-      return;
-    }
-    if (this.selectedGrade < 100 || this.selectedGrade > 125) {
-      console.error('Invalid grade');
-      return;
-    }
-
+    if (!this.selectedInternship) return;
+    if (this.selectedGrade < 100 || this.selectedGrade > 125) return;
+  
     const existingInternship = this.plannedInternships.find(
-      internship => internship.name === this.selectedInternship?.name
+      i => i.name === this.selectedInternship?.name
     );
-
+  
     if (!existingInternship) {
       this.plannedInternships.push({
         ...this.selectedInternship,
         grade: this.selectedGrade
       });
       this.updatePlannedXP();
+      this.internships++;
     } else {
-      console.error('Internship already planned');
+      existingInternship.grade = this.selectedGrade;
+      this.updatePlannedXP();
     }
-    this.internships = this.internships + 1;
+  
     this.selectedInternship = undefined;
     this.selectedGrade = 100;
   }
