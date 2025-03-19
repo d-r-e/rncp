@@ -6,18 +6,8 @@
 		"min_projects": 2,
 		"projects": [
 			{
-				"id": 1,
-				"name": "Old Piscine Php",
-				"xp": 4200
-			},
-			{
 				"id": 1481,
 				"name": "Piscine Php Symfony",
-				"xp": 9450
-			},
-			{
-				"id": 1483,
-				"name": "Deprecated Piscine Python Django",
 				"xp": 9450
 			},
 			{
@@ -73,11 +63,6 @@
 		"min_xp": 10000,
 		"min_projects": 2,
 		"projects": [
-			{
-				"id": 1486,
-				"name": "Deprecated Piscine Swift iOS",
-				"xp": 9450
-			},
 			{
 				"id": 1379,
 				"name": "Ft_Hangouts",
