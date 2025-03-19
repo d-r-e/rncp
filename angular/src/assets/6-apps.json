@@ -74,18 +74,8 @@
 				"xp": 9450
 			},
 			{
-				"id": 3,
-				"name": "Old Piscine Php",
-				"xp": 4200
-			},
-			{
 				"id": 1481,
 				"name": "Piscine Php Symfony",
-				"xp": 9450
-			},
-			{
-				"id": 1483,
-				"name": "Deprecated Piscine Python Django",
 				"xp": 9450
 			},
 			{
@@ -126,11 +116,6 @@
 			{
 				"id": 1429,
 				"name": "H42N42",
-				"xp": 9450
-			},
-			{
-				"id": 1486,
-				"name": "Deprecated Piscine Swift Ios",
 				"xp": 9450
 			},
 			{
