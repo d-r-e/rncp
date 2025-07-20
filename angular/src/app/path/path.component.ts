@@ -39,8 +39,8 @@ export class PathComponent implements OnInit {
 
   availableInternships: Internship[] =
     [
-      { name: 'Internship I', baseXP: 42000, grade: 100 },
-      { name: 'Internship II', baseXP: 63000, grade: 100 },
+      { name: 'Work Experience I', baseXP: 42000, grade: 100 },
+      { name: 'Work Experience II', baseXP: 63000, grade: 100 },
     ]
   showInternshipForm: boolean = false;
 

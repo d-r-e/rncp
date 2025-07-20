@@ -87,8 +87,8 @@ export class AuthService {
 		const internships = projects.filter(
 			projectUser =>
 				projectUser.cursus_ids.includes(21) &&
-				(projectUser.project.name.toLowerCase() == 'internship i' ||
-					projectUser.project.name.toLowerCase() == 'internship ii') &&
+				(projectUser.project.name.toLowerCase() == 'work experience i' ||
+					projectUser.project.name.toLowerCase() == 'work experience ii') &&
 				projectUser['validated?']
 		);
 
