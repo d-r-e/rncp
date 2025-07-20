@@ -33,6 +33,7 @@ logging.basicConfig(level=logging.DEBUG)
 load_dotenv()
 CLIENT_ID = environ.get("CLIENT_ID")
 CLIENT_SECRET = environ.get("CLIENT_SECRET")
+SECOND_CLIENT_SECRET = environ.get("SECOND_CLIENT_SECRET")
 REDIRECT_URI = environ.get("REDIRECT_URI")
 
 @app.route('/api/auth/callback')
@@ -46,6 +47,9 @@ def auth_callback():
         }
     token_response = requests.post('https://api.intra.42.fr/oauth/token', data=data)
 
+    if token_response.status_code != 200 and SECOND_CLIENT_SECRET:
+        data['client_secret'] = SECOND_CLIENT_SECRET
+        token_response = requests.post('https://api.intra.42.fr/oauth/token', data=data)
 
     if token_response.status_code != 200:
         logging.error(token_response.json())

@@ -6,7 +6,7 @@
 
 ### Development
 
-1. Edit flask/.env
+1. Edit `flask/.env` and set `CLIENT_ID`, `CLIENT_SECRET`, `SECOND_CLIENT_SECRET`, and `REDIRECT_URI`
 2. Replace the redirect url in the environment.ts
 3. Execute:
 
