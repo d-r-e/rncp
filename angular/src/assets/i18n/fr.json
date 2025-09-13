@@ -29,5 +29,6 @@
 	"contributors": "Contributeurs",
 	"home": "Accueil",
 	"about": "À propos",
-	"github": "GitHub"
+        "github": "GitHub",
+        "report_issue": "Signaler un problème sur GitHub"
 }
