@@ -13,7 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
 	styleUrl: './login.component.css',
 })
 export class LoginComponent implements OnInit {
-	auth_url = environment.auth_url;
+        auth_url = environment.auth_url;
+        repo_url = 'https://github.com/d-r-e/rncp';
 
 	constructor(
 		private route: ActivatedRoute,

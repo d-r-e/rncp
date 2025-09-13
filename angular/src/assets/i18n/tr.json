@@ -29,5 +29,6 @@
 	"contributors": "Katkıda bulunanlar",
 	"home": "Ana Sayfa",
 	"about": "Hakkında",
-	"github": "GitHub"
+        "github": "GitHub",
+        "report_issue": "GitHub'da sorun bildirin"
 }

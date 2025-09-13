@@ -29,5 +29,6 @@
 	"contributors": "Contributors",
 	"home": "Home",
 	"about": "About",
-	"github": "Github"
+        "github": "Github",
+        "report_issue": "Report issue on GitHub"
 }

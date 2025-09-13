@@ -1,16 +1,19 @@
 <div class="container justify-content-center align-middle w-100 h-100 montserrat">
-	<div class="d-flex flex-row justify-content-center align-items-center">
-		<a
-			id="login-button"
-			[href]="auth_url"
-			*ngIf="!isLoggedIn()"
-			class="mt-5 cursor-pointer btn btn-white  px-5 bg-white d-flex flex-column align-items-center justify-content-center">
-			<span class="text-wrap">{{ 'login-with' | translate }}</span>
-			<img
-				id="42-logo"
-				class="mb-2"
-				src="https://upload.wikimedia.org/wikipedia/commons/8/8d/42_Logo.svg"
-				alt="42" />
-		</a>
-	</div>
+<div class="d-flex flex-row justify-content-center align-items-center">
+<a
+id="login-button"
+[href]="auth_url"
+*ngIf="!isLoggedIn()"
+class="mt-5 cursor-pointer btn btn-white  px-5 bg-white d-flex flex-column align-items-center justify-content-center">
+<span class="text-wrap">{{ 'login-with' | translate }}</span>
+<img
+id="42-logo"
+class="mb-2"
+src="https://upload.wikimedia.org/wikipedia/commons/8/8d/42_Logo.svg"
+alt="42" />
+</a>
+</div>
+<div class="text-center mt-3">
+<a [href]="repo_url" target="_blank" rel="noopener">{{ 'report_issue' | translate }}</a>
+</div>
 </div>
