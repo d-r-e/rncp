@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Block, CursusEvent, ProjectUser } from '../models/me';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
+import { ViewChildren, QueryList } from '@angular/core';
+import { BlockComponent } from './block/block.component';
 
 // from https://42evaluators.com/calculator
 const levelsXp = [
@@ -36,6 +38,8 @@ export class PathComponent implements OnInit {
   selectedInternship?: Internship;  // To store the currently selected internship
   selectedGrade: number = 100;  // Default grade value
   inputValue: number = 100;
+
+  @ViewChildren(BlockComponent) blockComponents!: QueryList<BlockComponent>;
 
   availableInternships: Internship[] =
     [
@@ -139,8 +143,32 @@ export class PathComponent implements OnInit {
 
   getPlannedLevel() {
     const startLevel = this.getLevel();
-    let plannedXp = this.blocks.map((block: Block) => block.planned_xp).reduce((acc, xp) => acc + (xp ?? 0), 0);
+    
+    // Collect all planned projects from all blocks, deduplicated by project ID
+    const uniquePlannedProjects = new Map<number, number>(); // projectId -> XP
+    
+    // Iterate through all block components to get their planned projects
+    if (this.blockComponents) {
+      this.blockComponents.forEach((blockComponent: BlockComponent) => {
+        blockComponent.planned_projects.forEach((plannedProject: ProjectUser) => {
+          const projectId = plannedProject.project.id;
+          const projectXp = plannedProject.occurrence;
+          
+          // Only add if not already present, or update if this has more XP
+          // (in case the same project is planned with different grades)
+          if (!uniquePlannedProjects.has(projectId)) {
+            uniquePlannedProjects.set(projectId, projectXp);
+          }
+        });
+      });
+    }
+    
+    // Sum up the XP from unique planned projects
+    let plannedXp = Array.from(uniquePlannedProjects.values()).reduce((acc, xp) => acc + xp, 0);
+    
+    // Add internship XP
     plannedXp += this.plannedInternships.map((internship: Internship) => internship.baseXP * internship.grade / 100).reduce((acc, xp) => acc + xp, 0);
+    
     const levelDown = Math.floor(startLevel);
     const levelUp = Math.ceil(startLevel);
     const levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];
