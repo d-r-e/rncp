@@ -141,9 +141,7 @@ export class PathComponent implements OnInit {
     return this.authService.getLevel();
   }
 
-  getPlannedLevel() {
-    const startLevel = this.getLevel();
-    
+  private getUniquePlannedProjectsXp(): number {
     // Collect all planned projects from all blocks, deduplicated by project ID
     const uniquePlannedProjects = new Map<number, number>(); // projectId -> XP
     
@@ -164,7 +162,14 @@ export class PathComponent implements OnInit {
     }
     
     // Sum up the XP from unique planned projects
-    let plannedXp = Array.from(uniquePlannedProjects.values()).reduce((acc, xp) => acc + xp, 0);
+    return Array.from(uniquePlannedProjects.values()).reduce((acc, xp) => acc + xp, 0);
+  }
+
+  getPlannedLevel() {
+    const startLevel = this.getLevel();
+    
+    // Get deduplicated XP from all planned projects across blocks
+    let plannedXp = this.getUniquePlannedProjectsXp();
     
     // Add internship XP
     plannedXp += this.plannedInternships.map((internship: Internship) => internship.baseXP * internship.grade / 100).reduce((acc, xp) => acc + xp, 0);
