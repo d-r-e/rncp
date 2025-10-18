@@ -154,9 +154,9 @@ export class PathComponent implements OnInit {
           const projectId = plannedProject.project.id;
           const projectXp = plannedProject.occurrence;
           
-          // Only add if not already present, or update if this has more XP
-          // (in case the same project is planned with different grades)
-          if (!uniquePlannedProjects.has(projectId)) {
+          // Store the maximum XP if the same project is planned with different grades
+          const currentXp = uniquePlannedProjects.get(projectId);
+          if (currentXp === undefined || projectXp > currentXp) {
             uniquePlannedProjects.set(projectId, projectXp);
           }
         });

@@ -45,9 +45,9 @@ describe('PathComponent', () => {
 			xp: 22450
 		};
 
-		const sharedProjectUser: ProjectUser = {
+		const sharedProjectUser100: ProjectUser = {
 			id: 2071,
-			occurrence: 22450,
+			occurrence: 22450, // 100% grade
 			final_mark: 100,
 			status: '',
 			'validated?': true,
@@ -56,13 +56,24 @@ describe('PathComponent', () => {
 			cursus_ids: [21]
 		};
 
-		// Create mock block components
+		const sharedProjectUser110: ProjectUser = {
+			id: 2071,
+			occurrence: 24695, // 110% grade (22450 * 1.1)
+			final_mark: 110,
+			status: '',
+			'validated?': true,
+			current_team_id: 0,
+			project: sharedProject,
+			cursus_ids: [21]
+		};
+
+		// Create mock block components with same project at different grades
 		const mockBlockComponent1 = {
-			planned_projects: [sharedProjectUser]
+			planned_projects: [sharedProjectUser100]
 		} as BlockComponent;
 
 		const mockBlockComponent2 = {
-			planned_projects: [sharedProjectUser]
+			planned_projects: [sharedProjectUser110]
 		} as BlockComponent;
 
 		// Set up the blockComponents QueryList
@@ -73,13 +84,18 @@ describe('PathComponent', () => {
 		// Mock the getLevel to return a base level
 		mockAuthService.getLevel.and.returnValue(10);
 
-		// Call getPlannedLevel - it should deduplicate the shared project
+		// Call getPlannedLevel - it should take the maximum XP (110% grade)
 		const plannedLevel = component.getPlannedLevel();
 
-		// The XP should be counted only once, not twice
-		// With base level 10 and 22450 XP added, we can verify it's not doubled
-		// If it were counted twice (44900), the level would be higher
+		// The XP should be counted only once with the higher grade
 		expect(plannedLevel).toBeGreaterThan(10);
+		
+		// Now test with only the 100% grade project
+		queryList.reset([mockBlockComponent1, mockBlockComponent1]);
+		const plannedLevelWith100 = component.getPlannedLevel();
+		
+		// The 110% version should give a higher level than 100%
+		expect(plannedLevel).toBeGreaterThan(plannedLevelWith100);
 		
 		// Let's also test that two different projects ARE counted
 		const differentProject: ProjectUser = {
@@ -93,13 +109,13 @@ describe('PathComponent', () => {
 			cursus_ids: [21]
 		};
 
-		mockBlockComponent1.planned_projects = [sharedProjectUser];
+		mockBlockComponent1.planned_projects = [sharedProjectUser100];
 		mockBlockComponent2.planned_projects = [differentProject];
 		queryList.reset([mockBlockComponent1, mockBlockComponent2]);
 
 		const plannedLevelWithDifferent = component.getPlannedLevel();
 		
 		// With two different projects, the level should be higher than with just one
-		expect(plannedLevelWithDifferent).toBeGreaterThan(plannedLevel);
+		expect(plannedLevelWithDifferent).toBeGreaterThan(plannedLevelWith100);
 	});
 });
