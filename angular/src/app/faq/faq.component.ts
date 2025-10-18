@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { contributors } from '@app/package.json';
+import packageJson from '@app/package.json';
 
 interface Contributor {
 	name: string;
@@ -20,6 +20,6 @@ export class FaqComponent implements OnInit {
 	public contributors: Contributor[] = [];
 
 	ngOnInit(): void {
-		this.contributors = contributors as Contributor[];
+		this.contributors = packageJson.contributors as Contributor[];
 	}
 }
