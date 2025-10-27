@@ -23,6 +23,12 @@ export class LoginComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
+		// Redirect to home if already logged in
+		if (this.authService.isLoggedIn()) {
+			this.router.navigate(['/rncp']);
+			return;
+		}
+
 		this.route.queryParams.subscribe(params => {
 			if (params['code']) {
 				this.authService.login(params['code']);
