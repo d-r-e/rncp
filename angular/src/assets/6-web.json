@@ -54,6 +54,11 @@
 				"id": 2485,
 				"name": "Tokenizer",
 				"xp": 9450
+			},
+			{
+				"id": 2600,
+				"name": "TokenizeArt",
+				"xp": 9450
 			}
 		]
 	},
