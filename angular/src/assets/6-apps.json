@@ -207,9 +207,19 @@
 				"xp": 9450
 			},
 			{
+				"id": 1469,
+				"name": "ft_select",
+				"xp": 4200
+			},
+			{
 				"id": 1420,
 				"name": "Matt Daemon",
 				"xp": 9450
+			},
+			{
+				"id": 1466,
+				"name": "ft_script",
+				"xp": 4200
 			},
 			{
 				"id": 1467,
