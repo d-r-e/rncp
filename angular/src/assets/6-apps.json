@@ -152,6 +152,11 @@
 				"id": 2364,
 				"name": "Piscine Object",
 				"xp": 9450
+			},
+			{
+				"id": 2355,
+				"name": "Mobile",
+				"xp": 9450
 			}
 		]
 	},
@@ -290,7 +295,7 @@
 		"min_projects": 2,
 		"projects": [
 			{
-				"id": 1484,
+				"id": 2228,
 				"name": "Piscine OCaml",
 				"xp": 9450
 			},
