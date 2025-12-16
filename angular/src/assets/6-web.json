@@ -92,6 +92,16 @@
 				"id": 2355,
 				"name": "Mobile",
 				"xp": 9450
+			},
+			{
+				"id": 1427,
+				"name": "Music-room",
+				"xp": 25200
+			},
+			{
+				"id": 2552,
+				"name": "Peace Break",
+				"xp": 9000
 			}
 		]
 	},
