@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-        this.translate.addLangs(['fr', 'en', 'es', 'tr']);
+		this.translate.addLangs(['fr', 'en', 'es', 'de', 'tr']);
 		this.translate.setDefaultLang('en');
 
 		this.translate.use(this.authService.getLanguage() || 'en');
