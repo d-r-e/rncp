@@ -28,4 +28,8 @@ export const routes: Routes = [
 		path: 'auth/callback',
 		component: LoginComponent,
 	},
+	{
+		path: 'auth/callback/:campusId',
+		component: LoginComponent,
+	},
 ];
