@@ -9,186 +9,191 @@ import { BlockComponent } from './block/block.component';
 
 // from https://42evaluators.com/calculator
 const levelsXp = [
-  0, 462, 2688, 5885, 11777, 29217, 46255, 63559, 74340, 85483, 95000, 105630,
-  124446, 145782, 169932, 197316, 228354, 263508, 303366, 348516, 399672, 457632,
-  523320, 597786, 682164, 777756, 886074, 1008798, 1147902, 1305486, 1484070];
+	0, 462, 2688, 5885, 11777, 29217, 46255, 63559, 74340, 85483, 95000, 105630,
+	124446, 145782, 169932, 197316, 228354, 263508, 303366, 348516, 399672, 457632,
+	523320, 597786, 682164, 777756, 886074, 1008798, 1147902, 1305486, 1484070];
 
 interface Internship {
-  name: string;
-  baseXP: number;
-  grade: number;
+	name: string;
+	baseXP: number;
+	grade: number;
 }
 
 @Component({
-  selector: 'app-path',
-  templateUrl: './path.component.html',
-  styleUrl: './path.component.css',
+	selector: 'app-path',
+	templateUrl: './path.component.html',
+	styleUrl: './path.component.css',
 })
 export class PathComponent implements OnInit {
-  events: number = 0;
-  rncp: number = 6;
-  blocks: Block[] = [];
-  projects: ProjectUser[] = [];
-  requiredLevel: number = 17;
-  requiredEvents: number = 10;
-  internships: number = 0;
-  requiredInternships: number = 2;
-  plannedInternships: Internship[] = [];
-  path: 'web' | 'apps' | 'sec' | 'ai' = 'ai';
-  selectedInternship?: Internship;  // To store the currently selected internship
-  selectedGrade: number = 100;  // Default grade value
-  inputValue: number = 100;
+	events: number = 0;
+	rncp: number = 6;
+	blocks: Block[] = [];
+	projects: ProjectUser[] = [];
+	requiredLevel: number = 17;
+	requiredEvents: number = 10;
+	internships: number = 0;
+	requiredInternships: number = 2;
+	plannedInternships: Internship[] = [];
+	path: 'web' | 'apps' | 'sec' | 'ai' = 'ai';
+	selectedInternship?: Internship;  // To store the currently selected internship
+	selectedGrade: number = 100;  // Default grade value
+	inputValue: number = 100;
 
-  @ViewChildren(BlockComponent) blockComponents!: QueryList<BlockComponent>;
+	@ViewChildren(BlockComponent) blockComponents!: QueryList<BlockComponent>;
 
-  availableInternships: Internship[] =
-    [
-      { name: 'Work Experience I', baseXP: 42000, grade: 100 },
-      { name: 'Work Experience II', baseXP: 63000, grade: 100 },
-    ]
-  showInternshipForm: boolean = false;
+	availableInternships: Internship[] =
+		[
+			{ name: 'Work Experience I', baseXP: 42000, grade: 100 },
+			{ name: 'Work Experience II', baseXP: 63000, grade: 100 },
+		]
+	showInternshipForm: boolean = false;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private http: HttpClient,
-    private translate: TranslateService
-  ) {
-    const internshipProjects = this.authService.getInternships();
-    this.availableInternships = this.availableInternships.filter(i=> !internshipProjects.find(p=> p.name === i.name));
-    this.internships = internshipProjects.length;
+	constructor(
+		private authService: AuthService,
+		private router: Router,
+		private http: HttpClient,
+		private translate: TranslateService
+	) {
+		const internshipProjects = this.authService.getInternships();
+		this.availableInternships = this.availableInternships.filter(i => !internshipProjects.find(p => p.name === i.name));
+		this.internships = internshipProjects.length;
 
-    this.authService.getEvents().subscribe((events: CursusEvent[]) => {
-      this.events = events.length;
-    });
+		this.authService.getEvents().subscribe((events: CursusEvent[]) => {
+			this.events = events.length;
+		});
 
-    if (this.authService.me) {
-      this.projects = this.authService.me.projects_users.filter(
-        (project: ProjectUser) =>
-          project.cursus_ids.includes(21) && project['validated?']
-      );
-    }
-  }
+		if (this.authService.me) {
+			this.projects = this.authService.me.projects_users.filter(
+				(project: ProjectUser) =>
+					project.cursus_ids.includes(21) && project['validated?']
+			);
+		}
+	}
 
-  ngOnInit(): void {
-    this.setRNCP(7);
-  }
+	ngOnInit(): void {
+		this.setRNCP(7);
+	}
 
-  loadData() {
-    this.http.get(`assets/${this.rncp}-${this.path}.json`).subscribe(response => {
-      this.blocks = response as Block[];
-    });
-  }
+	loadData() {
+		this.http.get<Block[]>(`/assets/${this.rncp}-${this.path}.json`).subscribe({
+			next: (response: Block[]) => {
+				this.blocks = response;
+			},
+			error: () => {
+				this.blocks = [];
+			},
+		});
+	}
 
-  onInputChange(event: Event): void {
-    const inputElement = event.target as HTMLInputElement;
-    const newValue = Number(inputElement.value);
-    this.selectedGrade = newValue;
-  }
+	onInputChange(event: Event): void {
+		const inputElement = event.target as HTMLInputElement;
+		const newValue = Number(inputElement.value);
+		this.selectedGrade = newValue;
+	}
 
-  selectInternship(internship: Internship) {
-    this.selectedInternship = internship;
-  }
+	selectInternship(internship: Internship) {
+		this.selectedInternship = internship;
+	}
 
-  addPlannedInternship() {
-    if (!this.selectedInternship) return;
-    if (this.selectedGrade < 100 || this.selectedGrade > 125) return;
-  
-    const existingInternship = this.plannedInternships.find(
-      i => i.name === this.selectedInternship?.name
-    );
-  
-    if (!existingInternship) {
-      this.plannedInternships.push({
-        ...this.selectedInternship,
-        grade: this.selectedGrade
-      });
-      this.updatePlannedXP();
-      this.internships++;
-    } else {
-      existingInternship.grade = this.selectedGrade;
-      this.updatePlannedXP();
-    }
-  
-    this.selectedInternship = undefined;
-    this.selectedGrade = 100;
-  }
+	addPlannedInternship() {
+		if (!this.selectedInternship) return;
+		if (this.selectedGrade < 100 || this.selectedGrade > 125) return;
 
-  updatePlannedXP() {
-    const totalPlannedXP = this.plannedInternships.reduce((total, internship) => {
-      const xp = internship.baseXP * (internship.grade ? internship.grade / 100 : 1);
-      return total + xp;
-    }, 0);
+		const existingInternship = this.plannedInternships.find(
+			i => i.name === this.selectedInternship?.name
+		);
 
-    // Here you could update your UI or any other relevant property with the calculated XP
-    console.log('Total Planned XP:', totalPlannedXP);
-  }
+		if (!existingInternship) {
+			this.plannedInternships.push({
+				...this.selectedInternship,
+				grade: this.selectedGrade
+			});
+			this.updatePlannedXP();
+			this.internships++;
+		} else {
+			existingInternship.grade = this.selectedGrade;
+			this.updatePlannedXP();
+		}
 
-  setRNCP(level: number) {
-    this.rncp = level;
-    this.requiredLevel = level == 6 ? 17 : 21;
-    this.requiredEvents = level == 6 ? 10 : 15;
-    this.path = level == 6 ? 'web' : 'sec';
-    this.loadData();
-  }
+		this.selectedInternship = undefined;
+		this.selectedGrade = 100;
+	}
 
-  setPath(path: 'web' | 'apps' | 'sec' | 'ai') {
-    this.path = path;
-    this.loadData();
-  }
+	updatePlannedXP() {
+		const totalPlannedXP = this.plannedInternships.reduce((total, internship) => {
+			const xp = internship.baseXP * (internship.grade ? internship.grade / 100 : 1);
+			return total + xp;
+		}, 0);
 
-  getLevel() {
-    return this.authService.getLevel();
-  }
+		// Here you could update your UI or any other relevant property with the calculated XP
+		console.log('Total Planned XP:', totalPlannedXP);
+	}
 
-  private getUniquePlannedProjectsXp(): number {
-    // Collect all planned projects from all blocks, deduplicated by project ID
-    const uniquePlannedProjects = new Map<number, number>(); // projectId -> XP
-    
-    // Iterate through all block components to get their planned projects
-    if (this.blockComponents) {
-      this.blockComponents.forEach((blockComponent: BlockComponent) => {
-        blockComponent.planned_projects.forEach((plannedProject: ProjectUser) => {
-          const projectId = plannedProject.project.id;
-          const projectXp = plannedProject.occurrence;
-          
-          // Store the maximum XP if the same project is planned with different grades
-          const currentXp = uniquePlannedProjects.get(projectId);
-          if (currentXp === undefined || projectXp > currentXp) {
-            uniquePlannedProjects.set(projectId, projectXp);
-          }
-        });
-      });
-    }
-    
-    // Sum up the XP from unique planned projects
-    return Array.from(uniquePlannedProjects.values()).reduce((acc, xp) => acc + xp, 0);
-  }
+	setRNCP(level: number) {
+		this.rncp = level;
+		this.requiredLevel = level == 6 ? 17 : 21;
+		this.requiredEvents = level == 6 ? 10 : 15;
+		this.path = level == 6 ? 'web' : 'sec';
+		this.loadData();
+	}
 
-  getPlannedLevel() {
-    const startLevel = this.getLevel();
-    
-    // Get deduplicated XP from all planned projects across blocks
-    let plannedXp = this.getUniquePlannedProjectsXp();
-    
-    // Add internship XP
-    plannedXp += this.plannedInternships.map((internship: Internship) => internship.baseXP * internship.grade / 100).reduce((acc, xp) => acc + xp, 0);
-    
-    const levelDown = Math.floor(startLevel);
-    const levelUp = Math.ceil(startLevel);
-    const levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];
-    const currentXp = levelsXp[levelDown] + (levelXpTotal * (startLevel - Math.floor(startLevel)));
+	setPath(path: 'web' | 'apps' | 'sec' | 'ai') {
+		this.path = path;
+		this.loadData();
+	}
 
-    let finalXp = currentXp + plannedXp;
+	getLevel() {
+		return this.authService.getLevel();
+	}
 
-    let i = 0;
-    for (; i < levelsXp.length; i++) {
-      if (levelsXp[i] > finalXp) break;
-    }
+	private getUniquePlannedProjectsXp(): number {
+		// Collect all planned projects from all blocks, deduplicated by project ID
+		const uniquePlannedProjects = new Map<number, number>(); // projectId -> XP
 
-    const maxXp = levelsXp[i] - levelsXp[i - 1];
-    finalXp = finalXp - levelsXp[i - 1];
+		// Iterate through all block components to get their planned projects
+		if (this.blockComponents) {
+			this.blockComponents.forEach((blockComponent: BlockComponent) => {
+				blockComponent.planned_projects.forEach((plannedProject: ProjectUser) => {
+					const projectId = plannedProject.project.id;
+					const projectXp = plannedProject.occurrence;
 
-    return i - 1 + (finalXp / maxXp);
-  }
+					// Store the maximum XP if the same project is planned with different grades
+					const currentXp = uniquePlannedProjects.get(projectId);
+					if (currentXp === undefined || projectXp > currentXp) {
+						uniquePlannedProjects.set(projectId, projectXp);
+					}
+				});
+			});
+		}
+
+		// Sum up the XP from unique planned projects
+		return Array.from(uniquePlannedProjects.values()).reduce((acc, xp) => acc + xp, 0);
+	}
+
+	getPlannedLevel() {
+		const startLevel = this.getLevel();
+
+		// Get deduplicated XP from all planned projects across blocks
+		let plannedXp = this.getUniquePlannedProjectsXp();
+
+		// Add internship XP
+		plannedXp += this.plannedInternships.map((internship: Internship) => internship.baseXP * internship.grade / 100).reduce((acc, xp) => acc + xp, 0);
+
+		const levelDown = Math.floor(startLevel);
+		const levelUp = Math.ceil(startLevel);
+		const levelXpTotal = levelsXp[levelUp] - levelsXp[levelDown];
+		const currentXp = levelsXp[levelDown] + (levelXpTotal * (startLevel - Math.floor(startLevel)));
+
+		let finalXp = currentXp + plannedXp;
+
+		let i = 0;
+		for (; i < levelsXp.length; i++) {
+			if (levelsXp[i] > finalXp) break;
+		}
+
+		const maxXp = levelsXp[i] - levelsXp[i - 1];
+		finalXp = finalXp - levelsXp[i - 1];
+
+		return i - 1 + (finalXp / maxXp);
+	}
 }

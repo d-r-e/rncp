@@ -6,34 +6,14 @@
 		"min_projects": 3,
 		"projects": [
 			{
-				"id": 1430,
-				"name": "famine",
+				"id": 39001,
+				"name": "cybersecurity",
 				"xp": 9450
-			},
-			{
-				"id": 1443,
-				"name": "pestilence",
-				"xp": 15750
 			},
 			{
 				"id": 1404,
 				"name": "snow-crash",
 				"xp": 9450
-			},
-			{
-				"id": 1840,
-				"name": "ft_malcolm",
-				"xp": 6000
-			},
-			{
-				"id": 1451,
-				"name": "ft_ssl_md5",
-				"xp": 9450
-			},
-			{
-				"id": 1405,
-				"name": "Darkly",
-				"xp": 6000
 			},
 			{
 				"id": 1417,
@@ -51,39 +31,64 @@
 				"xp": 11500
 			},
 			{
-				"id": 1447,
-				"name": "ft_shield",
-				"xp": 15750
-			},
-			{
-				"id": 1419,
-				"name": "Woody Woodpacker",
-				"xp": 9450
-			},
-			{
-				"id": 2346,
-				"name": "Piscine Cybersecurity",
-				"xp": 0
-			},
-			{
 				"id": 2393,
 				"name": "UnleashTheBox",
 				"xp": 15750
 			},
 			{
-				"id": 2395,
-				"name": "Active Connect",
-				"xp": 15750
+				"id": 39002,
+				"name": "tinky-winkey",
+				"xp": 16800
 			},
 			{
-				"id": 2527,
-				"name": "MicroForensX",
+				"id": 39003,
+				"name": "dr-quine",
+				"xp": 2520
+			},
+			{
+				"id": 1419,
+				"name": "woody-woodpacker",
 				"xp": 9450
 			},
 			{
-				"id": 2529,
-				"name": "ActiveTechTales",
-				"xp": 15750 
+				"id": 1447,
+				"name": "ft_shield",
+				"xp": 15750
+			},
+			{
+				"id": 1430,
+				"name": "famine",
+				"xp": 9450
+			},
+			{
+				"id": 1443,
+				"name": "pestilence",
+				"xp": 15750
+			},
+			{
+				"id": 39004,
+				"name": "war",
+				"xp": 35700
+			},
+			{
+				"id": 39005,
+				"name": "death",
+				"xp": 35700
+			},
+			{
+				"id": 1840,
+				"name": "ft_malcolm",
+				"xp": 6000
+			},
+			{
+				"id": 1400,
+				"name": "ft_nmap",
+				"xp": 15750
+			},
+			{
+				"id": 1405,
+				"name": "Darkly",
+				"xp": 6000
 			}
 		]
 	},
@@ -192,7 +197,7 @@
 				"xp": 22450
 			},
 			{
-				 "id": 1458,
+				"id": 1458,
 				"name": "Doom Nukem",
 				"xp": 15750
 			},
@@ -276,23 +281,23 @@
 			},
 			{
 				"id": 2520,
-				"name":"Active Discovery",
-				"xp": 15750 
+				"name": "Active Discovery",
+				"xp": 15750
 			},
 			{
 				"id": 2521,
 				"name": "Automatic Directory",
-				"xp": 9450 
+				"xp": 9450
 			},
 			{
 				"id": 2522,
 				"name": "Administrative Directory",
-				"xp":9450 
+				"xp": 9450
 			},
 			{
 				"id": 2523,
 				"name": "Accessible Directory",
-				"xp": 9450 
+				"xp": 9450
 			}
 		]
 	}
