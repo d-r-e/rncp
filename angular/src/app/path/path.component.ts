@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { Block, CursusEvent, ProjectUser } from '../models/me';
+import { Block, CursusEvent, Project, ProjectUser } from '../models/me';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { ViewChildren, QueryList } from '@angular/core';
@@ -135,6 +135,12 @@ export class PathComponent implements OnInit {
   setPath(path: 'web' | 'apps' | 'sec' | 'ai') {
     this.path = path;
     this.loadData();
+  }
+
+  syncPlanned(origin: BlockComponent, change: { project: Project; mark: number | null }) {
+    this.blockComponents.forEach(b => {
+      if (b !== origin) b.syncPlanned(change.project, change.mark);
+    });
   }
 
   getLevel() {
