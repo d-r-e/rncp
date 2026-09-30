@@ -127,7 +127,7 @@ class="w-100 w-sm-50 mt-2 mt-sm-0"
 <div class="row d-flex align-items-stretch">
 <div *ngFor="let block of blocks" class="col-md-6 col-lg-4 col-xl-3">
 <div class="m-2 h-100 pb-4">
-<app-block [block]="block" [projects]="projects"></app-block>
+<app-block #blockRef [block]="block" [projects]="projects" (plannedChange)="syncPlanned(blockRef, $event)"></app-block>
 </div>
 </div>
 </div>
