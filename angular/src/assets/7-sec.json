@@ -84,6 +84,11 @@
 				"id": 2529,
 				"name": "ActiveTechTales",
 				"xp": 15750 
+			},
+			{
+				"id": 2097,
+				"name": "tinky-winkey",
+				"xp": 16800
 			}
 		]
 	},
@@ -202,6 +207,31 @@
 				"id": 1442,
 				"name": "KFS X",
 				"xp": 35700
+			},
+			{
+				"id": 1423,
+				"name": "filesystem",
+				"xp": 15750
+			},
+			{
+				"id": 1456,
+				"name": "userspace_digressions",
+				"xp": 16800
+			},
+			{
+				"id": 1422,
+				"name": "drivers-and-interrupts",
+				"xp": 15750
+			},
+			{
+				"id": 1421,
+				"name": "process-and-memory",
+				"xp": 9450
+			},
+			{
+				"id": 2749,
+				"name": "RetroEmu",
+				"xp": 37800
 			}
 		]
 	},
@@ -222,7 +252,7 @@
 				"xp": 22450
 			},
 			{
-				 "id": 1458,
+				"id": 1458,
 				"name": "Doom Nukem",
 				"xp": 15750
 			},
@@ -323,6 +353,21 @@
 				"id": 2523,
 				"name": "Accessible Directory",
 				"xp": 9450 
+			},
+			{
+				"id": 2746,
+				"name": "Inception of context",
+				"xp": 19800
+			},
+			{
+				"id": 2750,
+				"name": "Inception of wisdom",
+				"xp": 21600
+			},
+			{
+				"id": 2747,
+				"name": "ft_lgtm",
+				"xp": 16200
 			}
 		]
 	}
