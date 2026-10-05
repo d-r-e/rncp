@@ -157,6 +157,21 @@
 				"id": 2355,
 				"name": "Mobile",
 				"xp": 9450
+			},
+			{
+				"id": 2550,
+				"name": "Libftpp",
+				"xp": 5880
+			},
+			{
+				"id": 2371,
+				"name": "Abstract Data",
+				"xp": 20084
+			},
+			{
+				"id": 2749,
+				"name": "RetroEmu",
+				"xp": 37800
 			}
 		]
 	},
@@ -267,7 +282,7 @@
 				"xp": 25200
 			},
 			{
-				"id": 2086,
+				"id": 1448,
 				"name": "Override",
 				"xp": 35700
 			},
