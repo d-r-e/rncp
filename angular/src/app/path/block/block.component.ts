@@ -10,6 +10,8 @@ export class BlockComponent implements OnInit {
 	@Input() block!: Block;
 	@Input() projects?: ProjectUser[];
 	@Output() completionStatus: EventEmitter<boolean> = new EventEmitter<boolean>();
+	// mark is null when the project is unplanned
+	@Output() plannedChange = new EventEmitter<{ project: Project; mark: number | null }>();
 	activeProjectIndex: number | null = null;
 	xp: number = 0;
 	completed_projects: ProjectUser[] = [];
@@ -72,6 +74,7 @@ export class BlockComponent implements OnInit {
 				project: project,
 				cursus_ids: [21],
 			} as ProjectUser);
+			this.plannedChange.emit({ project, mark: 100 });
 		} else if (this.isPlanned(project)) {
 			const proj = this.planned_projects.find((projectUser: ProjectUser) => {
 				return projectUser.project.id == project.id;
@@ -80,6 +83,7 @@ export class BlockComponent implements OnInit {
 				this.planned_projects = this.planned_projects.filter((projectUser: ProjectUser) => {
 					return projectUser.project.id != project.id;
 				});
+			this.plannedChange.emit({ project, mark: null });
 		}
 		this.isBlockCompleted();
 		this.show_slider = false;
@@ -134,6 +138,24 @@ export class BlockComponent implements OnInit {
 			return;
 		}
 		const mark = parseInt((target as HTMLInputElement).value);
+		this.slider_mark = mark;
+		this.setMark(project, mark);
+		this.plannedChange.emit({ project, mark });
+	}
+
+	// Mirror a plan made in another block, when this block has the same project.
+	syncPlanned(project: Project, mark: number | null) {
+		const local = this.block.projects.find(p => p.id == project.id);
+		if (!local || this.isCompleted(local)) return;
+		if (mark === null) {
+			this.planned_projects = this.planned_projects.filter(p => p.project.id != local.id);
+			this.calculateXP();
+		} else {
+			this.setMark(local, mark);
+		}
+	}
+
+	private setMark(project: Project, mark: number) {
 		const new_xp = Math.round((project.xp * mark) / 100);
 		const found: ProjectUser | undefined = this.planned_projects.find(
 			(projectUser: ProjectUser) => {
@@ -145,8 +167,6 @@ export class BlockComponent implements OnInit {
 				return false;
 			}
 		);
-
-		this.slider_mark = mark;
 
 		if (!found) {
 			this.planned_projects.push({
