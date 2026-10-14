@@ -2,6 +2,7 @@ import { Component, Input, Output, OnInit, EventEmitter, ChangeDetectorRef } fro
 import { Block, Project, ProjectUser } from '../../models/me';
 
 @Component({
+	standalone: false,
 	selector: 'app-block',
 	templateUrl: './block.component.html',
 	styleUrl: './block.component.css',

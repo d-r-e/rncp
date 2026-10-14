@@ -20,6 +20,7 @@ interface Internship {
 }
 
 @Component({
+  standalone: false,
   selector: 'app-path',
   templateUrl: './path.component.html',
   styleUrl: './path.component.css',

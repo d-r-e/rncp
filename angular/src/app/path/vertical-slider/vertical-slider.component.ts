@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
+	standalone: false,
 	selector: 'app-vertical-slider',
 	templateUrl: './vertical-slider.component.html',
 	styleUrl: './vertical-slider.component.css',
