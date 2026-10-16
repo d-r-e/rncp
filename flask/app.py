@@ -10,7 +10,7 @@ from flask_caching import Cache
 app = Flask(__name__)
 
 config = {
-	"CACHE_TYPE": "filesystem",
+	"CACHE_TYPE": "FileSystemCache",
 	"CACHE_DIR": "cache",
 	"CACHE_DEFAULT_TIMEOUT": 3600 # refresh the cache for each user every 1 hour
 }
