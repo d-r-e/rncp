@@ -2,8 +2,22 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { customLangFactory } from './CustomLangFactory';
 
 export const appConfig: ApplicationConfig = {
-	providers: [importProvidersFrom(HttpClientModule), provideRouter(routes)],
+	providers: [
+		importProvidersFrom(
+			HttpClientModule,
+			TranslateModule.forRoot({
+				loader: {
+					provide: TranslateLoader,
+					useFactory: customLangFactory,
+					deps: [HttpClient],
+				},
+			})
+		),
+		provideRouter(routes),
+	],
 };
