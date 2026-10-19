@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { Block, CursusEvent, Project, ProjectUser } from '../models/me';
@@ -20,6 +20,7 @@ interface Internship {
 }
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
   selector: 'app-path',
   templateUrl: './path.component.html',

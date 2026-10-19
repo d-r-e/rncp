@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Me } from '../models/me';
@@ -10,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 	standalone: true,
 	imports: [CommonModule, TranslateModule],
 	templateUrl: './header.component.html',
+	changeDetection: ChangeDetectionStrategy.Eager,
 	styleUrl: './header.component.css',
 })
 export class HeaderComponent {
