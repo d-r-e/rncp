@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
 	standalone: false,
 	selector: 'app-vertical-slider',
 	templateUrl: './vertical-slider.component.html',
+	changeDetection: ChangeDetectionStrategy.Eager,
 	styleUrl: './vertical-slider.component.css',
 })
 export class VerticalSliderComponent {

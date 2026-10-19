@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import packageJson from '@app/package.json';
 
@@ -14,6 +14,7 @@ interface Contributor {
 	standalone: true,
 	imports: [CommonModule, TranslateModule],
 	templateUrl: './faq.component.html',
+	changeDetection: ChangeDetectionStrategy.Eager,
 	styleUrl: './faq.component.css',
 })
 export class FaqComponent implements OnInit {

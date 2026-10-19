@@ -13,6 +13,7 @@ module.exports = tseslint.config(
 		rules: {
 			"@angular-eslint/prefer-inject": "off",
 			"@angular-eslint/prefer-standalone": "off",
+			"@angular-eslint/prefer-on-push-component-change-detection": "off",
 			"@angular-eslint/directive-selector": [
 				"error",
 				{

@@ -1,7 +1,8 @@
-import { Component, Input, Output, OnInit, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { Block, Project, ProjectUser } from '../../models/me';
 
 @Component({
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: false,
 	selector: 'app-block',
 	templateUrl: './block.component.html',
